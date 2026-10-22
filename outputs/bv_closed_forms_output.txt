@@ -1,0 +1,12 @@
+K0 = 1.8540746773013719184  d = K0^2/pi = 1.0942198076132383194  mass at 0: 1/d = 0.913893162088927 vs pi/K0^2 = 0.913893162088927
+max rel. error, Friedrichs masses vs (29): 3.7419e-50
+max rel. error, W_F closed form:             3.7419e-50
+max rel. error, Krein masses vs (30):        3.2073e-50
+max rel. error, W_inf closed form:           3.2073e-50
+product law, n=3, m=4: 0.999845587572048   tanh*coth = 0.999845587572048
+product law, n=7, m=8: 0.999999999461469   tanh*coth = 0.999999999461469
+product law, n=13, m=14: 1.0   tanh*coth = 1.0
+product law, n=25, m=26: 1.0   tanh*coth = 1.0
+c = -1: local exponent of the terms of sum W_F n^-8 n^-c = -2.0 (convergent iff < -1)
+c = -2: local exponent of the terms of sum W_F n^-8 n^-c = -1.0 (convergent iff < -1)
+c = -3: local exponent of the terms of sum W_F n^-8 n^-c = 3.8587658e-51 (convergent iff < -1)

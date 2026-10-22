@@ -1,0 +1,6 @@
+device: NVIDIA GeForce RTX 4090  free/total memory 22.5/24.0 GiB
+workload: n = 2000000 sites, 64 values of lambda, one pass
+CPU numpy (vectorised over lambda): 10.33 s
+GPU cupy (incl. transfer + sync):  0.54 s
+speed-up: 19.1x
+counts identical: True

@@ -1,0 +1,74 @@
+\section{Open problems}\label{sec:open}
+
+We list the questions that the methods of this paper leave open, in the form in which
+we would attack them next.
+
+\paragraph{Rates and the second term for dimerised links.} \Cref{thm:dimer} has no rate. The
+proof loses control in two places: the matching window, whose size is constrained from
+both sides by $N_\lambda^{\max(2\alpha/(2\alpha-1),\alpha/(\alpha-1+\delta))}\ll N_M\ll N_\lambda^{\alpha/(\alpha-1)}$, and the
+uniformity of the drift sum near the turning point. On the chain D1 of \Cref{sec:numerics} the
+error decays roughly like $N_\lambda^{-1}$ over the accessible range; we do not know whether this is the
+general rate. A proof would combine the Airy comparison of
+\Cref{sec:olver}, which does not care about $\kappa'$, with a Bessel comparison of Olver type on
+the far field. The second-order constant should then contain, besides the terms of
+\Cref{thm:second}, a contribution of the Bessel order $\nu$.
+
+\paragraph{Larger diagonals.} The hypothesis $\beta<\alpha-1$ (or $\beta<\alpha-1-2|\kappa'|$) is exactly what
+makes the coordinates of \Cref{thm:count} exist, and the cost of the diagonal in
+\Cref{thm:rate} is $N_\lambda^{1+\beta-\alpha}$. For a smooth diagonal $b_n=b(n)$ the natural phase is
+\[
+  \Phi_{A,b}(\lambda):=\int_0^\infty\arcsin\Bigl(\min\Bigl(1,\frac{\lambda-b(x)}{2A(x)}\Bigr)\Bigr)dx .
+\]
+\begin{conjecture}\label{conj:AB}
+Under \Cref{hyp:A} with $b_n=b(n)$, $b$ smooth with $x^jb^{(j)}(x)=O(x^\beta)$, $\beta<\alpha-1$,
+$\psi(\lambda)-\Phi_{A,b}(\lambda)=O(N_\lambda^{-\min(1,\delta'')})$.
+\end{conjecture}
+\noindent To first order in $b$, $\Phi_{A,b}-\Phi_A=-\frac{b_0}{4c\alpha}\B(\frac{\alpha-\beta-1}{2\alpha},\frac12)N_\lambda^{1+\beta-\alpha}$
+for $b(x)=b_0x^\beta$, $A=cx^\alpha$, and \Cref{sec:numerics} confirms this as the leading diagonal
+term of $\psi-\Phi_A$ on one chain to about $0.2\%$; our truncation data are not accurate enough to
+decide whether $N_\lambda(\psi-\Phi_{A,b})$ stays bounded. For $\beta\ge\alpha-1$ the diagonal is no longer a
+perturbation of the coordinates at infinity, and even the limit-circle property depends on
+finer structure.
+
+\paragraph{Leading-order dimerisation.} If the even and odd links have different
+leading coefficients, $a_n=c_en^\alpha(1+\kappa_e/n+O(n^{-2}))$ for even $n$ and
+$a_n=c_on^\alpha(1+\kappa_o/n+O(n^{-2}))$ for odd $n$ with $c_e\ne c_o$, the matrix is in the
+limit-point case for every $\alpha>0$ (one solution at $\lambda=0$ grows geometrically; for
+birth--death rates this is \cite[\S2, Remark~3]{Valent1999}), and for $\alpha>1$ its spectrum is
+discrete \cite[Thm.~A]{SwiderskiTrojan2022}. The spectrum then has two turning points, at the
+edges $|o-e|=\lambda$ and $o+e=\lambda$ of the local band, where $o(y):=c_oy^\alpha(1+\kappa_o/y)$ and
+$e(y):=c_ey^\alpha(1+\kappa_e/y)$. Put
+\[
+  \Phi_r(\lambda):=\int_{-1/2}^\infty\arccos\Bigl(\operatorname{clip}\Bigl(\frac{|o|^2+|e|^2-\lambda^2}{2|o||e|}\Bigr)\Bigr)dx,
+  \qquad o=o(2x+1),\ e=e(2x+2),
+\]
+with $\operatorname{clip}$ the projection onto $[-1,1]$.
+\begin{conjecture}\label{conj:H}
+The positive eigenvalues $\lambda_1<\lambda_2<\cdots$ satisfy $\Phi_r(\lambda_j)=(j-\frac12)\pi+O(1/j)$, whether
+or not $0$ is an eigenvalue.
+\end{conjecture}
+\noindent The absolute values matter: with $o$ and $e$ themselves the integrand jumps where
+$o$ or $e$ changes sign, and the conjecture fails for $\kappa_o<0$. The two Maslov
+contributions $\frac14$ come from the two simple turning points; a proof needs Airy windows for
+a period-two system. The leading term $\#\{j:\lambda_j\le\lambda\}=\Phi_r(\lambda)/\pi+O(N_\lambda^{2/3})$ follows from
+a Dirichlet decoupling into cells of length $N_\lambda^{1/3}$. \Cref{sec:numerics} reports a test.
+
+\paragraph{Sharper remainders and general symbols.} The remainder $O(N_\lambda^{-4/3})$ in
+\Cref{thm:second} comes from the turning region in \Cref{lem:riemann}; numerically it is
+$O(N_\lambda^{-3})$ for analytic symbols. We expect an expansion of $\psi-\Phi$ in odd powers of
+$N_\lambda^{-1}$ for links with a convergent expansion in $1/n$. For a general symbol in
+\Cref{hyp:A} the natural candidate for the second term is the regularised Weyl--Moyal term of
+\Cref{rem:moyal}; we have proved it only for power symbols.
+
+\paragraph{Rough perturbations.} \Cref{prop:SH} shows that a non-oscillating rough part
+$e_n\sim\kappa_en^{-1-\delta''}$ shifts the phase by an amount of exact order $N_\lambda^{-\delta''}$. An
+alternating rough part $(-1)^nn^{-1-\delta''}$ is a decaying dimerisation, and cancellation between
+neighbouring links should make its effect on the phase smaller than $N_\lambda^{-\delta''}$; its true order, and a rate for
+\Cref{hyp:H} with $\delta\le\frac34$, are open.
+
+\paragraph{The limits $\alpha\to1^+$ and $2|\kappa'|\to\alpha-1$.} All constants in this paper blow up as
+$\alpha\to1^+$, where the limit-circle property is lost through Carleman's condition, and in
+the dimerised case as $\nu\to0$ or $\nu\to1$, where it is lost at the edge of Valent's
+indeterminacy range. A description that is uniform up to these boundaries would describe
+the transition from discrete spectrum of an extension to the spectrum of a self-adjoint
+operator.

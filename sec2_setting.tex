@@ -1,0 +1,327 @@
+\section{The setting and an exact count}\label{sec:setting}
+
+This section fixes the notation, recalls the limit-circle criterion, and turns the
+eigenvalue problem for every self-adjoint extension into a statement about one
+monotone function $\psi$, the phase of the regular solution at infinity. Everything
+later in the paper is an asymptotic statement about $\psi$.
+
+\subsection{Jacobi matrices with growing links}
+
+We index sites by $k\ge0$ and write the Jacobi equation as
+\begin{equation}\label{eq:jacobi}
+  a_k u_{k-1}+b_k u_k+a_{k+1}u_{k+1}=\lambda u_k,\qquad k\ge0,\qquad a_0:=0,
+\end{equation}
+with links $a_k>0$ $(k\ge1)$ joining sites $k-1$ and $k$, and real diagonal $b_k$. The
+operator $J$ acts on $\ell^2(\NN_0)$; $J_{\min}$ is its closure on finitely supported
+vectors and $J_{\max}=J_{\min}^*$. We write $J_0$ for the matrix with the same links
+and $b\equiv0$. The \emph{regular solution} $p=p(\lambda)$ has $p_{-1}=0$, $p_0=1$; it
+spans the solutions of the eigenvalue equation at site $0$, so $\lambda$ is an
+eigenvalue of a self-adjoint extension exactly when $p(\lambda)$ lies in its domain.
+For two sequences $f,g$ we put
+\begin{equation}\label{eq:wronskian}
+  W_k(f,g):=a_{k+1}\bigl(f_kg_{k+1}-f_{k+1}g_k\bigr),
+\end{equation}
+which is independent of $k$ when $f,g$ solve \eqref{eq:jacobi} with the same
+$\lambda$.
+
+\paragraph{The solutions at $\lambda=0$.} The zero-diagonal recurrence at $\lambda=0$
+has the solutions $P$ ($P_0=1$, $P_1=0$) and $R$ ($R_0=0$, $R_1=1/a_1$). They live on
+alternate sites:
+\begin{equation}\label{eq:PR}
+  P_{2m}=(-1)^m\prod_{i=1}^{m}\frac{a_{2i-1}}{a_{2i}},\qquad
+  R_{2m+1}=\frac{(-1)^m}{a_1}\prod_{i=1}^{m}\frac{a_{2i}}{a_{2i+1}},\qquad
+  P_{2m+1}=R_{2m}=0,
+\end{equation}
+so that $a_{2m+1}P_{2m}R_{2m+1}=1$ for every $m$ and $W(P,R)=1$.
+
+\paragraph{Blocks.} The analysis is organised in two-site \emph{blocks}: block $m$
+consists of the sites $2m,2m+1$, and its central link is
+\[
+  A_m:=a_{2m+1},\qquad N_m:=2m+1 .
+\]
+For a spectral parameter $\lambda$ we write $\mu_m:=\lambda/A_m$, $u_m:=2-\mu_m$ and
+\begin{equation}\label{eq:phim}
+  \varphi_m:=2\arcsin\bigl(\min(1,\mu_m/2)\bigr)\in[0,\pi].
+\end{equation}
+The \emph{discrete Bohr--Sommerfeld sum} is $S(\lambda):=\sum_{m\ge0}\varphi_m$. It
+converges when $\sum_m 1/A_m<\infty$, because $\varphi_m\le\pi\mu_m/2$.
+
+\paragraph{The hypotheses.} The links are compared with $c\,n^\alpha$, $\alpha>1$,
+$c>0$. The main class of the paper allows a $1/n$ term with an alternating part:
+\begin{hypothesis}[dimerised power links]\label{hyp:D}
+$a_n=c\,n^\alpha\bigl(1+(\kappa+\kappa'(-1)^n)/n+e_n\bigr)$ for $n\ge n_0$, with
+$\alpha>1$, $c>0$, $\kappa,\kappa'\in\RR$ and $|e_n|\le C_e\,n^{-1-\delta}$ for some
+$\delta\in(0,1]$. Finitely many links are arbitrary positive numbers.
+\end{hypothesis}
+\noindent The chain is \emph{balanced} if $\kappa'=0$ and \emph{dimerised} otherwise.
+Nothing is assumed about differences of $e_n$. For the first-order law in the balanced
+case a weaker hypothesis on first differences suffices:
+\begin{hypothesis}[slowly varying perturbation]\label{hyp:H}
+$a_n=c\,n^\alpha(1+r_n)$ with $\alpha>1$, $c>0$, $r_n\to0$ and
+$|r_{n+1}-r_n|\le C\,n^{-1-\delta}$ for some $\delta\in(0,1]$.
+\end{hypothesis}
+\noindent Under \Cref{hyp:H}, $r_n=-\sum_{k\ge n}(r_{k+1}-r_k)=O(n^{-\delta})$.
+\Cref{hyp:D} with $\kappa'=0$ is contained in \Cref{hyp:H}, and so is
+$a_n=c(n+s)^\alpha$ for every shift $s$. A diagonal enters only through a size
+condition:
+\begin{hypothesis}[small diagonal]\label{hyp:b}
+$|b_n|\le C_b(1+n)^\beta$ with $\beta<\alpha-1-2|\kappa'|$.
+\end{hypothesis}
+
+We use $\Lambda:=\lambda/(2c)$, $N_\lambda:=\Lambda^{1/\alpha}$ (the position where
+$2c\,N^\alpha=\lambda$), and the constants
+\begin{equation}\label{eq:constants}
+  I_\alpha:=\int_0^\infty\arcsin\bigl(\min(1,y^{-\alpha})\bigr)\,dy
+  =\tfrac12\B\bigl(\tfrac{\alpha-1}{2\alpha},\tfrac12\bigr),\qquad
+  J_\alpha:=\int_1^\infty\frac{y^{-\alpha-2}\,dy}{\sqrt{1-y^{-2\alpha}}}
+  =\frac{1}{2\alpha}\B\bigl(\tfrac12+\tfrac1{2\alpha},\tfrac12\bigr).
+\end{equation}
+(The first identity follows by writing $I_\alpha=\pi/2+\int_1^\infty\arcsin(y^{-\alpha})dy$,
+integrating by parts and substituting $w=y^{-2\alpha}$; the second by the same
+substitution.) The \emph{explicit phase} is
+\begin{equation}\label{eq:Phi}
+  \Phi(\lambda):=N_\lambda I_\alpha-\frac{\kappa\pi}{2\alpha}.
+\end{equation}
+
+\subsection{The data at \texorpdfstring{$\lambda=0$}{lambda = 0} and the limit-circle criterion}
+
+Let $\varepsilon_m:=\tfrac12\bigl(\log a_{2m+3}-2\log a_{2m+2}+\log a_{2m+1}\bigr)$, a
+second difference of $\log a$ centred on the even link $a_{2m+2}$. It measures how
+far consecutive blocks are from being similar: by \eqref{eq:PR},
+\begin{equation}\label{eq:rho-ratio}
+  \frac{A_{m+1}P_{2m+2}^2}{A_mP_{2m}^2}
+  =\frac{a_{2m+3}a_{2m+1}}{a_{2m+2}^2}=e^{2\varepsilon_m}.
+\end{equation}
+
+\begin{proposition}{The data at $\lambda=0$}{zero}
+Assume that $a_n=c\,n^\alpha(1+\kappa'(-1)^n/n+r_n)$, where $r$ satisfies \Cref{hyp:H}.
+This class contains \Cref{hyp:D}.
+\begin{enumerate}
+\item[(a)] $\varepsilon_m=-2\kappa'/N_m+\tilde\varepsilon_m$ with
+  $|\tilde\varepsilon_m|\le C\,N_m^{-1-\delta}$.
+\item[(b)] The limit $\vp:=\lim_{m\to\infty}A_mP_{2m}^2N_m^{2\kappa'}$ exists in
+  $(0,\infty)$, and $\rho_m:=A_mP_{2m}^2/\vp$ satisfies
+  $|\log(\rho_mN_m^{2\kappa'})|\le C\,N_m^{-\delta}$.
+\item[(c)] The normalised solutions $\Pt:=P/\sqrt\vp$ and $\Rt:=R\sqrt\vp$ satisfy
+  \[
+    \Pt_{2m}^2=\rho_m/A_m,\qquad \Rt_{2m+1}^2=1/(\rho_mA_m),\qquad W(\Pt,\Rt)=1.
+  \]
+\item[(d)] $J_0$ is in the limit-circle case if and only if $2|\kappa'|<\alpha-1$. If in
+  addition the diagonal satisfies \Cref{hyp:b}, then
+  $\sum_k|b_k|(\Pt_k^2+\Rt_k^2)<\infty$ and $J$ is in the limit-circle case as well.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(a) Write $\log a_n=\log c+\alpha\log n+\ell_n$. The second difference of $\alpha\log n$
+is $O(n^{-2})$. Since $r_n=O(n^{-\delta})$,
+$\ell_n=\log(1+r_n)+\kappa'(-1)^n/n+O(n^{-1-\delta})$, and the remainder has first
+differences $O(n^{-1-\delta})$ by \Cref{hyp:H}. The alternating term contributes
+$\tfrac12\kappa'\bigl(-\tfrac{1}{2m+3}-\tfrac{2}{2m+2}-\tfrac1{2m+1}\bigr)
+=-2\kappa'/N_m+O(N_m^{-2})$.
+
+(b) By \eqref{eq:rho-ratio} and (a), the increments of
+$\log(A_mP_{2m}^2N_m^{2\kappa'})$ are $2\varepsilon_m+2\kappa'\log(N_{m+1}/N_m)
+=2\tilde\varepsilon_m+O(N_m^{-2})$, which are summable with tail $O(N_m^{-\delta})$.
+
+(c) The first identity is the definition of $\rho_m$; the second follows from
+$a_{2m+1}P_{2m}R_{2m+1}=1$; the Wronskian is unchanged by the rescaling.
+
+(d) By (b) and (c), $P_{2m}^2\asymp N_m^{-\alpha-2\kappa'}$ and
+$R_{2m+1}^2\asymp N_m^{-\alpha+2\kappa'}$. Both are summable if and only if
+$\alpha\pm2\kappa'>1$, that is $2|\kappa'|<\alpha-1$. By Weyl's alternative at the real
+point $\lambda=0$ the matrix is in the limit-circle case exactly when every solution at
+$\lambda=0$ is square-summable \cite[Thm.~3]{Simon1998}. Under \Cref{hyp:b},
+$|b_k|(\Pt_k^2+\Rt_k^2)\le Ck^{\beta-\alpha+2|\kappa'|}$, which is summable; the
+limit-circle property of $J$ then follows from \Cref{thm:count}(i) below at
+$\lambda=0$, which writes every solution of $J$ at $\lambda=0$ in the bounded
+coordinates of $J_0$.
+\end{proof}
+
+\begin{remark}
+The criterion in (d) is not new. For periodically modulated links of
+Kostyuchenko--Mirzoev type it is due to \'Swiderski and Trojan
+\cite[Prop.~6.10 with Thm.~6.3]{SwiderskiTrojan2022}; with period two and no diagonal
+their condition reads exactly $2|\kappa'|<\alpha-1$. At the boundary $2|\kappa'|=\alpha-1$
+the matrix can be limit point, as the example with links $(n+1)^{5/2}(n+2)^{1/2}$ and
+$(n+1)^{1/2}(n+2)^{5/2}$ in \cite[\S10, remarks to Prop.~10.4]{ReiffensteinWoracek2025}
+shows ($\alpha=3$, $|\kappa'|=1$). Part (b) for balanced chains, and the
+equal-amplitude normalisation in (c), are the inputs that make the extension phase
+$t$ below meaningful.
+\end{remark}
+
+\subsection{The shear factorisation and the phase at infinity}
+
+From now on $J$ is in the limit-circle case, the diagonal satisfies \Cref{hyp:b}, and
+$\Pt$ and $\Rt$ are as in \Cref{prop:zero}. Define the shear weights
+\begin{equation}\label{eq:gamma}
+  \gamma_k(\lambda):=(\lambda-b_k)\Pt_k^2\quad(k\text{ even}),\qquad
+  \gamma_k(\lambda):=(\lambda-b_k)\Rt_k^2\quad(k\text{ odd}),
+\end{equation}
+and the shears $L(\gamma)=\bigl(\begin{smallmatrix}1&0\\\gamma&1\end{smallmatrix}\bigr)$,
+$U(\gamma)=\bigl(\begin{smallmatrix}1&-\gamma\\0&1\end{smallmatrix}\bigr)$. Put
+$v_{-1}:=(1,0)$ and
+\[
+  v_k:=L(\gamma_k)v_{k-1}\ (k\text{ even}),\qquad v_k:=U(\gamma_k)v_{k-1}\ (k\text{ odd}).
+\]
+A shear $S$ with $\det S=1$ moves the angle of a unit vector
+$\vartheta\mapsto\vartheta+\delta_S(\vartheta)$ with
+$\delta_S(\vartheta):=\operatorname{atan2}(\det[v,Sv],\langle v,Sv\rangle)$,
+$v=(\cos\vartheta,\sin\vartheta)$. For $L(\gamma)$ and $U(\gamma)$,
+$\det[v,Sv]=\gamma\cos^2\vartheta$ or $\gamma\sin^2\vartheta$, and $\det[v,Sv]=0$ forces
+$Sv=v$; so $\delta_S\in(-\pi,\pi)$, $\delta_S$ has the sign of $\gamma$, and it depends
+continuously on $(\gamma,\vartheta)$. We call $\vartheta+\delta_S$ the \emph{canonical
+lift}. The \emph{partial phase} $\psi_k(\lambda)$ is the sum of the first $k+1$ canonical
+increments along $v_{-1},v_0,\dots,v_k$, starting from the angle $0$.
+
+\begin{theorem}{Exact count}{count}
+Let $J$ be in the limit-circle case with $\sum_k|b_k|(\Pt_k^2+\Rt_k^2)<\infty$.
+\begin{enumerate}
+\item[(i)] $v_k=\vp^{-1/2}\bigl(W_k(p,\Rt),-W_k(p,\Pt)\bigr)$, and for every $k\ge0$
+  \[
+    p_k=\sqrt\vp\,(v_{k,1}\Pt_k+v_{k,2}\Rt_k),\qquad
+    p_{k+1}=\sqrt\vp\,(v_{k,1}\Pt_{k+1}+v_{k,2}\Rt_{k+1}).
+  \]
+\item[(ii)] $\psi_k\to\psi$ locally uniformly on $\RR$; $\psi$ is continuous and is a lift
+  of the angle of $v_\infty:=\lim v_k\neq0$.
+\item[(iii)] $\psi$ is strictly increasing. If $b\equiv0$ then $\psi(0)=0$ and $\psi$ is
+  odd. In general $\psi_{J_0-\operatorname{diag}(b)}(-\lambda)=-\psi_J(\lambda)$.
+\item[(iv)] For $t\in[0,\pi)$ let $w_t$ be a real tail solution at $\lambda=0$, that is, a real
+  sequence that satisfies \eqref{eq:jacobi} with $\lambda=0$ for $k\ge1$ (it need not satisfy the
+  equation at $k=0$, so $Jw_t$ may be supported at site $0$), whose limiting coordinates in (i) are
+  proportional to $(\cos t,\sin t)$. Let $H_t$ be the restriction of $J_{\max}$ to
+  $\{f:\lim_kW_k(f,w_t)=0\}$. Then $H_t$ is self-adjoint,
+  every self-adjoint extension of $J_{\min}$ is one $H_t$, and
+  \[
+    \lambda\in\operatorname{spec}H_t\iff\psi(\lambda)\in t+\pi\ZZ .
+  \]
+\item[(v)] If $\psi(\pm\infty)=\pm\infty$ (proved in \Cref{thm:discreteBS} for balanced links and
+  follows from \Cref{thm:dimer} for dimerised links) then $\operatorname{spec}H_t=\{\lambda_j(t)\}_{j\in\ZZ}$
+  with $\psi(\lambda_j(t))=t+j\pi$, all eigenvalues are simple, and
+  $\#\bigl(\operatorname{spec}H_t\cap(\lambda',\lambda]\bigr)
+  =\#\{j:\psi(\lambda')<t+j\pi\le\psi(\lambda)\}$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\step{coordinates} For a solution $g$ of $J_0g=0$ and the regular solution $p$, the
+recurrences at site $k\ge1$ give
+\[
+  W_k(p,g)-W_{k-1}(p,g)=p_k\bigl(a_{k+1}g_{k+1}+a_kg_{k-1}\bigr)
+  -g_k\bigl(a_{k+1}p_{k+1}+a_kp_{k-1}\bigr)=-(\lambda-b_k)p_kg_k .
+\]
+For any sequence $f$ and $k\ge0$, Cramer's rule with $W(\Pt,\Rt)=1$ gives
+$f_j=W_k(f,\Rt)\Pt_j-W_k(f,\Pt)\Rt_j$ for $j=k,k+1$. With
+$\alpha_k:=W_k(p,\Rt)$ and $\beta_k:=-W_k(p,\Pt)$ this reads
+$p_k=\alpha_{k-1}\Pt_k+\beta_{k-1}\Rt_k$. On even sites $\Rt_k=0$, so
+$\alpha_k=\alpha_{k-1}$ and $\beta_k=\beta_{k-1}+\gamma_k\alpha_{k-1}$; on odd sites
+$\Pt_k=0$, so $\beta_k=\beta_{k-1}$ and $\alpha_k=\alpha_{k-1}-\gamma_k\beta_{k-1}$.
+Finally $(\alpha_0,\beta_0)=(a_1\Rt_1,a_1p_1\Pt_0)=\sqrt\vp\,(1,\gamma_0)$. This is (i).
+
+\step{convergence} For a unit vector and $|\gamma|\le\frac12$ we have
+$\langle v,Sv\rangle\ge1-|\gamma|/2>0$ and $|Sv|\ge1-|\gamma|$, so
+$|\delta_S|\le\frac\pi2\cdot\frac{|\gamma|}{1-|\gamma|}\le\pi|\gamma|$. Since
+$\sum_k|\gamma_k|\le\sum_k(|\lambda|+|b_k|)(\Pt_k^2+\Rt_k^2)$ converges locally uniformly,
+so do $\psi_k$ and $v_k$. The limit $v_\infty$ is nonzero: the partial products of the shears
+$L(\gamma_k)$, $U(\gamma_k)$ converge, since each differs from $I$ by $|\gamma_k|$ in norm and
+$\sum_k|\gamma_k|<\infty$; every partial product has determinant one, so the limit has
+determinant one, is invertible, and maps $v_{-1}=(1,0)$ to a nonzero vector. The same argument at a
+fixed real spectral parameter shows that the coordinates of every solution converge and that the
+limiting coordinates of two independent solutions are independent.
+
+\step{monotonicity} Let $q:=\partial_\lambda p$, so $(J-\lambda)q=p$ and $q_0=0$. The
+general Green identity $W_k(f,h)-W_{k-1}(f,h)=f_k(Jh)_k-h_k(Jf)_k$, in which $b$
+cancels, gives $W_k(p,q)=\sum_{j\le k}p_j^2$. Since $\Pt,\Rt$ do not depend on $\lambda$,
+the coordinates of $q$ are $\partial_\lambda(\alpha_k,\beta_k)$, and the bilinear form of
+Cramer's rule gives $W_k(p,q)=\alpha_k\beta_k'-\beta_k\alpha_k'$. The entries are entire
+and converge locally uniformly, so
+$\alpha_\infty\beta_\infty'-\beta_\infty\alpha_\infty'=\sum_jp_j^2>0$, which is
+$\psi'(\lambda)>0$ up to the positive factor $\alpha_\infty^2+\beta_\infty^2$. For
+$b\equiv0$ and $\lambda=0$ all $\gamma_k$ vanish. With $\Sigma=\operatorname{diag}(1,-1)$,
+$\Sigma L(\gamma)\Sigma=L(-\gamma)$ and $\Sigma U(\gamma)\Sigma=U(-\gamma)$; $\Sigma$ fixes
+$(1,0)$ and reverses angles, so the canonical lifts are negated, which is the reflection
+identity.
+
+\step{extensions} In the limit-circle case every self-adjoint extension is the
+restriction of $J_{\max}$ by a condition $\lim_kW_k(f,w)=0$ with $w$ a real tail solution at
+a fixed real point \cite[Thm.~2.6 and \S4]{Simon1998}; we use the point $0$. A tail solution is
+square-summable and $Jw$ is supported at site $0$, so $w\in D(J_{\max})$. For two
+solutions $f,w$ (at any spectral parameters) the bilinear Cramer identity at the
+sites $k,k+1$ reads $W_k(f,w)=A_k(f)B_k(w)-B_k(f)A_k(w)$, where
+$(A_k,B_k)=(W_k(\cdot,\Rt),-W_k(\cdot,\Pt))$ are the coordinates of (i). The coordinates
+converge by the convergence step, and $w\mapsto(A_\infty(w),B_\infty(w))$ is a linear
+isomorphism of the two-dimensional space of real tail solutions at $0$ onto $\RR^2$ (injective by the
+determinant-one argument above), so the real directions are
+labelled by $t\in[0,\pi)$. Now $\lambda$ is an eigenvalue of $H_t$ if and only if
+$p(\lambda)\in D(H_t)$, that is if and only if $v_\infty(\lambda)$ is parallel to
+$(\cos t,\sin t)$, which is $\psi(\lambda)\in t+\pi\ZZ$. Part (v) follows from (iii) and
+(iv).
+\end{proof}
+
+\begin{remark}[Provenance and other parametrisations]\label{rem:kac}
+The product of the shears is the classical factorisation of the Nevanlinna matrix into
+factors $I+zT_n$ with alternately upper and lower triangular $T_n$
+\cite[Ch.~I]{Akhiezer1965}, \cite[eq.~(51)]{BergSzwarc2017}. In the language of
+canonical systems it is the transfer matrix of Kac's Hamburger Hamiltonian
+\cite{Kac1999}: a piecewise constant Hamiltonian of rank one whose angles alternate
+between $0$ and $\pi/2$ (zero diagonal) and whose lengths are $\Pt_k^2$ and $\Rt_k^2$
+in our normalisation; the problem is determinate if and only if the total length is
+infinite. Our $\psi$ is the lifted angle of the monodromy at infinity. For $b\equiv0$,
+Simon's boundary condition $\lim W_k(f,\cos\tau_{\rm S}\,P+\sin\tau_{\rm S}\,R)=0$
+\cite{Simon1998} is our $H_t$ with $\tan t=\tan\tau_{\rm S}/\vp$, since $P=\sqrt\vp\,\Pt$ and
+$R=\Rt/\sqrt\vp$; and Yafaev's extension $J_\omega$ defined by the asymptotics of
+solutions \cite[Thm.~3.9]{Yafaev2021} is $H_t$ with $\omega=e^{-2it}$, because
+$\Pt_n$ and $\Rt_n$ behave like $a_{n+1}^{-1/2}\cos(n\pi/2)$ and
+$a_{n+1}^{-1/2}\sin(n\pi/2)$ when $\rho_m\to1$. The point of the normalisation by $\vp$
+is that it makes the phase $t$ appear additively in the eigenvalue law.
+\end{remark}
+
+\paragraph{Notation.} \Cref{tab:notation} collects the symbols that recur across sections.
+There is one phase, $\psi$, and every other angle in the paper is a way of computing it:
+$\psi_k$ along the chain, $\chi_m$ in the moving frame of \Cref{sec:blocks}, and $\Omega$
+inside the Airy window of \Cref{sec:turning}. A few letters are used in more than one place with
+unrelated meanings that the table separates: $J$ is the Jacobi matrix, $J_\alpha$ a constant and $J_{\pm\nu}$
+a Bessel function, while the rotation generator is $\Jr$; $D_m$ and $D(N)$ are frame matrices, while $D$
+alone is an entry of the Nevanlinna matrix. The Airy comparison sequences $\psi_A,\psi_B$ of
+\Cref{sec:olver} are not phases, and $\gamma$ denotes the shear weights $\gamma_k$ here but a local exponent
+in \Cref{sec:dimer,sec:rates,sec:moments}. For a statement $P$, $[P]$ is $1$ if $P$ holds and $0$ otherwise.
+
+\begin{table}[h]
+\centering\footnotesize
+\begin{tabular}{lll}
+\toprule
+\estabhead{symbol} & \estabhead{meaning} & \estabhead{where}\\
+\midrule
+$N_\lambda$, $\Lambda$ & turning scale, $2cN_\lambda^\alpha=\lambda$; $\Lambda=\lambda/(2c)=N_\lambda^\alpha$ & \S\ref{sec:setting}\\
+$A_m$, $N_m$ & central link $a_{2m+1}$ and centre $2m+1$ of block $m$ & \S\ref{sec:setting}\\
+$\mu_m$, $u_m$ & $\lambda/A_m$ and $2-\mu_m$; $\mu_m=2$ at the turning point & \S\ref{sec:setting}\\
+$\varphi_m$, $S$ & block rotation $2\arcsin(\min(1,\mu_m/2))$ and $S=\sum_m\varphi_m$ & \eqref{eq:phim}\\
+$\Phi$, $I_\alpha$, $J_\alpha$ & explicit phase $N_\lambda I_\alpha-\kappa\pi/(2\alpha)$ and its constants & \eqref{eq:Phi}\\
+$P$, $R$; $\Pt$, $\Rt$, $\vp$ & solutions at $\lambda=0$; normalised to equal amplitude by $\vp$ & \Cref{prop:zero}\\
+$\rho_m$, $\varepsilon_m$ & frame normalisation and its logarithmic increment & \Cref{prop:zero}\\
+$\psi$, $\psi_k$ & phase at infinity and partial phase after site $k$ & \Cref{thm:count}\\
+$t$, $H_t$; $\alpha_\infty$, $\beta_\infty$ & extension angle and extension; coordinates of $p$ at infinity & \Cref{thm:count}\\
+$\Jr$, $\Sigma_1$, $\Sigma_3$, $e_\pm$ & rotation generator, reflections, diagonal basis & \S\ref{sec:blocks}\\
+$s_m$, $\sigma_m$, $E_m$, $D_m$ & frame parameter, its decrement, block frame, its diagonal part & \Cref{blem:block}\\
+$\chi_m$ & frame angle of block $m$; $\chi_m\to\psi$ & \eqref{eq:frame-recursion}\\
+$\ell$, $x_m$ & Airy scale $\asymp N_\lambda^{1/3}$ and Airy variable of block $m$ & \eqref{eq:ell}\\
+$\Omega$ & phase of the Airy function $\Ai(-\zeta)$ & \Cref{lem:airyphase}\\
+$\mathcal N^\pm_t$ & eigenvalue counting functions on the half-lines & \Cref{cor:balanced}\\
+$\nu$, $\tau$, $N_{\rm dec}$ & Bessel order, Bessel variable, site where $\tau=1$ & \S\ref{sec:dimer}\\
+$D(N)$, $Y$, $Y_0$, $Q$ & model frame, Bessel solution matrix, its large-$\tau$ limit, amplitude ratio & \S\ref{sec:bessel-derivation}\\
+$\theta_0$, $\theta_t$ & dimerised offsets, $\theta_0=\kappa'\pi/(2(\alpha-1))$ & \Cref{cor:dimer}\\
+$\dsum$, $\esum$ & sums of the birth--death parameters $d_j$, $e_j$ & \S\ref{sec:bd}\\
+$\mathsf E$, $\mathsf M$, $\mathsf k$ & Olver's envelopes and the derivative bound & \S\ref{sec:olver}\\
+$h$, $x_n$, $g$ & lattice step, Langer variable, Langer amplitude & \S\ref{sec:olver}\\
+$\mathcal P$, $\mathcal Q$; $\pp_n$, $\qq_n$ & frozen residuals; residual coefficients & \Cref{lem:R}\\
+$\Gamma$ & error scale of the rate theorem & \eqref{eq:Gamma}\\
+$A,B,C,D$; $G_\sigma$ & Nevanlinna matrix; $B+\sigma D$ & \S\ref{sec:moments}\\
+$\hat p_k$, $\mathcal E_\sigma$, $W_\sigma$ & orthonormal polynomials in $x$, annihilator, residue weight & \eqref{eq:Wsigma}\\
+$\mathcal I_\sigma$, $\mathcal S_\sigma$, $a(\mu)$ & weighted series, index series, critical index & \Cref{prop:weighted}\\
+$K_0$; $\Cres$ & $K(1/\sqrt2)$; residue constant of \Cref{thm:valent} & \Cref{ex:bv}; \eqref{eq:mF}\\
+\bottomrule
+\end{tabular}
+\caption{Recurring notation. Throughout, $\vartheta$ denotes the angle of a unit vector
+$(\cos\vartheta,\sin\vartheta)$ (in \Cref{sec:second}, $\arccos Z$) and $\hl{g}$ a lift of a matrix $g$ to
+the angles.}\label{tab:notation}
+\end{table}

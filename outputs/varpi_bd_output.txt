@@ -1,0 +1,4 @@
+closed form varpi = 26.160068549701
+m =     1000: A_m P_2m^2 N_m^(2 kappa') = 26.179317097482   relative difference +7.36e-04
+m =   100000: A_m P_2m^2 N_m^(2 kappa') = 26.160261115946   relative difference +7.36e-06
+m =  2000000: A_m P_2m^2 N_m^(2 kappa') = 26.160078178441   relative difference +3.68e-07

@@ -1,0 +1,274 @@
+\section{A discrete Olver bound}\label{sec:olver}
+
+The first-order law needed only a qualitative Airy limit on a window of fixed size $K$
+(\Cref{blem:window}). Rates, the second-order term and the application to singular
+limits in \Cref{sec:apps} need more: a comparison of the Jacobi recurrence with Airy
+functions on a window of macroscopic size around the turning point, with an error
+bound that is uniform across the turning point. This section proves such a bound,
+\Cref{thm:olver}, by a discrete variation of parameters modelled on Olver's error
+bounds for the Liouville--Green--Airy approximation \cite[Ch.~11]{Olver1974}. It is an
+exact inequality for an arbitrary three-term recurrence and an arbitrary pair of
+comparison sequences of Airy type; all the analysis of a particular chain goes into the
+size of one sum $V$, which \Cref{lem:V} estimates for the Langer comparison functions
+of a power-like link function.
+
+Discrete analogues of Olver's theorem exist \cite{GeronimoBrunoVanAssche2004,Geronimo2009},
+and the uniform bounds of Fischer, Burgarth and Lonigro \cite{FBL2026} rest on them. The error
+analysis there weights the error by an auxiliary function built from the Hankel function
+$H^{(1)}_{1/3}$: $\tilde w_1$ in \cite[Def.~A.2]{FBL2026}, who take it from \cite[eq.~(4.4)]{GeronimoBrunoVanAssche2004},
+and $\tilde u_j$, $\tilde w^{(j)}$ in \cite[(2.22), (3.51)]{Geronimo2009}. On the real line this function is
+$\Ai-i\Bi$ for negative argument and $-2i\Ai$ for positive argument \cite[(A.14)--(A.16)]{FBL2026}, so it
+is not a solution of the Airy equation on any interval that contains the turning point. The error
+analysis nevertheless treats it as one: \cite[(B.43)--(B.44)]{FBL2026} bound its residual as that of an
+Airy solution, citing \cite[p.~119]{GeronimoBrunoVanAssche2004}, and the proof in \cite[App.~A, near
+(A.43)]{Geronimo2009} uses its Wronskian with $\Ai_1$. No Airy solution can replace it, since an Airy
+solution that is recessive for positive argument is a multiple of $\Ai$, which vanishes for negative
+argument. We have read \cite{Geronimo2009} and \cite{FBL2026} at these places but not
+\cite{GeronimoBrunoVanAssche2004} itself. \Cref{thm:olver} avoids the auxiliary function: its kernel is
+built from the two real Airy functions, and its only weights are Olver's envelopes. Monotone envelopes
+are what make this possible, as explained after the statement.
+
+\subsection{Envelopes and the theorem}
+
+Let $c_*\approx-0.366046$ be the largest root of $\Ai=\Bi$. Olver's envelopes
+\cite[Ch.~11, \S2]{Olver1974} are
+\[
+  \begin{aligned}
+  \mathsf E(x)&:=\sqrt{\Bi(x)/\Ai(x)}, &\mathsf M(x)&:=\sqrt{2\Ai(x)\Bi(x)} &&(x\ge c_*),\\
+  \mathsf E(x)&:=1, &\mathsf M(x)&:=\sqrt{\Ai(x)^2+\Bi(x)^2} &&(x\le c_*).
+  \end{aligned}
+\]
+We use four elementary facts about them.
+\begin{enumerate}
+\item[(A1)] $\mathsf E$ is continuous and nondecreasing, since $(\Bi/\Ai)'=1/(\pi\Ai^2)>0$.
+\item[(A2)] $|\Ai|\le\mathsf E^{-1}\mathsf M$ and $|\Bi|\le\mathsf E\mathsf M$; for $x\ge c_*$ the
+  right sides are $\sqrt2\Ai$ and $\sqrt2\Bi$.
+\item[(A3)] $\mathsf m_0:=\sup_x\mathsf M(x)^2(1+|x|)^{1/2}<\infty$, because
+  $\mathsf M(x)^2|x|^{1/2}\to1/\pi$ as $x\to\pm\infty$ (DLMF 9.7.5, 9.7.7, 9.8.20).
+\item[(A4)] With $\mathsf k(x):=\max\bigl(|\Ai'(x)|/(\mathsf E^{-1}\mathsf M)(x),\,|\Bi'(x)|/(\mathsf E\mathsf M)(x)\bigr)$,
+  $\mathsf k_0:=\sup_x\mathsf k(x)(1+|x|)^{-1/2}<\infty$, by the same asymptotics (DLMF 9.7.6,
+  9.7.8, 9.8.21).
+\end{enumerate}
+Numerically $\mathsf m_0=0.48483$ (at $x=\frac12$) and $\mathsf k(x)(1+|x|)^{-1/2}\uparrow1$ as
+$x\to-\infty$ (\Cref{app:repro}); only finiteness is used.
+
+Consider a three-term operator on the sites $n_0-1\le n\le n_1+1$,
+\begin{equation}\label{eq:Lgeneral}
+  (\mathcal Lf)(n):=\mathsf a_{n+1}f(n+1)+\mathsf a_nf(n-1)-\mathsf d_nf(n),\qquad
+  \mathsf a_n>0,\quad \mathsf d_n\in\CC,
+\end{equation}
+together with real numbers $x_n$, strictly decreasing in $n$, and $g_n>0$. Put
+$\psi_A(n):=g_n\Ai(x_n)$, $\psi_B(n):=g_n\Bi(x_n)$ and
+$W_n:=\mathsf a_{n+1}\bigl(\psi_A(n)\psi_B(n+1)-\psi_A(n+1)\psi_B(n)\bigr)$, and assume
+$W_n\neq0$. Since the residual $\mathcal L(g\chi(x))(n)$ is linear in the Airy solution
+$\chi$ and $W_n\ne0$, there are unique numbers $\pp_n,\qq_n\in\CC$ with
+\begin{equation}\label{eq:residual}
+  \mathcal L\bigl(g\,\chi(x)\bigr)(n)=\chi(x_n)\,\pp_n+\chi'(x_n)\,\qq_n
+  \qquad\text{for every solution $\chi$ of }\chi''=x\chi .
+\end{equation}
+With $\mathsf E_n:=\mathsf E(x_n)$, $\mathsf M_n:=\mathsf M(x_n)$ and $\mathsf k_n:=\mathsf k(x_n)$ put
+\[
+  v_n:=\frac{(|\pp_n|+\mathsf k_n|\qq_n|)\,g_n\mathsf M_n^2}{|W_n|},\qquad
+  V:=\sum_{n=n_0}^{n_1}v_n,\qquad
+  \theta_D:=\max_{n_0\le n\le n_1}\frac{g_n|\qq_n|}{\pi|W_n|}.
+\]
+
+The kernel of the comparison below contains the factors $\mathsf E_n^2/\mathsf E_j^2$ between the
+sites $n$ and $j$ of a summation. Olver's choice of directions (the recessive function is started at
+the end where it is smallest and summed towards decreasing $x$, the dominant one from the other end)
+together with the monotonicity of $\mathsf E$ makes every such factor at most one. That is the only
+property of the weights the proof uses, and it is the reason no auxiliary Airy-type function is needed.
+
+\begin{theorem}{Discrete Olver bound}{olver}
+In this setting, let $f_A$ be the solution of $\mathcal Lf=0$ with $f_A=\psi_A$ at $n_0-1$ and
+$n_0$, and, if $\theta_D<1$, let $f_B$ be the solution with $f_B=\psi_B$ at $n_1$ and $n_1+1$.
+Then for $n_0-1\le n\le n_1+1$
+\[
+  |f_A(n)-\psi_A(n)|\le\bigl(e^{2V}-1\bigr)\,g_n\mathsf E_n^{-1}\mathsf M_n,\qquad
+  |f_B(n)-\psi_B(n)|\le\bigl(e^{2V/(1-\theta_D)}-1\bigr)\,g_n\mathsf E_n\mathsf M_n .
+\]
+\end{theorem}
+
+\begin{proof}
+\step{variation of parameters} Let $F(n):=(f(n),f(n+1))^{\mathsf T}$ and let $\Psi(n)$ be
+the matrix with columns $(\psi_A(n),\psi_A(n+1))^{\mathsf T}$ and $(\psi_B(n),\psi_B(n+1))^{\mathsf T}$, so
+$\det\Psi(n)=W_n/\mathsf a_{n+1}$. Put $\beta_i(n):=(\mathcal L\psi_i)(n)$. If $T_n$ is the transfer
+matrix of $\mathcal Lf=0$ from $F(n-1)$ to $F(n)$, then
+$\Psi(n)=T_n\Psi(n-1)+e_2(\beta_A(n),\beta_B(n))/\mathsf a_{n+1}$. Writing a solution as
+$F(n)=\Psi(n)c(n)$ and inverting $\Psi(n)$ gives the exact recursion
+\begin{equation}\label{eq:vop}
+  c(n)=c(n-1)+\frac{\sigma(n)}{W_n}\begin{pmatrix}\psi_B(n)\\-\psi_A(n)\end{pmatrix},\qquad
+  \sigma(n):=\beta_A(n)c_1(n-1)+\beta_B(n)c_2(n-1),
+\end{equation}
+and $f(n)=\psi_A(n)c_1(n-1)+\psi_B(n)c_2(n-1)=\psi_A(n)c_1(n)+\psi_B(n)c_2(n)$, the
+increment in \eqref{eq:vop} being orthogonal to $(\psi_A(n),\psi_B(n))$.
+
+\step{the residual of a moving Airy function} $\sigma(n)$ is the residual
+\eqref{eq:residual} of $\chi=c_1(n-1)\Ai+c_2(n-1)\Bi$. By (A2) and the definition of
+$\mathsf k$, $|\chi(x)|\le\mathsf E^{-1}\mathsf M(|c_1|+\mathsf E^2|c_2|)$ and
+$|\chi'(x)|\le\mathsf k\,\mathsf E^{-1}\mathsf M(|c_1|+\mathsf E^2|c_2|)$, so
+\[
+  |\sigma(n)|\le(|\pp_n|+\mathsf k_n|\qq_n|)\,\mathsf E_n^{-1}\mathsf M_n\,\Lambda(n),\qquad
+  \Lambda(n):=|c_1(n-1)|+\mathsf E_n^2|c_2(n-1)| .
+\]
+
+\step{forward growth} By \eqref{eq:vop} and (A2), $|c_1(n)-c_1(n-1)|\le v_n\Lambda(n)$ and
+$\mathsf E_n^2|c_2(n)-c_2(n-1)|\le v_n\Lambda(n)$. Since $x_{n+1}<x_n$, (A1) gives
+$\mathsf E_{n+1}\le\mathsf E_n$, hence $\Lambda(n+1)\le(1+2v_n)\Lambda(n)$. For $f_A$,
+$c(n_0-1)=(1,0)$, so $\Lambda(n_0)=1$ and $\Lambda(n)\le\prod_{j<n}(1+2v_j)$.
+
+\step{the error of $f_A$} For $n\ge n_0$,
+$f_A(n)-\psi_A(n)=\psi_A(n)(c_1(n-1)-1)+\psi_B(n)c_2(n-1)$, and both brackets are sums of
+increments over $n_0\le j<n$. The first term is at most
+$g_n\mathsf E_n^{-1}\mathsf M_n\sum_jv_j\Lambda(j)$. In the second,
+$|\psi_B(n)|\,|c_2(j)-c_2(j-1)|\le g_n\mathsf E_n\mathsf M_n\mathsf E_j^{-2}v_j\Lambda(j)\le g_n\mathsf E_n^{-1}\mathsf M_nv_j\Lambda(j)$,
+because $x_j>x_n$ gives $\mathsf E_j\ge\mathsf E_n$. Summing,
+$|f_A(n)-\psi_A(n)|\le g_n\mathsf E_n^{-1}\mathsf M_n\sum_j2v_j\Lambda(j)
+\le g_n\mathsf E_n^{-1}\mathsf M_n\bigl(\prod_j(1+2v_j)-1\bigr)$.
+
+\step{backward, for $f_B$} Write \eqref{eq:vop} as $c(n)=(I+u_nw_n^{\mathsf T})c(n-1)$ with
+$u_n=(\psi_B(n),-\psi_A(n))^{\mathsf T}/W_n$ and $w_n=(\beta_A(n),\beta_B(n))^{\mathsf T}$. By
+\eqref{eq:residual} and the Wronskian $\Ai\Bi'-\Ai'\Bi=1/\pi$,
+$\beta_A\psi_B-\beta_B\psi_A=-g_n\qq_n/\pi$, so $|w_n^{\mathsf T}u_n|\le\theta_D<1$ and
+$c(n-1)=c(n)-u_n\,w_n^{\mathsf T}c(n)/(1+w_n^{\mathsf T}u_n)$. Now $w_n^{\mathsf T}c(n)$ is the
+residual of $c_1(n)\Ai+c_2(n)\Bi$, bounded as in the second step by
+$(|\pp_n|+\mathsf k_n|\qq_n|)\mathsf E_n\mathsf M_n\Lambda_2(n)$ with
+$\Lambda_2(n):=\mathsf E_n^{-2}|c_1(n)|+|c_2(n)|$. Hence the two increments satisfy
+$\mathsf E_n^{-2}|\Delta c_1|,|\Delta c_2|\le v_n\Lambda_2(n)/(1-\theta_D)$, and since
+$\mathsf E_{n-1}\ge\mathsf E_n$, $\Lambda_2(n-1)\le(1+2v_n/(1-\theta_D))\Lambda_2(n)$, with
+$\Lambda_2(n_1)=1$. The error $f_B(n)-\psi_B(n)=\psi_A(n)c_1(n)+\psi_B(n)(c_2(n)-1)$ is a sum
+over $n<j\le n_1$; now $\mathsf E_j\le\mathsf E_n$, so each increment of $c_1$ contributes at most
+$g_n\mathsf E_n\mathsf M_nv_j\Lambda_2(j)/(1-\theta_D)$, and the fourth step's summation gives the
+bound.
+\end{proof}
+
+The theorem is an exact inequality: no expansion in a small parameter enters it. The
+coefficients $\mathsf d_n$ enter only through the residuals, which is why they may be complex. Two consequences are used
+repeatedly. Put $d:=e^{2V/(1-\theta_D)}-1$. Then:
+\begin{enumerate}
+\item[(D1)] where $x_n\ge c_*$, $f_A(n)=\psi_A(n)(1+O_{\le\sqrt2d})$ and
+  $f_B(n)=\psi_B(n)(1+O_{\le\sqrt2d})$; where $x_n\le c_*$,
+  $|f_A(n)-\psi_A(n)|,|f_B(n)-\psi_B(n)|\le d\,g_n\mathsf M_n$;
+\item[(D2)] the coefficient vectors satisfy $|c^{(A)}_1(n)-1|\le d$,
+  $|c^{(A)}_2(n)|\le\mathsf E_n^{-2}d$, $|c^{(B)}_2(n)-1|\le d$, $|c^{(B)}_1(n)|\le\mathsf E_n^2d$, so the
+  Casoratian of $f_A$ and $f_B$ is $W_n(1+\omega)$ with $|\omega|\le2d+2d^2$.
+\end{enumerate}
+Here $O_{\le c}$ denotes a quantity of modulus at most $c$; (D2) is read off from the
+third and fifth steps of the proof.
+
+\subsection{Langer comparison functions}
+
+We now construct $x_n$ and $g_n$ for a recurrence whose coefficients are samples of a
+smooth function, and estimate $V$. Let $h\in(0,h_0]$ be a small parameter, $T$ a
+compact interval, and $a(t,h)>0$ a family of functions with
+\begin{equation}\label{eq:ahyp}
+  a(\cdot,h)\to a_0\ \text{in }C^4(T)\ (h\to0),\qquad a_0'>0\text{ on }T,\qquad
+  2a_0(t_p^0)=1\text{ for some interior }t_p^0 .
+\end{equation}
+The comparison operator is $(\mathcal L_af)(n):=a((n+1)h)f(n+1)+a(nh)f(n-1)-f(n)$. Put
+$\hat a(t):=a(t+h/2,h)$ and $Z:=1/(2\hat a)$, let $t_p$ be the root of $Z=1$, and define
+the Langer variable $\zeta$ and the amplitude $g$ by
+\[
+  \tfrac23\zeta^{3/2}:=\int_t^{t_p}\arccosh Z\quad(t\le t_p),\qquad
+  \tfrac23(-\zeta)^{3/2}:=\int_{t_p}^t\arccos Z\quad(t\ge t_p),
+\]
+\[
+  g:=\Bigl(\frac{\zeta}{\hat a^2(Z^2-1)}\Bigr)^{1/4},
+\]
+and $x_n:=h^{-2/3}\zeta(nh)$ \cite[(2.2)--(2.3)]{Geronimo2009}.
+
+\begin{lemma}[Langer data]\label{lem:langer}
+Assume \eqref{eq:ahyp}, and let $T'\subset T$ be a compact interval containing $t_p^0$ in
+its interior. For $h\le h_0$: $t_p$ is unique in $T'$ and $t_p\to t_p^0$; $\zeta$ and $g$ are
+$C^3$ on $T'$ with norms bounded uniformly in $h$; $\zeta'<0$, $g_*\le g\le G_*$ and
+$|\zeta(t)|\ge r_0|t-t_p|$ on $T'$ for positive constants. The \emph{eikonal identity}
+$\cosh(\sqrt\zeta\,\zeta')=Z$ and the \emph{amplitude identity}
+$\hat a\,g^2\sinh(\sqrt\zeta\,\zeta')/\sqrt\zeta=-1$ hold on $T'$, read with $\cos$ and $\sin$
+for $t>t_p$. If $a$ is real-analytic in $(t,h)$ near $T'\times\{0\}$, so are $\zeta$ and $g$.
+\end{lemma}
+
+\noindent The proof follows the $h=0$ data through a chain of continuous operations
+(\Cref{app:routine}).
+
+\begin{lemma}[Local residuals]\label{lem:R}
+Under \eqref{eq:ahyp}, the coefficients \eqref{eq:residual} of $\mathcal L_a$ with these $x_n$
+and $g_n:=g(nh)$ satisfy, for $nh\in T'$,
+\[
+  |\pp_n|\le C_Rh^2,\qquad|\qq_n|\le C_Rh^{1/3}h^2,\qquad W_n=-\frac{h^{1/3}}\pi\bigl(1+O(h)\bigr).
+\]
+If $a$ is analytic, $|\qq_n|\le C_Rh^{1/3}h^3$ and $W_n=-(h^{1/3}/\pi)(1+O(h^2))$.
+\end{lemma}
+
+\begin{proof}
+\step{the stencil} Fix $t=nh$, put $s_\pm:=(\zeta(t\pm h)-\zeta(t))/h$ and
+$Y(s):=\chi(x_n+h^{1/3}s)$. Then $Y''=(\zeta(t)+hs)Y$, so
+$\chi(x_{n\pm1})=\chi(x_n)X_1(s_\pm)+h^{1/3}\chi'(x_n)X_2(s_\pm)$, where $X_1,X_2$ solve
+$Y''=(\zeta(t)+hs)Y$ with $(X_1,X_1')(0)=(1,0)$ and $(X_2,X_2')(0)=(0,1)$. Since
+$a((n\pm1)h)$ and $a(nh)$ are $\hat a(t\pm h/2)$, this gives
+\[
+  \begin{aligned}
+  \pp_n&=\hat a(t+\tfrac h2)g(t+h)X_1(s_+)+\hat a(t-\tfrac h2)g(t-h)X_1(s_-)-g(t),\\
+  \qq_n&=h^{1/3}\bigl[\hat a(t+\tfrac h2)g(t+h)X_2(s_+)+\hat a(t-\tfrac h2)g(t-h)X_2(s_-)\bigr].
+  \end{aligned}
+\]
+
+\step{freezing and parity} Keep $\zeta,\hat a,g$ fixed and replace the step $h$ by a free
+variable $\eta$ in all four places (the stencil points, $s_\pm$, the half-shifts, and the
+equation $Y''=(\zeta+\eta s)Y$); call the results $\mathcal P(t,\eta)$ and $h^{1/3}\mathcal Q(t,\eta)$. Since
+$\zeta\in C^3$ and $g,\hat a\in C^2$, both are $C^2$ in $\eta$ with uniform bounds. The
+equation is invariant under $(s,\eta)\mapsto(-s,-\eta)$, so $X_1(-s;-\eta)=X_1(s;\eta)$ and
+$X_2(-s;-\eta)=-X_2(s;\eta)$; and $\eta\mapsto-\eta$ exchanges the two stencil points, with
+$s_\pm(-\eta)=-s_\mp(\eta)$. Hence $\mathcal P$ is even and $\mathcal Q$ is odd in $\eta$.
+
+\step{two identities} At $\eta=0$, $s_\pm=\pm\zeta'$ and $X_1(s)=\cosh(\sqrt\zeta s)$, so
+$\mathcal P(t,0)=g(2\hat a\cosh(\sqrt\zeta\zeta')-1)=0$ by the eikonal identity. The coefficient
+$\partial_\eta\mathcal Q(t,0)$ vanishes by the amplitude identity and its derivative; this is the
+discrete transport equation, derived in \Cref{app:transport}. By Taylor's theorem,
+$\mathcal P=O(\eta^2)$ and $\mathcal Q=O(\eta^2)$; take $\eta=h$.
+
+\step{the Casoratian} By the stencil form and $\Ai\Bi'-\Ai'\Bi=1/\pi$,
+\[
+  W_n=\hat a(t+\tfrac h2)\,g(t)\,g(t+h)\,X_2(s_+)\;h^{1/3}/\pi .
+\]
+At $\eta=0$ the factor $\hat ag^2X_2(\zeta')$ equals
+$\hat ag^2\sinh(\sqrt\zeta\zeta')/\sqrt\zeta=-1$. In the analytic case Cauchy estimates
+replace Taylor's theorem: $\mathcal Q$, odd with vanishing linear term, is $O(\eta^3)$, and the
+Casoratian factor expanded about the midpoint $t+h/2$ is even in $\eta$.
+\end{proof}
+
+A perturbed operator
+\begin{equation}\label{eq:Lpert}
+  (\mathcal Lf)(n)=a((n+1)h)(1+e_{n+1})f(n+1)+a(nh)(1+e_n)f(n-1)-(1-d_n)f(n),
+\end{equation}
+with $e_n>-1$ and $d_n\in\CC$, has the Casoratian $W_n(1+e_{n+1})$ for the same pair, and
+coefficients $\pp^{\rm ch}_n,\qq^{\rm ch}_n$ with
+\begin{equation}\label{eq:Wlemma}
+  |\pp^{\rm ch}_n-\pp_n|+h^{-1/3}|\qq^{\rm ch}_n-\qq_n|\le C\eta_n,\qquad
+  \eta_n:=|e_n|+|e_{n+1}|+|d_n|,
+\end{equation}
+because $(\mathcal L-\mathcal L_a)\psi(n)=a((n+1)h)e_{n+1}\psi(n+1)+a(nh)e_n\psi(n-1)+d_n\psi(n)$ and
+$\psi(n\pm1)$ expands as in the first step above with bounded coefficients.
+
+\begin{lemma}[Size of $V$]\label{lem:V}
+Assume \eqref{eq:ahyp} and let $[n_0,n_1]$ be a set of sites with $nh\in T'$. For the
+operator \eqref{eq:Lpert} with $\bar\eta:=\max_{n_0\le n\le n_1}\eta_n\le h_0$,
+\[
+  V\le C\bigl(h+\bar\eta/h\bigr),\qquad\theta_D\le C\bigl(h^2+\bar\eta\bigr).
+\]
+\end{lemma}
+
+\begin{proof}
+By \Cref{lem:R}, \eqref{eq:Wlemma} and (A4),
+$|\pp^{\rm ch}_n|+\mathsf k_n|\qq^{\rm ch}_n|\le C(h^2+\eta_n)(1+h^{1/3}(1+|x_n|)^{1/2})$, and
+$h^{1/3}(1+|x_n|)^{1/2}\le h^{1/3}+|\zeta(nh)|^{1/2}$ is bounded. With $|W^{\rm ch}_n|\ge h^{1/3}/(4\pi)$,
+$g\le G_*$ and (A3),
+$v_n\le C(h^2+\eta_n)h^{-1/3}(1+|x_n|)^{-1/2}$. Since $|x_n|\ge r_0h^{-2/3}|nh-t_p|$ and the sites
+are spaced by $h$, $\sum_n(1+|x_n|)^{-1/2}\le C(1+h^{-1}\int_0^{|T|}(h^{-2/3}r_0s)^{-1/2}ds)\le Ch^{-2/3}$.
+Hence $V\le C(h^2+\bar\eta)h^{-1}$. The bound on $\theta_D$ is \Cref{lem:R} and \eqref{eq:Wlemma}
+divided by $|W_n|$.
+\end{proof}
+
+For the power-like chains of \Cref{sec:rates}, $\bar\eta\le C(h^{1+\delta''}+h^{\alpha-\beta})$, and
+\Cref{lem:V} gives $V\le C(h+h^{\delta''}+h^{\alpha-1-\beta})$. For the singular limits of
+\Cref{sec:apps}, $\bar\eta\le C(h^2+h^\alpha)$ and $V\le C(h+h^{\alpha-1})$: there $\alpha>1$ is
+exactly the condition that the perturbation is negligible across the Airy window.

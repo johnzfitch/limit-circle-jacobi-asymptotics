@@ -1,0 +1,99 @@
+Sanity check, Berg--Valent quartic (W_F(x) ~ x^(5/4) tanh):
+    n =   7: W(products)/W(closed form) = 0.999998436855  (constant expected; truncation at 400 factors)
+    n =  21: W(products)/W(closed form) = 0.999873393164  (constant expected; truncation at 400 factors)
+    n =  61: W(products)/W(closed form) = 0.99102625008  (constant expected; truncation at 400 factors)
+
+Al-Salam--Carlitz, q = 0.5, a = 1.5, gamma = log a/log(1/q) = 0.5849625007
+  Friedrichs W_F: predicted exponent 1.5849625
+    x =          5.0  local exponent 1.452370619   W/x^e = 1.459189413
+    x =        383.0  local exponent 1.58292393   W/x^e = 1.198942577
+    x =      24575.0  local exponent 1.584930655   W/x^e = 1.195607876
+    x =   1.57286e+6  local exponent 1.584962003   W/x^e = 1.195555918
+    x =   1.00663e+8  local exponent 1.584962493   W/x^e = 1.195555106
+    x =   6.44245e+9  local exponent 1.584962479   W/x^e = 1.195555075
+    x =  4.12317e+11  local exponent 1.584961125   W/x^e = 1.195553953
+  Krein W_K: predicted exponent 0.4150375
+    x =          7.0  local exponent 0.3329841019   W/x^e = 3.909762656
+    x =        511.0  local exponent 0.4137484195   W/x^e = 3.468946223
+    x =      32767.0  local exponent 0.4150173559   W/x^e = 3.462843318
+    x =   2.09715e+6  local exponent 0.4150371845   W/x^e = 3.46274813
+    x =   1.34218e+8  local exponent 0.4150374937   W/x^e = 3.462746641
+    x =   8.58993e+9  local exponent 0.4150374562   W/x^e = 3.462746517
+
+Al-Salam--Carlitz, q = 0.3, a = 2.0, gamma = log a/log(1/q) = 0.5757166425
+  Friedrichs W_F: predicted exponent 1.5757166
+    x =      21.2222  local exponent 1.545503814   W/x^e = 0.9750668944
+    x =      30482.2  local exponent 1.575694763   W/x^e = 0.9248057041
+    x =    4.1815e+7  local exponent 1.575716627   W/x^e = 0.9247709271
+    x =  5.73594e+10  local exponent 1.575716642   W/x^e = 0.9247709018
+    x =  7.86824e+13  local exponent 1.575716642   W/x^e = 0.9247709017
+    x =  1.07932e+17  local exponent 1.575716642   W/x^e = 0.9247709017
+    x =  1.48055e+20  local exponent 1.575716642   W/x^e = 0.9247709017
+  Krein W_K: predicted exponent 0.42428336
+    x =       36.037  local exponent 0.4109069858   W/x^e = 1.670726384
+    x =      50804.3  local exponent 0.4242735976   W/x^e = 1.632285644
+    x =   6.96917e+7  local exponent 0.4242833504   W/x^e = 1.632258263
+    x =  9.55991e+10  local exponent 0.4242833575   W/x^e = 1.632258243
+    x =  1.31137e+14  local exponent 0.4242833575   W/x^e = 1.632258243
+    x =  1.79887e+17  local exponent 0.4242833575   W/x^e = 1.632258243
+
+Stieltjes--Wigert, q = 0.5: 23 zeros of Ramanujan's function found, ratios xi_(n+1)/xi_n: ['5.21707', '4.45787', '4.20472', '4.0973', '4.04749']
+  Friedrichs W_F (support xi_n): predicted exponent 1.5
+    x =      29.0298  local exponent 1.483440627   W/x^e = 1.904865341
+    x =      2024.25  local exponent 1.497911673   W/x^e = 1.827707037
+    x =     130882.0  local exponent 1.499738652   W/x^e = 1.818438505
+    x =   8.38709e+6  local exponent 1.499967327   W/x^e = 1.817285417
+    x =   5.36859e+8  local exponent 1.499995916   W/x^e = 1.817141366
+    x =  3.43596e+10  local exponent 1.499999489   W/x^e = 1.817123361
+    x =  2.19902e+12  local exponent 1.499999936   W/x^e = 1.81712111
+  sigma = 1, W_1 (support q xi_n): predicted exponent 0.5
+    x =      14.5149  local exponent 0.4834406266   W/x^e = 1.3469432
+    x =      1012.13  local exponent 0.4979116732   W/x^e = 1.29238404
+    x =      65441.0  local exponent 0.499738652   W/x^e = 1.285830198
+    x =   4.19354e+6  local exponent 0.4999673267   W/x^e = 1.285014842
+    x =   2.68429e+8  local exponent 0.4999959158   W/x^e = 1.284912982
+    x =  1.71798e+10  local exponent 0.4999994895   W/x^e = 1.284900251
+    x =  1.09951e+12  local exponent 0.4999999362   W/x^e = 1.284898659
+  Krein W_K (support xi_n/q): predicted exponent 0.5
+    x =      58.0597  local exponent 0.4834406266   W/x^e = 1.3469432
+    x =       4048.5  local exponent 0.4979116732   W/x^e = 1.29238404
+    x =     261764.0  local exponent 0.499738652   W/x^e = 1.285830198
+    x =   1.67742e+7  local exponent 0.4999673267   W/x^e = 1.285014842
+    x =   1.07372e+9  local exponent 0.4999959158   W/x^e = 1.284912982
+    x =  6.87193e+10  local exponent 0.4999994895   W/x^e = 1.284900251
+    x =  4.39804e+12  local exponent 0.4999999362   W/x^e = 1.284898659
+
+Stieltjes--Wigert, q = 0.3: 13 zeros of Ramanujan's function found, ratios xi_(n+1)/xi_n: ['13.6215', '11.7232', '11.2851', '11.1625', '11.1265']
+  Friedrichs W_F (support xi_n): predicted exponent 1.5
+    x =      402.518  local exponent 1.496820516   W/x^e = 1.709146412
+    x =      4542.46  local exponent 1.499045993   W/x^e = 1.69602732
+    x =      50705.2  local exponent 1.499713782   W/x^e = 1.692128232
+    x =     564169.0  local exponent 1.499914133   W/x^e = 1.690961756
+    x =   6.27114e+6  local exponent 1.49997424   W/x^e = 1.690612105
+    x =    6.9688e+7  local exponent 1.499992272   W/x^e = 1.690507236
+    x =    7.7434e+8  local exponent 1.499997682   W/x^e = 1.690475778
+    x =   8.60387e+9  local exponent 1.499999304   W/x^e = 1.69046634
+    x =  9.55989e+10  local exponent 1.499999791   W/x^e = 1.690463509
+    x =  1.06221e+12  local exponent 1.499999937   W/x^e = 1.69046266
+  sigma = 1, W_1 (support q xi_n): predicted exponent 0.5
+    x =      120.756  local exponent 0.4968205161   W/x^e = 0.9361380437
+    x =      1362.74  local exponent 0.4990459926   W/x^e = 0.9289524213
+    x =      15211.6  local exponent 0.4997137822   W/x^e = 0.9268168028
+    x =     169251.0  local exponent 0.4999141333   W/x^e = 0.9261778979
+    x =   1.88134e+6  local exponent 0.4999742398   W/x^e = 0.925986386
+    x =   2.09064e+7  local exponent 0.4999922719   W/x^e = 0.9259289467
+    x =   2.32302e+8  local exponent 0.4999976816   W/x^e = 0.9259117163
+    x =   2.58116e+9  local exponent 0.4999993045   W/x^e = 0.9259065472
+    x =  2.86797e+10  local exponent 0.4999997913   W/x^e = 0.9259049965
+    x =  3.18663e+11  local exponent 0.4999999374   W/x^e = 0.9259045313
+  Krein W_K (support xi_n/q): predicted exponent 0.5
+    x =      1341.73  local exponent 0.4968205161   W/x^e = 0.9361380437
+    x =      15141.5  local exponent 0.4990459926   W/x^e = 0.9289524213
+    x =     169017.0  local exponent 0.4997137822   W/x^e = 0.9268168028
+    x =   1.88056e+6  local exponent 0.4999141333   W/x^e = 0.9261778979
+    x =   2.09038e+7  local exponent 0.4999742398   W/x^e = 0.925986386
+    x =   2.32293e+8  local exponent 0.4999922719   W/x^e = 0.9259289467
+    x =   2.58113e+9  local exponent 0.4999976816   W/x^e = 0.9259117163
+    x =  2.86796e+10  local exponent 0.4999993045   W/x^e = 0.9259065472
+    x =  3.18663e+11  local exponent 0.4999997913   W/x^e = 0.9259049965
+    x =   3.5407e+12  local exponent 0.4999999374   W/x^e = 0.9259045313

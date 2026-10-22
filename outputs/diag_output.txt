@@ -1,0 +1,20 @@
+CPU/GPU count agreement on n=2001, 257 lambdas: True
+t=0.0000 N=    9.621 lambda=5.525003e+03  Phi - theta_t (mod pi) = +3.484e-03   N^1.5 * that = +0.1040
+t=0.0000 N=   14.337 lambda=2.231721e+04  Phi - theta_t (mod pi) = +2.150e-03   N^1.5 * that = +0.1167
+t=0.0000 N=   20.625 lambda=7.969620e+04  Phi - theta_t (mod pi) = +1.431e-03   N^1.5 * that = +0.1340
+t=0.0000 N=   28.486 lambda=2.467419e+05  Phi - theta_t (mod pi) = +1.017e-03   N^1.5 * that = +0.1546
+t=0.0000 N=   39.491 lambda=7.740665e+05  Phi - theta_t (mod pi) = +7.298e-04   N^1.5 * that = +0.1811
+t=0.0000 N=   56.785 lambda=2.759597e+06  Phi - theta_t (mod pi) = +5.102e-04   N^1.5 * that = +0.2183
+t=0.0000 N=   80.367 lambda=9.307024e+06  Phi - theta_t (mod pi) = +3.647e-04   N^1.5 * that = +0.2627
+t=0.0000 N=  113.383 lambda=3.104192e+07  Phi - theta_t (mod pi) = +2.623e-04   N^1.5 * that = +0.3167
+t=0.0000 N=  160.548 lambda=1.048695e+08  Phi - theta_t (mod pi) = +1.883e-04   N^1.5 * that = +0.3831
+t=0.0000 N=  226.580 lambda=3.501888e+08  Phi - theta_t (mod pi) = +1.356e-04   N^1.5 * that = +0.4626
+t=0.0000 sizes=[131072, 262144, 524288] p=3.40 time=126.3s
+t=1.5708 N=   10.126 lambda=6.607096e+03  Phi - theta_t (mod pi) = +6.194e-03   N^1.5 * that = +0.1996
+t=1.5708 N=   14.841 lambda=2.518514e+04  Phi - theta_t (mod pi) = +3.715e-03   N^1.5 * that = +0.2124
+t=1.5708 N=   19.557 lambda=6.615771e+04  Phi - theta_t (mod pi) = +2.617e-03   N^1.5 * that = +0.2264
+t=1.5708 N=   27.417 lambda=2.158332e+05  Phi - theta_t (mod pi) = +1.734e-03   N^1.5 * that = +0.2490
+t=1.5708 N=   39.994 lambda=8.091474e+05  Phi - theta_t (mod pi) = +1.115e-03   N^1.5 * that = +0.2821
+t=1.5708 N=   55.716 lambda=2.582017e+06  Phi - theta_t (mod pi) = +7.665e-04   N^1.5 * that = +0.3188
+t=1.5708 N=   80.871 lambda=9.512570e+06  Phi - theta_t (mod pi) = +5.084e-04   N^1.5 * that = +0.3697
+t=1.5708 sizes=[1048576, 2097152, 4194304] p=1.60 time=1020.9s

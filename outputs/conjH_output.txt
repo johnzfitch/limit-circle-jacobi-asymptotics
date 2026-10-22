@@ -1,0 +1,30 @@
+H1: alpha=2.5, c_e=1.0, c_o=1.7, kappa_e=0.2, kappa_o=-0.4; zero eigenvalue present: False
+  j=   1 lambda=9.782712e-01 (size change 0.0e+00)  Phi_r/pi - j = -0.99977   with signed o, e: -0.79977
+  j=   2 lambda=2.186592e+01 (size change 0.0e+00)  Phi_r/pi - j = -0.64458   with signed o, e: -0.84458
+  j=   5 lambda=3.789817e+02 (size change 0.0e+00)  Phi_r/pi - j = -0.52502   with signed o, e: -0.72502
+  j=  10 lambda=2.516422e+03 (size change 0.0e+00)  Phi_r/pi - j = -0.50994   with signed o, e: -0.70994
+  j=  20 lambda=1.536027e+04 (size change 0.0e+00)  Phi_r/pi - j = -0.50445   with signed o, e: -0.70445
+  j=  50 lambda=1.586946e+05 (size change 0.0e+00)  Phi_r/pi - j = -0.50167   with signed o, e: -0.70167
+  j= 100 lambda=9.109483e+05 (size change 0.0e+00)  Phi_r/pi - j = -0.50082   with signed o, e: -0.70082
+  j= 150 lambda=2.522504e+06 (size change 0.0e+00)  Phi_r/pi - j = -0.50054   with signed o, e: -0.70054
+  j= 200 lambda=5.190773e+06 (size change 0.0e+00)  Phi_r/pi - j = -0.50040   with signed o, e: -0.70040
+H2: alpha=2.0, c_e=1.3, c_o=1.0, kappa_e=-0.5, kappa_o=0.3; zero eigenvalue present: True
+  j=   1 lambda=3.404895e+00 (size change 0.0e+00)  Phi_r/pi - j = -0.53696   with signed o, e: -0.53696
+  j=   2 lambda=1.638305e+01 (size change 0.0e+00)  Phi_r/pi - j = -0.52100   with signed o, e: -0.52100
+  j=   5 lambda=1.118784e+02 (size change 0.0e+00)  Phi_r/pi - j = -0.50812   with signed o, e: -0.50812
+  j=  10 lambda=4.595003e+02 (size change 0.0e+00)  Phi_r/pi - j = -0.50393   with signed o, e: -0.50393
+  j=  20 lambda=1.861678e+03 (size change 0.0e+00)  Phi_r/pi - j = -0.50193   with signed o, e: -0.50193
+  j=  50 lambda=1.172396e+04 (size change 0.0e+00)  Phi_r/pi - j = -0.50076   with signed o, e: -0.50076
+  j= 100 lambda=4.701371e+04 (size change 3.4e-15)  Phi_r/pi - j = -0.50038   with signed o, e: -0.50038
+  j= 150 lambda=1.058692e+05 (size change 4.4e-16)  Phi_r/pi - j = -0.50025   with signed o, e: -0.50025
+  j= 200 lambda=1.882905e+05 (size change 6.7e-16)  Phi_r/pi - j = -0.50019   with signed o, e: -0.50019
+H3: alpha=3.0, c_e=1.0, c_o=0.6, kappa_e=0.0, kappa_o=0.0; zero eigenvalue present: True
+  j=   1 lambda=7.740556e+00 (size change 0.0e+00)  Phi_r/pi - j = -0.50988   with signed o, e: -0.50988
+  j=   2 lambda=6.160142e+01 (size change 0.0e+00)  Phi_r/pi - j = -0.51411   with signed o, e: -0.51411
+  j=   5 lambda=9.650348e+02 (size change 0.0e+00)  Phi_r/pi - j = -0.50964   with signed o, e: -0.50964
+  j=  10 lambda=7.727028e+03 (size change 0.0e+00)  Phi_r/pi - j = -0.50564   with signed o, e: -0.50564
+  j=  20 lambda=6.183186e+04 (size change 0.0e+00)  Phi_r/pi - j = -0.50303   with signed o, e: -0.50303
+  j=  50 lambda=9.661940e+05 (size change 0.0e+00)  Phi_r/pi - j = -0.50127   with signed o, e: -0.50127
+  j= 100 lambda=7.729634e+06 (size change 0.0e+00)  Phi_r/pi - j = -0.50064   with signed o, e: -0.50064
+  j= 150 lambda=2.608757e+07 (size change 6.2e-15)  Phi_r/pi - j = -0.50043   with signed o, e: -0.50043
+  j= 200 lambda=6.183724e+07 (size change 1.6e-15)  Phi_r/pi - j = -0.50032   with signed o, e: -0.50032

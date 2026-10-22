@@ -1,0 +1,329 @@
+\section{Application: critical indices of indeterminate moment problems}\label{sec:moments}
+
+By a theorem of M.~Riesz, for an N-extremal solution $\mu$ of an indeterminate moment problem the
+measure $(1+x^2)^{-1}\mu$ is determinate while $\mu$ is not. Berg and Szwarc \cite{BergSzwarc2026}
+define the \emph{critical index}
+\[
+  a(\mu):=\sup\{\gamma\in[0,1]:(1+x^2)^{-\gamma}\mu\ \text{is indeterminate}\}
+\]
+and put $\mu$ in class $\mathbf A$ if $(1+x^2)^{-a(\mu)}\mu$ is still indeterminate and in class
+$\mathbf B$ otherwise. They show $a(\mu_F)\le\frac12\le a(\mu_\sigma)$ for the Friedrichs solution
+$\mu_F$ and the other N-extremal solutions $\mu_\sigma$ of a Stieltjes problem, exhibit members of
+$\mathbf A(\frac12)$ and $\mathbf B(\frac12)$, and note that explicit examples are known only at the value
+$\frac12$. They ask whether both classes $\mathbf A$ and $\mathbf B$ are nonempty \cite[after
+Prop.~1.7]{BergSzwarc2026}, and leave open a determinacy threshold built on the Berg--Valent problem
+\cite[Ex.~4.1]{BergSzwarc2026}. We compute the indices exactly for Valent's polynomial rates; this
+gives explicit members of $\mathbf B$ and decides the threshold. The index is read off from the residues
+of a Nevanlinna function at the support points, and these residues come from the Bessel boundary
+values of \Cref{thm:dimer}.
+
+\subsection{A weighted criterion}
+
+Let $x$ be the variable of a normalised indeterminate Hamburger problem with orthonormal
+polynomials $\hat p_k$ (in the variable $x$; they are not the regular solution $p$ of the earlier
+sections) and Nevanlinna matrix $\bigl(\begin{smallmatrix}A&C\\B&D\end{smallmatrix}\bigr)$, in the
+parametrisation of \cite{BergSzwarc2026}. For $\sigma\in\RR\cup\{\infty\}$ the N-extremal solution
+$\mu_\sigma$ is supported by the zero set $\mathcal Z_\sigma$ of $G_\sigma:=B+\sigma D$ ($G_\infty:=D$), and
+$\mu_\sigma(\{x\})=1/\sum_k\hat p_k(x)^2$ \cite[Prop.~1.4]{BergSzwarc2026}. For a Stieltjes problem the
+Friedrichs solution is $\mu_F$ with $F\in\RR$, and the Krein solution is $\mu_\infty$. The identity
+\begin{equation}\label{eq:BD-CD}
+  B(u)D(v)-D(u)B(v)=(u-v)\sum_{k\ge0}\hat p_k(u)\hat p_k(v)
+\end{equation}
+\cite[first proof of Prop.~2.3]{BergSzwarcII} gives $\sum_k\hat p_k(u)^2=B'D-BD'$ as $v\to u$, so on
+$\mathcal Z_\sigma$
+\begin{equation}\label{eq:Wsigma}
+  \mu_\sigma(\{x\})\,\mathcal E_\sigma(x)^2=W_\sigma(x),\qquad
+  \mathcal E_\sigma:=D,\ W_\sigma:=\frac{D}{G_\sigma'}\ (\sigma\in\RR),\qquad
+  \mathcal E_\infty:=B,\ W_\infty:=-\frac{B}{D'},
+\end{equation}
+and $W_\sigma>0$ there. Equivalently $W_\sigma(x)=1/(\mu_\sigma(\{x\})G_\sigma'(x)^2)$.
+
+The criterion below rests on one fact about N-extremal measures: the polynomials have codimension one
+in $L^2((1+x^2)\mu_\sigma)$, and the orthogonal complement is spanned by $\mathcal E_\sigma/(1+x^2)$. A
+weighted measure $w\mu_\sigma$ is therefore indeterminate exactly when this one function, divided by $w$,
+still has finite norm, and that norm is a single series over the support.
+
+\begin{proposition}{Weighted determinacy}{weighted}
+Let $\mu_\sigma$ be N-extremal and let $w$ be a function on its support with $0<w\le C$. Then $w\mu_\sigma$
+is indeterminate if and only if
+\[
+  \mathcal I_\sigma(w):=\int\frac{\mathcal E_\sigma(x)^2}{(1+x^2)\,w(x)}\,d\mu_\sigma(x)
+  =\sum_{x\in\mathcal Z_\sigma}\frac{W_\sigma(x)}{(1+x^2)\,w(x)}<\infty .
+\]
+Consequently, with $\mathcal S_\sigma(\gamma):=\sum_{x\in\mathcal Z_\sigma}W_\sigma(x)(1+x^2)^{\gamma-1}$,
+$a(\mu_\sigma)=\sup\{\gamma:\mathcal S_\sigma(\gamma)<\infty\}$, and $\mu_\sigma\in\mathbf B$ if and only if
+$\mathcal S_\sigma(a(\mu_\sigma))=\infty$.
+\end{proposition}
+
+\paragraph{Attribution.} The criterion is the case $r=2$ of Theorem~A of Borichev and Sodin
+\cite{BorichevSodin1998}, specialised to N-extremal supports. Their Hamburger class $\mathfrak H$
+consists of the transcendental real entire functions of zero exponential type with simple
+real zeros on which $|\lambda|^n/|B_0'(\lambda)|\to0$ for every $n$; it contains the entries of the
+Nevanlinna matrix, so the $G_\sigma$. For $B_0\in\mathfrak H$ and a weight $\omega>0$ on its zero set
+$\Lambda_{B_0}$ with $|\lambda|^n\omega(\lambda)\to0$, Theorem~A states that the polynomials are dense in
+$\ell^r(\omega,\Lambda_{B_0})$, $1<r\le\infty$, if and only if
+$\sum_{\lambda\in\Lambda_F}|\omega(\lambda)F'(\lambda)|^{-r/(r-1)}=+\infty$ for every $F\in\mathfrak H$ with
+$\Lambda_F\subset\Lambda_{B_0}$ (a $\liminf$ condition replaces this for $r=1$). By Riesz's theorem $w\mu_\sigma$
+is indeterminate exactly when the polynomials are not dense in
+$L^2((1+x^2)w\mu_\sigma)=\ell^2(\omega,\mathcal Z_\sigma)$ with $\omega^2:=(1+x^2)w\,\mu_\sigma(\{x\})$, and for
+$F=G_\sigma$ the series is $\mathcal I_\sigma(w)$, since $1/(\mu_\sigma(\{x\})G_\sigma'(x)^2)=W_\sigma(x)$. No other
+divisor $F$ matters here: a convergent series for $F$ would give an annihilator supported on
+$\Lambda_F$, and by the proof below every annihilator is a multiple of $\mathcal E_\sigma/((1+x^2)w)$, which
+vanishes nowhere on $\mathcal Z_\sigma$.
+
+The quantifier over divisors is the point of Theorem~A. Hamburger \cite{Hamburger1944} stated
+that a measure $\sum\mu_\lambda\delta_\lambda$ on the zero set of some $B_0\in\mathfrak H$ is canonical
+(N-extremal) if and only if it satisfies three conditions, the third being
+$\sum_\lambda1/(\mu_\lambda B_0'(\lambda)^2)=+\infty$. That condition is necessary, since otherwise
+$1/(\mu_\lambda B_0'(\lambda))$ annihilates the polynomials, which is the ``if'' direction of
+\Cref{prop:weighted}. It is not sufficient: Berg and Pedersen found the gap in Hamburger's proof
+in 1989, and Koosis gave a counterexample \cite{Koosis1990}; see the account in
+\cite[\S3.5]{AbakumovBaranovBelov2014}, which also gives a counterexample on a power-separated set.
+Corollary~1.1 of \cite{BorichevSodin1998}, which replaces the third condition by the same divergence
+for every divisor $F\in\mathfrak H$ of $B_0$, is the corrected statement. Our account of Theorem~A and of
+Corollary~1.1 follows the February 1998 preprint of \cite{BorichevSodin1998}; we have not seen the
+published text. Their proof of Theorem~A follows an approach of de Branges; for N-extremal supports a
+short Hilbert-space argument suffices.
+
+\begin{proof}[Proof of \Cref{prop:weighted}]
+\step{codimension one} If $\mu$ is N-extremal, $\CC[x]$ has codimension one in
+$L^2((1+x^2)\mu)$: $f\mapsto(x-i)f$ maps $L^2((1+x^2)\mu)$ unitarily onto $L^2(\mu)$ and $\CC[x]$
+onto $(x-i)\CC[x]$, $\CC[x]=(x-i)\CC[x]+\CC$ is dense in $L^2(\mu)$ by Riesz's theorem
+\cite[Thm.~1.3]{BergSzwarc2026}, and the codimension is not zero because $\mu$ is indeterminate.
+This is the case $n=1$ of Cassier's theorem \cite[Thm.~2.2]{Berg1996}.
+
+\step{the annihilator} $f_\sigma:=\mathcal E_\sigma/(1+x^2)$ is a nonzero element of $L^2((1+x^2)\mu_\sigma)$
+orthogonal to $\CC[x]$. For $\sigma\in\RR$, $D(x)=x\,\mathcal K_0(x)$ with $\mathcal K_0=\sum_k\hat p_k(0)\hat p_k\in L^2(\mu_\sigma)$
+(Parseval, \cite[(5)--(6)]{BergSzwarcII}), so $\|f_\sigma\|^2\le\sum_k\hat p_k(0)^2$, and
+$\int D\,\bar q\,d\mu_\sigma=0$ for every polynomial $q$ \cite[Prop.~3.1(i)]{BergSzwarcII}. For
+$\sigma=\infty$, \eqref{eq:BD-CD} at a real $v$ with $D(v)\ne0$ gives $B=(\cdot-v)\mathcal K_v/D(v)$ on
+$\mathcal Z_\infty$ with $\mathcal K_v=\sum_k\hat p_k(v)\hat p_k\in L^2(\mu_\infty)$.
+
+\step{the criterion} If $f$ annihilates $\CC[x]$ in $L^2((1+x^2)w\mu_\sigma)$, then $fw$ annihilates
+it in $L^2((1+x^2)\mu_\sigma)$, because $w\le C$; so $fw=c\,f_\sigma$, and $f=c\,\mathcal E_\sigma/((1+x^2)w)$ has
+finite norm exactly when $c=0$ or $\mathcal I_\sigma(w)<\infty$. Riesz's theorem applied to $(1+x^2)w\mu_\sigma$
+gives the equivalence, and $w=(1+x^2)^{-\gamma}$ gives the formula for $a(\mu_\sigma)$.
+\end{proof}
+
+The criterion also answers the question of \cite{BergSzwarc2026} whether both classes are nonempty,
+but not by explicit measures. Since it is the case $r=2$ of Theorem~A of Borichev and Sodin, the
+following is a corollary of their theorem rather than a result of this paper; the explicit members of
+$\mathbf B$ come from \Cref{thm:valent} below.
+
+\begin{corollary}\label{cor:AB}
+Both classes $\mathbf A$ and $\mathbf B$ of \cite{BergSzwarc2026} are nonempty.
+\end{corollary}
+
+\begin{proof}
+Fix an N-extremal $\mu_\sigma$, order its support by $|x|$ as $x_0,x_1,\dots$, write $W_k:=W_\sigma(x_k)$ and
+$S_k:=W_0+\dots+W_k$. By \Cref{prop:weighted} with $w=1$, $\sum_kW_k/(1+x_k^2)<\infty$, because $\mu_\sigma$
+is indeterminate; with $w=(1+x^2)^{-1}$, $\sum_kW_k=\infty$, because $(1+x^2)^{-1}\mu_\sigma$ is determinate.
+So $S_k\to\infty$, and since $1+x_k^2$ is nondecreasing and tends to infinity, Kronecker's lemma gives
+$S_k=o(1+x_k^2)$; in particular $(1+x_k^2)^\delta\ge c_\delta S_k^\delta$ for every $\delta>0$. We use two facts about
+the increments $S_k-S_{k-1}=W_k$. First, $\sum_kW_k/(S_kL(S_k))<\infty$ whenever $\int^\infty ds/(sL(s))<\infty$ and
+$L$ is positive and nondecreasing, because each term is at most $\int_{S_{k-1}}^{S_k}ds/(sL(s))$; this
+covers $L=\log^2(e+s)$ and $L=s^\delta$. Second, $\sum_kW_kS_k^{\delta-1}/\log^2(e+S_k)=\infty$ for
+$0<\delta<1$: if $S_k>2S_{k-1}$ for infinitely many $k$, those terms are at least
+$S_k^\delta/(2\log^2(e+S_k))$, which is bounded below; otherwise, from some $k$ on, $S_{k-1}\ge S_k/2$ and each
+term is at least a constant times $\int_{S_{k-1}}^{S_k}s^{\delta-1}\log^{-2}(e+s)\,ds$, whose sum diverges.
+
+\step{$\mathbf A\neq\emptyset$} Let $w_k:=\min\bigl(S_k\log^2(e+S_k)/(1+x_k^2),1\bigr)$ and $\nu:=w\mu_\sigma$. Then
+$\mathcal I_\sigma(w)\le\sum_kW_k/(S_k\log^2(e+S_k))+\sum_kW_k/(1+x_k^2)<\infty$, so $\nu$ is indeterminate by
+\Cref{prop:weighted}. It is N-extremal: $\nu\le\mu_\sigma$, so the polynomials are dense in $L^2(\nu)$
+\cite[Lemma~1.1(ii)]{BergSzwarc2026}, and Riesz's theorem applies. For $0<\delta<1$ the weight
+$(1+x^2)^{-\delta}w$ is bounded and
+\[
+  \mathcal I_\sigma\bigl((1+x^2)^{-\delta}w\bigr)\ge\sum_k\frac{W_k(1+x_k^2)^\delta}{S_k\log^2(e+S_k)}
+  \ge c_\delta\sum_k\frac{W_kS_k^{\delta-1}}{\log^2(e+S_k)}=\infty,
+\]
+so $(1+x^2)^{-\delta}\nu$ is determinate; for $\delta\ge1$ this follows by monotonicity
+\cite[Lemma~1.1(i)]{BergSzwarc2026}. By \cite[Prop.~1.7(i)]{BergSzwarc2026}, $\mathbf A\ne\emptyset$.
+
+\step{$\mathbf B\neq\emptyset$} Let $w_k:=S_k/(1+x_k^2)$, which is bounded since $S_k=o(1+x_k^2)$, and
+$\nu:=w\mu_\sigma$. Then $\mathcal I_\sigma(w)=\sum_kW_k/S_k=\infty$ by the Abel--Dini theorem, so $\nu$ is
+determinate. For $\delta>0$ the weight $(1+x^2)^\delta w$ need not be bounded, so we compare with the
+bounded weight $w'_k:=\min((1+x_k^2)^\delta w_k,1)$:
+$\mathcal I_\sigma(w')\le\sum_kW_k/(S_k(1+x_k^2)^\delta)+\sum_kW_k/(1+x_k^2)\le c_\delta^{-1}\sum_kW_kS_k^{-1-\delta}+C<\infty$,
+so $w'\mu_\sigma$ is indeterminate, and so is the larger measure $(1+x^2)^\delta\nu$
+\cite[Lemma~1.1(i)]{BergSzwarc2026}. By \cite[Prop.~1.7(ii)]{BergSzwarc2026}, $\mathbf B\ne\emptyset$.
+\end{proof}
+
+The content below is the exact index of the natural solutions of a large class of problems, which
+gives explicit members of $\mathbf B$ with every index in $(0,\frac12)\cup(\frac12,1)$.
+
+\subsection{Valent's rates}
+
+Let $\lambda_n=\prod_{j=1}^p(pn+e_j)$ and $\mu_n=\prod_{j=1}^p(pn+d_j)$ be indeterminate polynomial rates
+as in \Cref{sec:bd}, so that $p\ge3$, $p<\esum-\dsum<p(p-1)$ and $\nu=((\esum-\dsum)/p-1)/(p-2)\in(0,1)$, and
+consider the associated Stieltjes problem in the variable $x=\lambda^2$. Put
+\[
+  \hat\Phi(x):=\Phi(\sqrt x)=\tau_p\sin(\pi/p)\,x^{1/p}-\frac{\kappa\pi}p,\qquad
+  \theta_F(x):=\hat\Phi(x)-\frac\pi4-\frac{\nu\pi}2,
+\]
+\[
+  \Upsilon(x):=\sqrt x\,Q(\sqrt x)=c_Q\,x^\nu ,
+\]
+with $Q$ from \eqref{eq:Q}, $c=(p/2)^{p/2}$ and $c_Q=(2(p-2)c)^{1-2\nu}\Gamma(1-\nu)/\Gamma(\nu)>0$.
+
+\begin{theorem}{Critical indices for Valent's rates}{valent}
+For every indeterminate polynomial birth--death problem of this kind:
+\begin{enumerate}
+\item[(a)] $a(\mu_F)=\frac{1-\nu}2$, and $a(\mu_\sigma)=\frac{1+\nu}2$ for every $\sigma\in(\RR\cup\{\infty\})\setminus\{F\}$;
+\item[(b)] every N-extremal solution lies in $\mathbf B$;
+\item[(c)] there is $\Cres>0$ such that, along the large support points,
+  \[
+    \frac{W_F(x)\hat\Phi'(x)}{\Upsilon(x)}\to \Cres\sin\nu\pi,\qquad
+    W_\infty(y)\Upsilon(y)\hat\Phi'(y)\to\frac{\sin\nu\pi}{\Cres},
+  \]
+  \[
+    (\sigma-F)^2W_\sigma(y)\Upsilon(y)\hat\Phi'(y)\to\frac{\sin\nu\pi}{\Cres},
+  \]
+  the last for $y\ge y_0(\sigma)$, where $y_0(\sigma)\to\infty$ as $\sigma\to F$. In particular, for the
+  Friedrichs point $x_k$ and the Krein point $y_k$ of the same period,
+  $W_F(x_k)W_\infty(y_k)\hat\Phi'(x_k)\hat\Phi'(y_k)\Upsilon(y_k)/\Upsilon(x_k)\to\sin^2\nu\pi$, a law with no
+  free constant.
+\end{enumerate}
+\end{theorem}
+
+The proof turns boundary values into residues with two facts about functions of positive
+imaginary part.
+
+\begin{lemma}\label{lem:nevfun}
+For $\sigma\in\RR$, $m_\sigma:=-D/G_\sigma$ is a Nevanlinna function, and so is $m_\infty:=B/D$. Each is real
+meromorphic with simple real poles exactly on $\mathcal Z_\sigma$, and the residue at $x\in\mathcal Z_\sigma$ is
+$-W_\sigma(x)$.
+\end{lemma}
+
+\begin{proof}
+With $u=z$, $v=\bar z$ in \eqref{eq:BD-CD}, $\operatorname{Im}(B\bar D)(z)=\operatorname{Im}z\sum_k|\hat p_k(z)|^2$, so
+$B/D$, $G_\sigma/D=B/D+\sigma$ and $-D/G_\sigma$ map the upper half-plane to itself. The poles are the
+zeros of $G_\sigma$ (of $D$), real and simple because $AD-BC=1$ and $W_\sigma>0$, with residues
+$-D/G_\sigma'$ and $B/D'$.
+\end{proof}
+
+\begin{lemma}\label{lem:herglotz}
+Let $m$ be a meromorphic Nevanlinna function with simple real poles $x_j$ and residues $-r_j<0$.
+\begin{enumerate}
+\item[(i)] If $x_-<x_k<x_+$ and $[x_-,x_+]$ contains no other pole, then
+  \[r_k\ge\bigl(m(x_-)-m(x_+)\bigr)\frac{(x_k-x_-)(x_+-x_k)}{x_+-x_-}.\]
+\item[(ii)] If $x_k<x_1<x_2$ and $(x_k,x_2]$ contains no pole, then
+  \[r_k\le\bigl(m(x_2)-m(x_1)\bigr)\frac{(x_1-x_k)(x_2-x_k)}{x_2-x_1}.\]
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+By the Herglotz representation, $m(y)-m(v)=c_1(y-v)+\sum_jr_j\frac{y-v}{(x_j-y)(x_j-v)}$ with
+$c_1\ge0$, for real $y,v$ off the poles. In (i) take $y=x_-$, $v=x_+$: every term except the
+$k$-th is non-positive. In (ii) take $y=x_2$, $v=x_1$: every term is non-negative.
+\end{proof}
+
+\begin{proof}[Proof of \Cref{thm:valent}]
+\step{the ratio} By the proof of \Cref{cor:bd}, $D(\lambda^2)=C_1\lambda\beta_\infty(\lambda)$ and
+$G_F(\lambda^2)=C_2\alpha_\infty(\lambda)$ with real constants $C_1,C_2\ne0$: in each pair both functions
+are entire of order less than one in $x=\lambda^2$ with the same zeros, counted with multiplicity. In
+$m_F=-D/G_F=-(C_1/C_2)\lambda\beta_\infty/\alpha_\infty$ the amplitude $\mathcal A(\lambda)$ of \Cref{thm:dimer}
+cancels, and with $\sin(\Phi-\frac\pi4+\frac{\nu\pi}2)=\sin(\theta_F+\nu\pi)$ and
+$\sin(\frac\pi4+\frac{\nu\pi}2-\Phi)=-\sin\theta_F$ we get, for every $\eta\in(0,\frac\pi2)$,
+\begin{equation}\label{eq:mF}
+  m_F(x)=-\Cres\Upsilon(x)\bigl[\cos\nu\pi+\sin\nu\pi\cot\theta_F(x)+o(1)\bigr],\qquad \Cres:=-C_1/C_2,
+\end{equation}
+uniformly on $\{\operatorname{dist}(\theta_F(x),\pi\ZZ)\ge\eta\}$, with an additive error because the
+bracket may vanish there. Its sign is forced: between consecutive poles a Nevanlinna function
+increases, while $\cot\theta_F$ decreases; comparing the points with $\theta_F\equiv\eta$ and $\equiv2\eta$
+in one period, which are separated by no pole for large $x$ since $|\alpha_\infty|\ge|\mathcal A|(\sin\eta-|r_1|)>0$
+there, gives $\Cres>0$. (This also makes the result independent of the sign conventions in
+\Cref{thm:dimer}.)
+
+\step{the support points} By \eqref{eq:mF}, $|m_F|\ge c\Upsilon\to\infty$ at phase distance $\ge\eta$ from both
+$\pi\ZZ$ and $-\nu\pi+\pi\ZZ$, while $m_F$ is large negative at $\theta_F=k\pi+\eta$, large positive at
+$(k+1)\pi-\eta$ and increasing between poles. Hence for large $x$ the poles of $m_F$ (the points of
+$\mathcal Z_F$) are one per period with $\theta_F=k\pi+o(1)$, and the points where $m_F$ takes a given
+bounded value, in particular the zeros of $D$ ($m_F=0$) and of $G_\sigma=G_F+(\sigma-F)D$
+($m_F=1/(\sigma-F)$), are one per period with $\theta_F=k\pi-\nu\pi+o(1)$. Since $\hat\Phi(x)\asymp x^{1/p}$,
+the $k$-th large support point is $\asymp k^p$ in every case.
+
+\step{the residues} Let $x_k\in\mathcal Z_F$ be large, fix $\eta$, and take the points $x_\pm$ with
+$\theta_F(x_\pm)=\theta_F(x_k)\pm\eta$ and $x_1,x_2$ with $\theta_F=\theta_F(x_k)+\eta,\theta_F(x_k)+2\eta$; for large $k$ no
+other pole lies in the intervals used, and across one period $\Upsilon$ and $\hat\Phi'$ change by
+factors $1+O(x^{-1/p})$. By \eqref{eq:mF}, $m_F(x_-)-m_F(x_+)=\Cres\Upsilon(2\sin\nu\pi\cot\eta+o(1))$ and
+$m_F(x_2)-m_F(x_1)=\Cres\Upsilon(\sin\nu\pi/\sin2\eta+o(1))$, while the geometric factors in
+\Cref{lem:herglotz} are $(\eta/2+o(1))/\hat\Phi'$ and $(2\eta+o(1))/\hat\Phi'$. Hence
+\[
+  \eta\cot\eta\,(1+o(1))\le\frac{W_F(x_k)\hat\Phi'(x_k)}{\Cres\sin\nu\pi\,\Upsilon(x_k)}\le\frac{2\eta}{\sin2\eta}(1+o(1)),
+\]
+and letting $\eta\to0$ gives the first limit in (c). For the Krein solution,
+$m_\infty=B/D=-1/m_F-F$; writing $\theta_F=k\pi-\nu\pi+\epsilon$, \eqref{eq:mF} gives
+$m_\infty=(\Cres\Upsilon)^{-1}[\cos\nu\pi-\sin\nu\pi\cot\epsilon+o(1)]-F$ for $|\epsilon|\ge\eta$, and the same four
+points (now around the pole $\epsilon\approx0$) give the second limit; $F$ cancels in the
+differences. For $\sigma\ne F$ put $s:=\sigma-F$; then $m_\sigma=m_F/(1-sm_F)=-1/s+1/(s(1-sm_F))$, and where
+$|s|\Upsilon\gg1$ this is $-1/s+(s^2\Cres\Upsilon)^{-1}[\cos\nu\pi-\sin\nu\pi\cot\epsilon+o(1)]$, which gives the third
+limit; the threshold $y_0(\sigma)$ is where $|\sigma-F|\Upsilon(y_0)$ becomes large, so it grows as $\sigma\to F$. The
+product law is the product of the first two limits.
+
+\step{the indices} By (c), $W_F(x_k)\asymp\Upsilon/\hat\Phi'\asymp x_k^{1+\nu-1/p}$ and
+$W_\sigma(y_k)\asymp y_k^{1-\nu-1/p}$ for $\sigma\ne F$. With $x_k\asymp k^p$ the terms of $\mathcal S_\sigma(\gamma)$ are
+$\asymp k^{p(2\gamma-1\pm\nu)-1}$, with $+$ for $F$ and $-$ otherwise; finitely many small or negative support
+points contribute a finite amount. So $\mathcal S_\sigma(\gamma)<\infty$ exactly for $\gamma<(1\mp\nu)/2$, and at the
+critical index the terms are $\asymp1/k$, so $\mathcal S_\sigma$ diverges and $\mu_\sigma\in\mathbf B$
+(\Cref{prop:weighted}).
+\end{proof}
+
+The values $(1\mp\nu)/2$ lie on either side of $\frac12$, as \cite[Thm.~3.8]{BergSzwarc2026} requires,
+and every value in $(0,\frac12)$ and $(\frac12,1)$ occurs as $\nu$ ranges over the admissible rates. The
+proof needs only the $o(1)$ boundary values of \Cref{thm:dimer} at points a fixed phase distance from
+the support: the Nevanlinna property converts values into residues.
+
+\subsection{A worked check: the Berg--Valent quartic problem}
+
+For the quartic rates of \Cref{ex:bv} ($p=4$, $\nu=\frac12$), Berg and Szwarc give
+\[
+  \mu_F=\frac{4\pi}{K_0^2}\sum_{n\text{ odd}}\frac{n\pi}{\sinh n\pi}\,\delta_{n^4},\qquad
+  \mu_\infty=\frac{\pi}{K_0^2}\,\delta_0+\frac{4\pi}{K_0^2}\sum_{n\ge2\text{ even}}\frac{n\pi}{\sinh n\pi}\,\delta_{n^4}
+\]
+\cite[(29)--(30)]{BergSzwarc2026}, with the elliptic constant $K_0=\Gamma(\frac14)^2/(4\sqrt\pi)$ of
+\Cref{ex:bv} (not to be confused with $\Cres$), and ask for which $c$ the measure
+$\mu_c:=\sum_{n\text{ odd}}\frac{n\pi}{\sinh n\pi}n^c\delta_{n^4}$ is indeterminate; they show indeterminacy for
+$c\ge0$ and determinacy for $c\le-4$ \cite[Ex.~4.1]{BergSzwarc2026}. With
+$w:=x^{1/4}$, the functions of minimal type with the right zeros and normalisation are
+$G_F(x)=-\cos\frac{\pi w}2\cosh\frac{\pi w}2$ and
+$D(x)=\frac{4d}{\pi^2}w^2\sin\frac{\pi w}2\sinh\frac{\pi w}2$ with $d=D'(0)=K_0^2/\pi$, the value for which
+$1/(DG_F')$ and $-1/(BD')$ reproduce the masses. Differentiating with $d/dx=(4w^3)^{-1}d/dw$,
+\[
+  W_F(n^4)=\frac{32d}{\pi^3}\,n^5\tanh\frac{\pi n}2\quad(n\text{ odd}),\qquad
+  W_\infty(n^4)=\frac{2\pi n}{d}\coth\frac{\pi n}2\quad(n\ge2\text{ even}).
+\]
+So $\mathcal S_F(\gamma)\asymp\sum_{n\text{ odd}}n^{8\gamma-3}$ and $\mathcal S_\infty(\gamma)\asymp\sum n^{8\gamma-7}$, which gives
+$a(\mu_F)=\frac14$ and $a(\mu_\infty)=\frac34$, both in $\mathbf B$, as \Cref{thm:valent} predicts. In this
+normalisation $\hat\Phi'(x)=\frac\pi8x^{-3/4}$ and $\Upsilon(y)/\Upsilon(x)=(y/x)^{1/2}$, and the product in
+\Cref{thm:valent}(c) equals $\tanh(\pi n/2)\coth(\pi m/2)$, which tends to $\sin^2\frac\pi2=1$. For the
+threshold, $\mu_c$ is a constant multiple of $x^{c/4}\mu_F$; for $c\le0$ the weight $x^{c/4}$ is bounded on
+the support, and \Cref{prop:weighted} gives indeterminacy if and only if
+$\sum_{n\text{ odd}}W_F(n^4)n^{-8}n^{-c}\asymp\sum n^{-3-c}<\infty$. Hence \emph{$\mu_c$ is indeterminate if and
+only if $c>-2$}, and the threshold measure $\mu_{-2}$ is determinate. The closed forms, the masses and
+the product law are also checked numerically (\Cref{app:repro}). \Cref{tab:indices} collects the
+indices that the criterion gives on the closed forms we know.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{llll}
+\toprule
+\estabhead{problem} & \estabhead{parameter} & $a(\mu_F)$ & $a(\mu_\sigma)$, $\sigma\ne F$\\
+\midrule
+Valent's rates (\Cref{thm:valent}) & $\nu\in(0,1)$ & $(1-\nu)/2$ & $(1+\nu)/2$\\
+Berg--Valent quartic & $\nu=\frac12$ & $\frac14$ & $\frac34$\\
+Valent's cubic \cite{Valent1999}, GLRV P2 \cite{GLRV2006} & $\nu=\frac13$ & $\frac13$ & $\frac23$\\
+GLRV P1 \cite{GLRV2006} & $\nu=\frac23$ & $\frac16$ & $\frac56$\\
+Al-Salam--Carlitz & $\gamma_q=\log a/\log(1/q)$ & $(1-\gamma_q)/2$ & $(1+\gamma_q)/2$ (Krein)\\
+Stieltjes--Wigert & $0<q<1$ & $\frac14$ & $\frac34$ (Krein and $\sigma=1$)\\
+\bottomrule
+\end{tabular}
+\caption{Critical indices of N-extremal solutions; all listed measures lie in $\mathbf B$. The
+first four rows are \Cref{thm:valent}. The last two rows are $q$-families of order zero,
+outside the class of this paper; their entries follow from \Cref{prop:weighted} and the
+closed forms of \cite[Ex.~4.2--4.3]{BergSzwarc2026}, and cover only the solutions named. For
+Al-Salam--Carlitz ($0<q<1<a<1/q$), $W_F\asymp x^{1+\gamma_q}$ on the Friedrichs support and
+$W_\infty\asymp x^{1-\gamma_q}$ on the Krein support; for Stieltjes--Wigert, $W_F\asymp x^{3/2}$ and
+$W_\infty,W_1\asymp x^{1/2}$. At the critical index the terms of $\mathcal S$ have a positive limit along the
+geometric support, so $\mathcal S$ diverges. These growth rates were checked numerically
+(\Cref{app:repro}).}\label{tab:indices}
+\end{table}

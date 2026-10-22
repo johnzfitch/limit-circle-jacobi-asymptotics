@@ -1,0 +1,96 @@
+\section{Computational cross-checks and reproducibility}\label{app:repro}
+
+No proof in this paper depends on a computation. This appendix lists the computations that were
+run alongside the proofs as cross-checks, and how the eigenvalues of \Cref{sec:numerics} were
+computed. Each item names the program that produced it; the programs and their outputs are listed in
+\Cref{app:availability}.
+
+\subsection{Cross-checks of closed forms and identities}
+
+The following identities, all proved in the text, were also checked in exact arithmetic (SymPy) or at
+$40$ to $60$ significant digits (mpmath) by \texttt{exact\_checks.py}, unless another program is named.
+\begin{itemize}
+\item The Beta-function forms of $I_\alpha$ and $J_\alpha$ in \eqref{eq:constants} and of $C_\alpha$ in
+  \Cref{cor:balanced}, and the identity between Valent's density and $C_\alpha c^{-1/\alpha}$ for balanced rates.
+\item The drift integral $-\kappa'\pi/(2\alpha)$ of \Cref{prop:nearfield}.
+\item The block identities of \Cref{blem:block}, the generator \eqref{eq:X} and the exact Euler-step
+  matrix in the proof of \Cref{lem:airycoords}.
+\item The Bessel facts (B1)--(B3), the matching coefficients in the proof of \Cref{thm:dimer} and the limits
+  defining $Q$ in \eqref{eq:Q}; the birth--death dictionary and the Krein offset of \Cref{cor:bd}; the
+  closed form of $\vp$ for birth--death chains, against direct products on the chain BD6
+  (\texttt{varpi\_bd.py}).
+\item Olver's envelope constants in (A3)--(A4) of \Cref{sec:olver}: $\mathsf m_0=0.48483$ at $x=\frac12$, and
+  $\mathsf k(x)(1+|x|)^{-1/2}$ increasing to $1$ as $x\to-\infty$ (\texttt{airy\_envelopes.py}).
+\item The elimination behind the local density $\mathcal D$ of \Cref{prop:K2} and the discrete transport
+  identity of \Cref{lem:R} (\texttt{p2\_reduction.py}; the hand derivations are in
+  \Cref{app:transport,app:p2}); the finite part and the $w$-substitution in \Cref{prop:K2}; and $K_2$ by direct
+  quadrature of $G_2$, which agrees with $(2\alpha-1)J_\alpha/24$ to $2\cdot10^{-12}$.
+\item The split of the Weyl--Moyal term in \Cref{rem:moyal} into $+(\alpha-1)^2J_\alpha/(24N)$ and
+  $-\alpha^2J_\alpha/(24N)$.
+\item The range $[-0.2078862\ldots,\,0.0933663\ldots]$ of $\zeta(-\frac12,\cdot)$ on $(0,1]$ in
+  \Cref{prop:hurwitz}, with the maximum at $\theta=0.3027218\ldots$.
+\item The squeezing expansions of \Cref{cor:squeeze}, and interval-arithmetic values of the constants.
+\item The Berg--Valent closed forms of \Cref{sec:moments}: the masses $1/(DG_F')$ and $-1/(BD')$ against
+  \cite[(29)--(30)]{BergSzwarc2026}, the closed forms of $W_F$ and $W_\infty$, and the product law of
+  \Cref{thm:valent}(c) (\texttt{bv\_closed\_forms.py}).
+\item The $q$-family rows of \Cref{tab:indices} (\texttt{qfamily\_indices.py}). For an order-zero problem
+  Hadamard's theorem gives $G_\sigma=C z^m\prod_j(1-z/x_j)$ over the support, so
+  $W_\sigma=1/(\mu_\sigma(\{x\})G_\sigma'^2)$ is computable up to a constant from the masses alone. For
+  Al-Salam--Carlitz the masses are those of \cite[Ex.~4.2]{BergSzwarc2026}; at $(q,a)=(0.5,1.5)$ and
+  $(0.3,2)$ the local exponents of $W_F$ and $W_\infty$ agree with $1+\gamma_q$ and $1-\gamma_q$ to seven
+  digits, with $W/x^{1\pm\gamma_q}$ converging to a positive constant. For Stieltjes--Wigert the masses
+  are $1/\sum_n\hat p_n(x)^2$ with the polynomials of \cite[Ex.~4.3]{BergSzwarc2026}, at the zeros of
+  Ramanujan's function; at $q=0.5$ and $0.3$ the exponents of $W_F$, $W_1$ and $W_\infty$ approach
+  $\frac32$, $\frac12$ and $\frac12$ to six digits, again with positive limits of $W/x^{e}$. The same
+  method reproduces $W_F$ of the Berg--Valent problem to relative $2\cdot10^{-6}$ at $n=7$.
+\item The test of \Cref{conj:H} (\texttt{conjH.py}): $\Phi_r(\lambda_j)/\pi-j$ is $-0.50040$, $-0.50019$ and
+  $-0.50032$ at $j=200$ on three chains, approaching $-\frac12$ like $1/j$, while with $o,e$ in place of
+  $|o|,|e|$ the first chain ($\kappa_o<0$) gives $-0.70040$.
+\end{itemize}
+
+\subsection{The eigenvalue computations}
+
+The Sturm counts of \Cref{sec:numerics} are the only long computation (\texttt{sturm.py},
+\texttt{truncation\_run.py}; with a diagonal \texttt{sturm\_diag.py}, \texttt{diag\_run.py},
+\texttt{diag\_balanced.py}). The $k$-th positive eigenvalue was found by bisection on the counts, and
+for most chains by $256$-section, which evaluates $256$ spectral parameters per pass over the sites;
+on a test case $256$-section left the eigenvalues bit-for-bit unchanged and cut the number of passes
+about fourfold. The cases B3, SQ6m1 and D1 at $t=0$ were computed with bisection, the others with
+$256$-section. The counts were run on a GPU (NVIDIA RTX 4090) with one spectral parameter per thread in
+float64. On a bounded workload ($n=2\cdot10^6$ sites, $64$ spectral parameters, chain B3, including
+transfers and synchronisation) the GPU kernel took $0.54$\,s against $10.3$\,s for the vectorised CPU
+loop, with identical counts (\texttt{gpu\_probe.py}), and the eigenvalues of a truncation of size $\approx800$ agree with a $40$-digit bisection in
+mpmath (\texttt{validate\_sturm.py}). The maximal truncation size was reduced from $2^{26}$ to $2^{24}$ and
+then $2^{22}$ sites for the chains with slowly decaying tails, which lowers the largest level reached for
+them (last column of \Cref{tab:numerics}). The chain parameters are in \texttt{chains.py}; the table and
+\Cref{fig:laws} are produced from the stored truncation data by \texttt{make\_table.py} and
+\texttt{fig\_laws.py}, without computing new eigenvalues. The exact checks of the previous subsection are
+small CPU computations.
+
+\subsection{Code and data availability}\label{app:availability}
+
+The \LaTeX\ sources of this paper, all programs named above (folder \texttt{scripts}) and their
+outputs (folder \texttt{outputs}, including the per-eigenvalue truncation data behind
+\Cref{tab:numerics} and \Cref{fig:laws}) are published in the repository
+\href{https://github.com/johnzfitch/limit-circle-jacobi-asymptotics}{\texttt{github.com/johnzfitch/limit-circle-jacobi-asymptotics}},
+release tag \texttt{v1.0}. The file \texttt{SHA256SUMS.txt} in the release lists a SHA-256 checksum for
+every file. From the repository root, with Python~3, mpmath and SymPy, the cross-checks are reproduced by
+\begin{quote}\small\ttfamily
+python scripts/exact\_checks.py\\
+python scripts/p2\_reduction.py\\
+python scripts/airy\_envelopes.py\\
+python scripts/varpi\_bd.py\\
+python scripts/bv\_closed\_forms.py\\
+python scripts/qfamily\_indices.py\\
+python scripts/conjH.py
+\end{quote}
+each of which prints its results (the stored copies are the corresponding files in \texttt{outputs}).
+The eigenvalue data are reproduced by \texttt{python scripts/validate\_sturm.py},
+\texttt{python scripts/truncation\_run.py} (all chains, or one case with
+\texttt{--case <chain> <t>}), \texttt{python scripts/diag\_run.py} and
+\texttt{python scripts/diag\_balanced.py}; these need CuPy and a CUDA device (\texttt{sturm.py} also
+contains the NumPy reference implementation of the count that was used for validation). Finally
+\texttt{python scripts/make\_table.py} and \texttt{python scripts/fig\_laws.py} rebuild
+\Cref{tab:numerics} and \Cref{fig:laws} from the stored data (the figure script uses the plotting
+style module \texttt{es\_figure} of the typesetting kit, and matplotlib). The computations were designed and run
+by the author; their independence is from the asymptotic proofs, not from the author.

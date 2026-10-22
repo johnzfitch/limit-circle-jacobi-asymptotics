@@ -1,0 +1,335 @@
+\section{The turning point and the missing quarter-period}\label{sec:turning}
+
+This section follows the frame angle $\chi_m$ from site $0$ to a block $M$ well inside the
+oscillatory region and shows that it equals the discrete Bohr--Sommerfeld sum up to $M$,
+plus a drift, with no quarter-period (\Cref{prop:nearfield}). We first explain the
+result as a budget of phase, region by region, and then prove the three entries of the
+budget. The argument is the same for balanced and dimerised links, so we treat them
+together under the following hypothesis.
+
+\begin{hypothesis}\label{hyp:Hk}
+$a_n=c\,n^\alpha\bigl(1+\kappa'(-1)^n/n+r_n\bigr)$ with $r$ as in \Cref{hyp:H} and
+$2|\kappa'|<\alpha-1$; the diagonal satisfies $|b_n|\le C_b(1+n)^\beta$ with
+$\beta<\alpha-1-2|\kappa'|$.
+\end{hypothesis}
+
+\noindent The odd links $A_m=a_{2m+1}$ see the alternating term only through a constant:
+$A_m=c\,N_m^\alpha(1+\hat r_{2m+1})$ with $\hat r_n:=r_n-\kappa'/n$, and $\hat r$ again
+satisfies \Cref{hyp:H}. We write $\bar\ell_m:=\alpha\log(N_{m+1}/N_m)$ for the increment of
+$\log(c\,N^\alpha)$ and $\Delta\hat e_m:=\log(1+\hat r_{2m+3})-\log(1+\hat r_{2m+1})$,
+so that $\log A_{m+1}-\log A_m=\bar\ell_m+\Delta\hat e_m$ with $|\Delta\hat e_m|\le CN_m^{-1-\delta}$.
+
+\subsection{The phase budget}
+
+Measure the distance from the turning point on the Airy scale
+\begin{equation}\label{eq:ell}
+  \ell:=\bigl(N_\lambda/(16\alpha)\bigr)^{1/3},\qquad x_m:=4\ell^2(\mu_m-2)=-4\ell^2u_m .
+\end{equation}
+Then $x_m>0$ on the \emph{hyperbolic} side, where $2A_m<\lambda$, and $x_m<0$ on the
+\emph{oscillatory} side. Near the turning point $x_m$ decreases by $\ell^{-1}(1+o(1))$ per
+block (\Cref{lem:airycoords}), so it is the variable in which the turning point has a fixed
+shape, and the window $|x_m|<K$ is about $2K\ell$ blocks, that is $O(N_\lambda^{1/3})$ sites,
+wide. Fix $K\ge1$, let $m_L$ be the largest block with $x_m\ge K$ and $m_R$ the least
+with $x_m\le-K$. The blocks then fall into the regions sketched in \Cref{fig:budget}, and
+each contributes a definite amount to $\chi$.
+
+\emph{Below the turning point each block contributes $\pi$.} For $m\le m_L$ the regular
+solution has no sign change: it is positive and increasing (\Cref{lem:hyperbolic}). The
+reference solutions $\Pt_{2m}$ and $\Rt_{2m+1}$, on the other hand, change sign from each
+block to the next, by \eqref{eq:PR}. In the coordinates of \Cref{thm:count}, which expand
+$p$ in $\Pt$ and $\Rt$, the phase therefore advances by $\pi$ per block in the following sense: after
+block $m$ the lifted angle $\psi_{2m-1}$ lies in the open quarter $(m\pi-\pi/2,m\pi)$. The increment of a
+single block is not exactly $\pi$; only the quarter is fixed, and after the hyperbolic region
+$\psi_{2m_L-1}$ lies in $(m_L\pi-\pi/2,m_L\pi)$. Since
+$\varphi_m=\pi$ there too, the hyperbolic region contributes exactly its terms $m_L\pi$ of
+the sum $S$, up to a position inside one quarter that the window decides.
+
+\emph{The Airy window contributes $\Omega(K)-\pi/4$.} Across the window the block is a small
+perturbation of $T_1(2)=-I+\mathcal N$, where $\mathcal N$ is nilpotent with kernel
+$e_-=(1,-1)/\sqrt2$, and each block acts on the pair (amplitude, slope) as an Euler step
+of length $\ell^{-1}$ for the Airy equation $y''=xy$ (\Cref{lem:airycoords}). The amplitude
+$y$ is the component along $e_-$. The regular
+solution enters the window as the recessive solution $\Ai$, because it was increasing,
+and leaves it at $x=-K$ with the Airy phase
+$\Omega(K)=\arg\bigl(\Ai(-K)-i\Ai'(-K)/\sqrt K\bigr)$, measured from the direction $e_-$.
+That direction has angle $-\pi/4$, so (\Cref{blem:window})
+\[
+  \chi_{m_R}-m_R\pi\ \longrightarrow\ \Omega(K)-\frac\pi4 .
+\]
+In the same window the sum $S$ falls short of $\pi$ per block by
+$T_K:=\sum_{m_L<m<m_R}(\pi-\varphi_m)\to\frac23K^{3/2}$ (\Cref{lem:turningsum}), which is the
+classical action across the window. Hence
+\begin{equation}\label{eq:budget-window}
+  \chi_{m_R}-\sum_{m<m_R}\varphi_m\ \longrightarrow\ \Omega(K)-\frac\pi4+\frac23K^{3/2}
+  =O(K^{-3/2}),
+\end{equation}
+because $\Omega(K)=\frac\pi4-\frac23K^{3/2}+O(K^{-3/2})$ (\Cref{lem:airyphase}). The action
+$\frac23K^{3/2}$ is already in $S$, and what is left over is $\frac\pi4-\frac\pi4$.
+
+\emph{The two quarter-periods.} The $+\frac\pi4$ in $\Omega$ is the Maslov phase of the
+turning point, the $-\frac\pi4$ in $\Ai(-\zeta)\sim\pi^{-1/2}\zeta^{-1/4}\cos(\frac23\zeta^{3/2}-\frac\pi4)$.
+The $-\frac\pi4$ is set by the limit-circle end. At the turning point $\lambda=2a$ the
+local solution of $a u_{k-1}+au_{k+1}=\lambda u_k$ is the band-edge wave $u_k=\mathrm{const}$,
+which takes equal values on the two sites of a block. The coordinates of
+\Cref{thm:count} measure a solution against $\Pt$ and $\Rt$, which live on alternate
+sites. The block frame $E_m=D_m\Et(\mu_m)$ first rescales them by $D_m$ to equal amplitude
+on block $m$, and in that scaling a vector with equal values on the two sites has angle
+$-\frac\pi4$ modulo $\pi$: it is the direction $e_-$. For balanced links the frames tend to
+the identity as $m\to\infty$, and $D_m\to I$ precisely because $\Pt$ and $\Rt$ were normalised by $\vp$ to have
+equal amplitude at infinity (\Cref{prop:zero}(c)). So the $-\frac\pi4$ measured at the
+turning point is the $-\frac\pi4$ read at the limit-circle end, in the coordinates in which
+the boundary condition of $H_t$ is imposed. It is the band-edge direction in the staggered
+equal-amplitude coordinates, not an independent Maslov index of the end: the absence of an extra
+constant is relative to this normalisation, which is fixed once by the data at $\lambda=0$. A change of
+the boundary coordinates changes the angle of a given extension and its offset together, without
+changing any spectrum. (For dimerised links $D_m$ keeps drifting
+like $\operatorname{diag}(N_m^{\kappa'},N_m^{-\kappa'})$, and \Cref{sec:dimer} follows that drift
+to the end.) The cancellation takes place in $\psi$, before an extension is chosen, which is why every
+extension obeys a law $j\pi+t$ and none obeys $(j+\frac14)\pi+t$.
+
+\emph{Beyond the window each block adds $\varphi_m$ and a drift.} On the oscillatory side
+the adiabatic normal form (\Cref{prop:adiabatic}) applies. Each block adds its rotation
+$\varphi_m$ and the frame drift $\bar\varepsilon_m\tan(\varphi_m/2)$ with
+$\bar\varepsilon_m=-2\kappa'/N_m$, and the drifts add up to $-\kappa'\pi/(2\alpha)$. This is
+$0$ for balanced links.
+
+Adding the entries gives the near-field law
+\begin{equation}\label{eq:budget}
+\begin{aligned}
+  \chi_M&=\underbrace{m_L\pi}_{\text{hyperbolic}}
+  +\underbrace{\sum_{m_L\le m<m_R}\varphi_m+\Bigl(\Omega(K)-\frac\pi4+T_K\Bigr)}_{\text{Airy window}}
+  +\underbrace{\sum_{m_R\le m<M}\varphi_m-\frac{\kappa'\pi}{2\alpha}}_{\text{oscillatory}}+o(1)\\
+  &=\sum_{m<M}\varphi_m-\frac{\kappa'\pi}{2\alpha}+o(1),
+\end{aligned}
+\end{equation}
+where $o(1)$ is taken as $\lambda\to\infty$ and then $K\to\infty$. For balanced links $M=\infty$
+and $\chi_\infty=\psi$, so $\psi=S+o(1)$. For dimerised links the frames do not converge, and
+the far field beyond $M$ is the subject of \Cref{sec:dimer}.
+
+\begin{schemfigure}
+\begin{tikzpicture}
+\begin{axis}[es plot, width=0.97\linewidth, height=7.6cm,
+  xmode=log, ymode=log, xmin=1, xmax=1e6, ymin=2e-7, ymax=60,
+  xlabel={site $N$ (logarithmic)}, ylabel={angle per block},
+  xtick={1,10,100,1000,10000,100000,1000000},
+  ytick={1e-6,1e-4,1e-2,1}, ymajorgrids=false,
+  clip=false]
+  % regions
+  \addplot[draw=none, fill=esPlotGrid, fill opacity=0.6] coordinates {(88,2e-7) (112,2e-7) (112,60) (88,60)} \closedcycle;
+  \addplot[draw=none, fill=esPlotGrid, fill opacity=0.35] coordinates {(1e4,2e-7) (1e6,2e-7) (1e6,60) (1e4,60)} \closedcycle;
+  % rotation per block 2 arcsin(min(1,(N_lambda/N)^alpha)), alpha = 2, N_lambda = 100;
+  % beyond N = 200 the arcsine is evaluated by its series u + u^3/6 + 3u^5/40,
+  % because pgfmath loses the arcsine of small arguments
+  \addplot[esPlotBlue, line width=1.2pt, samples=300, domain=0:2.30103, variable=\t]
+    ({10^\t},{2*rad(asin(min(1,(100/10^\t)^2)))});
+  \addplot[esPlotBlue, line width=1.2pt, samples=200, domain=2.30103:5.45, variable=\t]
+    ({10^\t},{2*(100/10^\t)^2*(1+(100/10^\t)^4/6+3*(100/10^\t)^8/40)});
+  % frame drift 2|kappa'|/N, kappa' = 0.25
+  \addplot[esPlotAmber, line width=1.1pt, dashed, domain=0:6, samples=20, variable=\t]
+    ({10^\t},{0.5/10^\t});
+  \draw[esPlotGrey, densely dotted] (axis cs:100,2e-7) -- (axis cs:100,60);
+  \draw[esPlotGrey, densely dotted] (axis cs:1e4,2e-7) -- (axis cs:1e4,60);
+  \node[font=\scriptsize, text=esPlotInk, anchor=south] at (axis cs:100,60) {$N_\lambda$};
+  \node[font=\scriptsize, text=esPlotInk, anchor=south] at (axis cs:1e4,60) {$N_{\rm dec}$ ($\tau=1$)};
+  % labels on the curves
+  \node[font=\scriptsize, text=esPlotBlue, anchor=south west] at (axis cs:1000,1.2e-2) {rotation $\varphi_m$};
+  \node[font=\scriptsize, text=esPlotAmber, anchor=north west] at (axis cs:1.6,2.5e-3) {frame drift $|\varepsilon_m|\approx2|\kappa'|/N_m$};
+  % budget annotations
+  \node[font=\scriptsize, align=center, text=esPlotInk, fill=esPlotPanel, inner sep=2pt] at (axis cs:7,0.15)
+    {hyperbolic\\ $\varphi_m=\pi$; $\psi$ advances\\ by $\pi$ per block};
+  \node[font=\scriptsize, align=left, text=esPlotInk, fill=esPlotPanel, inner sep=2pt, anchor=west] at (axis cs:125,14)
+    {Airy window, $\asymp N_\lambda^{1/3}$ sites:\\ $\Omega(K)-\frac\pi4+T_K\to0$};
+  \node[font=\scriptsize, align=center, text=esPlotInk, fill=esPlotPanel, inner sep=2pt] at (axis cs:1100,3e-6)
+    {near field: $\varphi_m$ plus drift,\\ drift total $-\kappa'\pi/(2\alpha)$};
+  \node[font=\scriptsize, align=center, text=esPlotInk, fill=esPlotPanel, inner sep=2pt] at (axis cs:1e5,2e-2)
+    {far field ($\kappa'\ne0$):\\ Bessel of order $\nu$};
+\end{axis}
+\end{tikzpicture}
+\end{schemfigure}
+\esfiglabel{fig:budget}%
+\schemcap{FIG.\ \theesfig}{The phase budget along the chain, drawn for $\alpha=2$, $N_\lambda=100$ and
+$\kappa'=\frac14$. Below the turning point $N_\lambda$ each block contributes $\pi$ to the sum $S$, and
+the phase $\psi$ advances by $\pi$ per block up to a position inside one quarter. In the Airy
+window the Maslov phase $\frac\pi4$ of the turning point cancels the $-\frac\pi4$ fixed by
+the limit-circle end in the equal-amplitude coordinates set at $\lambda=0$, so no quarter-period
+survives in those coordinates. Beyond it each block adds its
+rotation and a drift. Where the rotation falls below the frame drift, near $N_{\rm dec}$, a
+dimerised chain becomes a Bessel problem (\Cref{sec:dimer}).}
+
+The rest of the section proves the three entries. The block geometry and the error sums
+that the proofs need are collected in \Cref{app:routine}.
+
+\subsection{The hyperbolic side}
+
+\begin{lemma}[Monotone region]\label{lem:hyperbolic}
+If $\lambda-b_k\ge a_k+a_{k+1}$ for $0\le k\le k_1$, then
+$1=p_0\le p_1\le\dots\le p_{k_1+1}$ and $\psi_k\in(k\pi/2,(k+1)\pi/2)$ for $0\le k\le k_1$.
+\end{lemma}
+
+\begin{proof}
+Inductively,
+\[
+  p_{k+1}=\frac{(\lambda-b_k)p_k-a_kp_{k-1}}{a_{k+1}}\ge\frac{(\lambda-b_k-a_k)\,p_k}{a_{k+1}}\ge p_k .
+\]
+By \Cref{thm:count}(i), $v_k$ is a positive multiple of
+\[
+  \Bigl(\frac{p_{2m}}{\Pt_{2m}},\frac{p_{2m+1}}{\Rt_{2m+1}}\Bigr)\quad(k=2m),\qquad
+  \Bigl(\frac{p_{2m+2}}{\Pt_{2m+2}},\frac{p_{2m+1}}{\Rt_{2m+1}}\Bigr)\quad(k=2m+1),
+\]
+whose entries have the signs $(-1)^m,(-1)^m$ and $(-1)^{m+1},(-1)^m$ respectively, by \eqref{eq:PR}. In
+both cases the angle of $v_k$ lies in $(k\pi/2,(k+1)\pi/2)$ modulo $2\pi$. All
+$\gamma_k>0$, so each canonical increment lies in $[0,\pi)$; starting from
+$\psi_0\in(0,\pi/2)$, the lift $\psi_k$ lies in an interval of length $3\pi/2$ that meets
+the class $(k\pi/2,(k+1)\pi/2)+2\pi\ZZ$ only once.
+\end{proof}
+
+\noindent For $\lambda\ge\lambda_0(K)$ the hypothesis holds with $k_1=2m_L$, and therefore
+$\psi_{2m_L-1}\in(m_L\pi-\pi/2,m_L\pi)$ (\Cref{lem:startwindow}).
+
+\subsection{The Airy window}
+
+\begin{boxedlemma}{Airy window}{window}
+Assume \Cref{hyp:Hk} and fix $K\ge1$. Then
+\[
+  \limsup_{\lambda\to\infty}\Bigl|\chi_{m_R}-m_R\pi-\bigl(\Omega(K)-\tfrac\pi4\bigr)\Bigr|
+  \le C_0\,\eta_A(K),\qquad \eta_A(K):=(1+\sqrt K)\,\frac{\Ai(K)}{\Bi(K)},
+\]
+where $\Omega$ is the Airy phase of \Cref{lem:airyphase} and $C_0$ is absolute.
+\end{boxedlemma}
+
+The proof works in coordinates adapted to the turning point, in which the blocks become
+Euler steps of the Airy equation. Write $z_m:=D_m^{-1}v_{2m-1}$ and define $(X_m,Y_m)$ by
+\begin{equation}\label{eq:XY}
+  z_m=(-1)^m\bigl(X_m\,e_-+\tfrac{Y_m}{4\ell}\,e_+\bigr),\qquad\text{that is}\qquad
+  (X_m,Y_m)^{\mathsf T}=(-1)^mC_\ell^{-1}z_m,\quad C_\ell:=\bigl[e_-,\ e_+/(4\ell)\bigr].
+\end{equation}
+The pair $(X_m,Y_m)$ will track $(y(x_m),-y'(x_m))$ for a solution $y$ of the Airy
+equation $y''=xy$. A direct computation of $D_m^{-1}v_{2m-1}$ from \Cref{thm:count}(i)
+and \eqref{eq:PR} gives the exact form
+\begin{equation}\label{eq:zm}
+  z_m\ \propto\ (-1)^mA_m^{1/2}\bigl(p_{2m},\,-c'_m\,p_{2m-1}\bigr),\qquad
+  c'_m:=a_{2m}/a_{2m+1},
+\end{equation}
+with a positive constant of proportionality; no normalisation by $\vp$ or $\rho_m$
+remains. So $X_m$ is, up to a factor, the average of $p$ over the block and $Y_m/\ell$ its
+difference. The \emph{Airy angle} of block $m$ is
+$\varrho_m:=\hl C_\ell^{-1}\bigl(\hl D_m^{-1}(\psi_{2m-1})-m\pi\bigr)$, where $\hl C_\ell$ is the
+lift of $C_\ell$ with $\hl C_\ell(0)=-\pi/4$, the angle of $e_-$. \Cref{lem:airycoords}
+shows that the blocks act on $(X,Y)$ as Euler steps $I+h_m\mathsf B(x_m)$ of the Airy system, with
+$h_m=x_m-x_{m+1}=\ell^{-1}(1+o(1))$ and $\mathsf B(x)=\bigl(\begin{smallmatrix}0&1\\x&0\end{smallmatrix}\bigr)$,
+that $\varrho_{m+1}$ is the principal lift of one step applied to $\varrho_m$, and that
+the window starts with $X_{m_L}>0$ and $Y_{m_L}/X_{m_L}\ge-C\ell/N_\lambda$.
+
+\begin{proof}[Proof of \Cref{blem:window}]
+The argument has three parts: the discrete trajectory follows an Airy trajectory, that
+trajectory is almost exactly $\Ai$, and its phase is read in the frame at $m_R$.
+
+\step{the Airy flow} Let $\mathcal U(x,x')$ be the propagator of $(X,Y)'=-(Y,xX)$ in the
+decreasing variable $x$, which is the system satisfied by $(y,-y')$ for $y''=xy$. Then
+$\|\mathcal U(x_{m+1},x_m)-I-h_m\mathsf B(x_m)\|\le C(K)h_m^2$. With \Cref{lem:airycoords}(a),
+telescoping gives
+$\|\prod_{m'<m}M_{m'}-\mathcal U(x_m,x_{m_L})\|\le e^{C(K)}\bigl(C(K)\ell^{-1}+o(1)\bigr)\to0$
+uniformly in $m$ and in the initial direction. The discrete vectors therefore stay
+uniformly close to an Airy trajectory and away from $0$, and the principal steps
+$\varrho_m$ stay within $o(1)$ of the continuous lifted angle of that trajectory.
+
+\step{the trajectory is $\Ai$} Every limiting trajectory starts at $x=K$ with $X>0$ and
+$Y/X=:\varsigma\ge0$, so it is a multiple of $y=\Ai+\epsilon\Bi$ with
+$\epsilon=(\varsigma\Ai(K)+\Ai'(K))/(-\Bi'(K)-\varsigma\Bi(K))$. Since $\Bi,\Bi'>0$, the mediant
+inequality gives $|\epsilon|\le\max(\Ai(K)/\Bi(K),|\Ai'(K)|/\Bi'(K))\le C_0\eta_A(K)$ for
+every $\varsigma\in[0,\infty]$ (\cite{DLMF}, 9.7.5--9.7.8; equation numbers of the form 9.7.5
+refer to that source throughout). The Wronskian $\Ai\Bi'-\Ai'\Bi=1/\pi$ gives
+$\Ai(K)+\epsilon\Bi(K)=\pi^{-1}/(\Bi'(K)+\varsigma\Bi(K))>0$, and since $\Ai/\Bi$ decreases on
+$[0,\infty)$, $y>0$ on $[0,K]$. So $\varrho$ stays in $(-\pi/2,\pi/2)$ on the hyperbolic part
+of the window.
+
+\step{reading the phase at $m_R$} By definition $\chi_{m_R}=\hl{\Et}(\mu_{m_R})^{-1}(\hl D_{m_R}^{-1}(\psi_{2m_R-1}))$,
+so $\chi_{m_R}-m_R\pi$ is the image of $\varrho_{m_R}$ under the lift of $\Et(\mu_{m_R})^{-1}C_\ell$
+that sends $0$ to $-\pi/4$. Since $\Et^{-1}$ multiplies $e_-$ by $e^{-s}$ and $e_+$ by $e^{s}$,
+this map sends $(X,Y)$ to a positive multiple of $Xe_-+qYe_+$ with $q=e^{2s}/(4\ell)$, and
+$q=\sqrt{4-u}/(2\sqrt{|x_{m_R}|})\to1/\sqrt K$. Hence
+$\chi_{m_R}-m_R\pi\to-\pi/4+\Omega_\epsilon(K)$, where $\Omega_\epsilon(\zeta)$ is the
+continuous lift of $\arg\bigl(y(-\zeta)-iy'(-\zeta)/\sqrt\zeta\bigr)$ on $(0,K]$, equal to
+$\pi/2$ at $0^+$. The Wronskian and DLMF 9.7.9, 9.7.11 give
+$|(y,y'/\sqrt K)(-K)|\ge cK^{-1/4}$, so $|\Omega_\epsilon(K)-\Omega_0(K)|\le C|\epsilon|$.
+\end{proof}
+
+\begin{lemma}[Airy phase]\label{lem:airyphase}
+Let $\Omega$ be the continuous lift on $(0,\infty)$ of
+$\arg\bigl(\Ai(-\zeta)-i\Ai'(-\zeta)/\sqrt\zeta\bigr)$ with $\Omega(0^+)=\pi/2$. Then
+$\Omega(\zeta)=\pi/4-\tfrac23\zeta^{3/2}+O(\zeta^{-3/2})$.
+\end{lemma}
+
+\begin{proof}
+By DLMF 9.7.9 and 9.7.10, $\Ai(-\zeta)=\pi^{-1/2}\zeta^{-1/4}(\cos\phi+O(\zeta^{-3/2}))$ and
+$\Ai'(-\zeta)=\pi^{-1/2}\zeta^{1/4}(\sin\phi+O(\zeta^{-3/2}))$ with $\phi=\frac23\zeta^{3/2}-\frac\pi4$.
+Hence
+\[
+  \Ai(-\zeta)-i\Ai'(-\zeta)/\sqrt\zeta=\pi^{-1/2}\zeta^{-1/4}\bigl(e^{-i\phi}+O(\zeta^{-3/2})\bigr),
+\]
+and $\Omega(\zeta)=-\phi+2\pi n_0+O(\zeta^{-3/2})$ for a fixed integer $n_0$. Writing
+$\Ai(-\zeta)=r\cos\Omega$, $-\Ai'(-\zeta)/\sqrt\zeta=r\sin\Omega$, the Airy equation gives
+$\Omega'=-\sqrt\zeta-\sin(2\Omega)/(4\zeta)$, so $\Omega$ is decreasing whenever
+$\cos\Omega=0$, and the $k$-th zero $a_k$ of $\Ai$ has $\Omega(|a_k|)=\pi/2-k\pi$. By DLMF
+9.9.6 and 9.9.18, $\frac23|a_k|^{3/2}=(4k-1)\pi/4+O(1/k)$, so $-\phi=\pi/2-k\pi+o(1)$ there,
+and $n_0=0$.
+\end{proof}
+
+\begin{lemma}[Turning sum]\label{lem:turningsum}
+$T_K=\sum_{m_L<m<m_R}(\pi-\varphi_m)\to\frac23K^{3/2}$ as $\lambda\to\infty$ at fixed $K$.
+\end{lemma}
+
+\begin{proof}
+Blocks with $x_m\ge0$ have $\varphi_m=\pi$. For $-K<x_m<0$,
+$\pi-\varphi_m=2\arccos(1-u_m/2)=2\sqrt{u_m}(1+O(u_m))=\ell^{-1}\sqrt{|x_m|}\,(1+O(K/\ell^2))$.
+With grid steps $h_m=\ell^{-1}(1+o(1))$ this is a Riemann sum of $\sqrt\zeta$ on
+$[0,|x_{m_R}|]$, and $|x_{m_R}|\to K$.
+\end{proof}
+
+\subsection{The near field}
+
+\begin{proposition}{Near field}{nearfield}
+Assume \Cref{hyp:Hk}. If $\kappa'=0$ let $M=\infty$; if $\kappa'\ne0$ let
+$M=M(\lambda)$ satisfy $N_M/N_\lambda\to\infty$ and $N_M^{\alpha-1}/\lambda\to0$. Then
+\[
+  \chi_M=\sum_{m<M}\varphi_m-\frac{\kappa'\pi}{2\alpha}+o(1)\qquad(\lambda\to+\infty),
+\]
+where for $M=\infty$ the left side is $\psi(\lambda)$. The $o(1)$ is uniform for $\kappa'$ in
+compact subsets of $(-(\alpha-1)/2,(\alpha-1)/2)$ when the other data are fixed.
+\end{proposition}
+
+\begin{proof}
+This is \eqref{eq:budget} made precise. Apply \Cref{prop:adiabatic} from $m_1=m_R$ to $M$
+with the split
+\[
+  \bar\varepsilon_m:=-2\kappa'/N_m,\qquad \bar\sigma_m:=s(\mu_m)-s(\mu_me^{-\bar\ell_m}),
+\]
+which keeps the drift and the smooth part of the frame change. By \Cref{lem:nearsums}
+the hypotheses of \Cref{prop:adiabatic} hold for $\lambda\ge\lambda_0(K)$, and the error
+$\sum_{m_R\le m<M}\mathcal E_m$ together with the boundary terms $|y_{m_R}-\chi_{m_R}|$ and
+$|y_M-\chi_M|$ is at most $CK^{-3/2}+o(1)$.
+
+\step{assembly} Blocks $m\le m_L$ have $\varphi_m=\pi$, including the finitely many small
+$m$ once $\lambda>2\max_{m<m_0}A_m$. So $\sum_{m<m_R}\varphi_m=m_R\pi-T_K$. By \Cref{blem:window},
+\Cref{lem:turningsum} and \Cref{prop:adiabatic},
+\[
+  \limsup_{\lambda\to\infty}\Bigl|\chi_M-\sum_{m<M}\varphi_m-\sum_{m_R\le m<M}\bar\varepsilon_m\tan\tfrac{\varphi_m}2\Bigr|
+  \le\bigl|\Omega(K)+\tfrac23K^{3/2}-\tfrac\pi4\bigr|+C_0\eta_A(K)+CK^{-3/2},
+\]
+and the right side tends to $0$ as $K\to\infty$ by \Cref{lem:airyphase}.
+
+\step{the drift} $\tan(\varphi_m/2)=(\mu_m/2)(1-\mu_m^2/4)^{-1/2}$ and
+$\mu_m/2=(N_\lambda/N_m)^\alpha(1+o(1))$ on the oscillatory side. The drift sum is therefore a
+Riemann sum with step $2$ in $N$ of
+\[
+  -\kappa'\int_{N_\lambda}^\infty\frac{(N_\lambda/N)^\alpha}{\sqrt{1-(N_\lambda/N)^{2\alpha}}}\frac{dN}{N}
+  =-\frac{\kappa'}{\alpha}\int_0^1\frac{dw}{\sqrt{1-w^2}}=-\frac{\kappa'\pi}{2\alpha}
+\]
+($w=(N_\lambda/N)^\alpha$, $dw/w=-\alpha\,dN/N$). The integrand has an integrable singularity at
+$N_\lambda$; the part below $N_{m_R}$ is $O((\ell K/N_\lambda)^{1/2})$ and the part above $N_M$ is
+$O((N_\lambda/N_M)^\alpha)$.
+
+\step{uniformity} Every constant above, and in \Cref{lem:nearsums}, depends on $\kappa'$ only
+through $|\kappa'|$ and through the bound $|\tilde\varepsilon_m|\le(C+C|\kappa'|)N_m^{-1-\delta}$,
+so it is bounded for $\kappa'$ in compact sets.
+\end{proof}

@@ -1,0 +1,451 @@
+\section{Dimerised links: a Bessel far field}\label{sec:dimer}
+
+Throughout this section $b\equiv0$ except in \Cref{thm:dimerdiag}, the links satisfy
+\Cref{hyp:D} with $2|\kappa'|<\alpha-1$, and
+\[
+  \nu:=\frac12-\frac{\kappa'}{\alpha-1}\in(0,1).
+\]
+
+\subsection{The guiding picture: a regular-singular end}\label{sec:dimer-picture}
+
+\paragraph{Two solutions that decay at different rates.} In a balanced chain the two
+solutions at $\lambda=0$ have the same size at infinity. In a dimerised chain they do not:
+by \Cref{prop:zero}, $P_{2m}^2\asymp N_m^{-\alpha-2\kappa'}$ and $R_{2m+1}^2\asymp N_m^{-\alpha+2\kappa'}$.
+Both are square-summable, which is the limit-circle property, but for $\kappa'>0$ the
+solution $P$ has the smaller block envelope, and for $\kappa'<0$ the solution $R$ does. We call it
+\emph{the solution of smaller block-envelope size}. The boundary condition it defines will turn out
+to be distinguished, and every other self-adjoint boundary condition contains some of the larger
+solution. The mechanism is a Bessel problem: the far field of the chain is a first-order Bessel system
+of order $\nu$, and the end $N=\infty$ sits at its regular singular point $\tau=0$
+(\Cref{sec:bessel-derivation}). After one component is eliminated the system becomes the scalar
+operator
+\[
+  -\frac{d^2}{d\tau^2}+\frac{\nu^2-\frac14}{\tau^2}\qquad\text{near }\tau=0,\quad 0<\nu<1,
+\]
+whose solutions near the end behave like $\tau^{1/2+\nu}$ and $\tau^{1/2-\nu}$. Sizes are not preserved
+by that elimination: the principal branch $\sqrt\tau J_\nu(\tau)$ of the scalar operator corresponds
+to the second coordinate axis, that is to $R$, for both signs of $\kappa'$. The scalar picture explains
+the order $\nu$ and the phases; which extension is distinguished is decided by the amplitude ratio of
+the two coordinates at the end, computed in \eqref{eq:Q}.
+
+\paragraph{Two laws.} At high energy this distinction decides the eigenvalues. Up to the
+place where the far field begins, the solution of energy $\lambda$ oscillates with equal
+amplitude in the frame of \Cref{sec:blocks}; beyond it the solution freezes into a fixed
+combination of the two solutions at $\lambda=0$. In a dimerised chain that place is the
+site $N_{\rm dec}\asymp N_\lambda^{\alpha/(\alpha-1)}$ found below, and there the ratio of the
+sizes of $\Rt$ and $\Pt$ is $N_{\rm dec}^{2\kappa'}$. So a solution of balanced size at
+$N_{\rm dec}$ reaches infinity with coordinates whose ratio is of order
+\[
+  \frac{\beta_\infty}{\alpha_\infty}\asymp N_{\rm dec}^{-2\kappa'}\asymp\lambda^{-2\kappa'/(\alpha-1)},
+\]
+times an oscillating factor of size one. For $\kappa'>0$ this tends to $0$. The boundary
+condition $\tan t=\beta_\infty/\alpha_\infty$ of $H_t$ (\Cref{thm:count}(iv)) can then be met
+only near a zero of $\alpha_\infty$, whatever $t\ne0$ is, and all these extensions share the
+law of $H_{\pi/2}$. The exception is $t=0$, the extension defined by $\Pt$, the solution of smaller
+block-envelope size: it has its own law, given by the zeros of $\beta_\infty$. For $\kappa'<0$
+the roles of $\Pt$ and $\Rt$, and of $H_0$ and $H_{\pi/2}$, are exchanged. In the balanced
+case $\kappa'=0$, $\nu=\frac12$, the two solutions have the same size at infinity, the
+coordinates stay of comparable size, neither solution is distinguished, and every $t$ has its
+own law (\Cref{cor:balanced}).
+
+\paragraph{Where the offsets come from.} The Bessel functions $J_{\pm\nu}(\tau)$ oscillate
+like $\cos(\tau\mp\frac{\nu\pi}2-\frac\pi4)$ for large $\tau$. Matching the near-field phase
+$\Phi$ to these two phases moves the offsets of $H_0$ and $H_{\pi/2}$ from the balanced values
+$0$ and $\frac\pi2$ to
+\[
+  \theta_0=\Bigl(\frac12-\nu\Bigr)\frac\pi2=\frac{\kappa'\pi}{2(\alpha-1)}\qquad\text{and}\qquad
+  \frac\pi2-\theta_0 .
+\]
+
+\paragraph{Where the far field begins.} On the oscillatory side a block rotates by
+$\varphi_m\approx\mu_m\approx2\Lambda N_m^{-\alpha}$, while the frame drifts by
+$|\varepsilon_m|\approx2|\kappa'|/N_m$. The adiabatic normal form needs the rotation to dominate
+the drift, and their ratio is
+\[
+  \frac{\varphi_m}{|\varepsilon_m|}\approx\frac{\Lambda N_m^{1-\alpha}}{|\kappa'|}=\frac{\alpha-1}{|\kappa'|}\,\tau(N_m),
+  \qquad\tau(N):=\frac{\Lambda N^{1-\alpha}}{\alpha-1}.
+\]
+So the Bessel variable $\tau$ measures rotation against drift. For $\tau\gg1$ the chain is
+in the near field of \Cref{prop:nearfield}, and for $\tau\lesssim1$ it is in the far field.
+The crossover is where $\tau$ is of order one, that is on the scale
+\[
+  N_{\rm dec}:=\Bigl(\frac{\Lambda}{\alpha-1}\Bigr)^{1/(\alpha-1)}\asymp N_\lambda^{\alpha/(\alpha-1)}
+\]
+(\Cref{fig:budget}). The two descriptions overlap on a range of $N$, and we match them there.
+
+The rest of the section makes this picture precise. We derive the Bessel system from the
+block product (\Cref{sec:bessel-derivation}), match it to the near field
+(\Cref{prop:farfield}, \Cref{thm:dimer}), and read off the eigenvalues of every extension
+(\Cref{cor:dimer}) and of birth--death processes (\Cref{cor:bd}).
+
+\subsection{From the block product to Bessel's equation}\label{sec:bessel-derivation}
+
+\paragraph{The block as a step of an equation.} By \Cref{blem:block} the block is
+$T_m=D_mT_1(\mu_m)D_m^{-1}$ with $D_m=\operatorname{diag}(\rho_m^{-1/2},\rho_m^{1/2})$, and
+$T_1(\mu)=I+\mu\Jr-\mu^2e_1e_1^{\mathsf T}$, where $\Jr$ generates the rotations. In the far
+field $\mu_m$ is small. The dimerisation enters only through the frame normalisation, and by
+\Cref{prop:zero}(b) $\rho_m=N_m^{-2\kappa'}(1+O(N_m^{-\delta}))$, so
+$D_m=D(N_m)(1+O(N_m^{-\delta}))$ with
+\[
+  D(N):=\operatorname{diag}(N^{\kappa'},N^{-\kappa'}).
+\]
+Since $D(N)$ is unbounded, the comparison has to be made in the weighted coordinates
+$D(N_m)^{-1}(\cdot)D(N_m)$: there $X:=D(N_m)^{-1}D_m=I+O(N_m^{-\delta})$ is diagonal and $T_1-I=O(\mu_m)$,
+so $X T_1X^{-1}=T_1+O(\mu_mN_m^{-\delta})$ and
+\[
+  D(N_m)^{-1}\bigl[T_m-I-\mu_m\,D(N_m)\Jr D(N_m)^{-1}\bigr]D(N_m)=O(\mu_m^2+\mu_mN_m^{-\delta}),
+\]
+where
+\[
+  D(N)\Jr D(N)^{-1}=\begin{pmatrix}0&-N^{2\kappa'}\\N^{-2\kappa'}&0\end{pmatrix}.
+\]
+In an ordinary matrix norm the remainder is only $O(\mu_m^2+\mu_mN_m^{2|\kappa'|-\delta})$: the
+off-diagonal entry $-\mu_m/\rho_m$ of $T_m$ differs from $-\mu_mN_m^{2\kappa'}$ by $\mu_mN_m^{2\kappa'}O(N_m^{-\delta})$,
+which for $\kappa'>0$ need not be small. The proof of \Cref{prop:farfield} in \Cref{app:routine}
+compares the true and the model step in exactly these weighted coordinates.
+A block spans two sites, and $\mu_m=\lambda/A_m=2\Lambda N_m^{-\alpha}(1+O(N_m^{-1}))$ is the integral of
+$\Lambda N^{-\alpha}$ over $[N_m-1,N_m+1]$ up to the same error. So $T_m$ is, to first order in
+$\mu_m$, the step of length two of
+\begin{equation}\label{eq:bessel-system}
+  \frac{dv}{dN}=\Lambda N^{-\alpha}\begin{pmatrix}0&-N^{2\kappa'}\\N^{-2\kappa'}&0\end{pmatrix}v .
+\end{equation}
+For $\kappa'=0$ this is a pure rotation, which is the content of the normal form. For
+$\kappa'\ne0$ the rotation is conjugated by the frame drift $D(N)$.
+
+\paragraph{Why the order is $\nu$.} The natural time of the rotation is the total angle
+still to come, $\tau(N)=\int_N^\infty\Lambda N'^{-\alpha}dN'=\Lambda N^{1-\alpha}/(\alpha-1)$, which
+decreases from $\infty$ to $0$ and is the variable introduced above. In this time
+\eqref{eq:bessel-system} reads $dv_1/d\tau=N^{2\kappa'}v_2$ and $dv_2/d\tau=-N^{-2\kappa'}v_1$, and
+the frame drift becomes a power of $\tau$:
+\[
+  N=N_{\rm dec}\,\tau^{-1/(\alpha-1)},\qquad N^{2\kappa'}=N_{\rm dec}^{2\kappa'}\,\tau^{-2\kappa'/(\alpha-1)}=N_{\rm dec}^{2\kappa'}\,\tau^{2\nu-1}.
+\]
+After rescaling by the constant $D(N_{\rm dec})^{-1}$, that is
+$(w_1,w_2):=(N_{\rm dec}^{-\kappa'}v_1,N_{\rm dec}^{\kappa'}v_2)$, the system is
+\[
+  \frac{dw_1}{d\tau}=\tau^{2\nu-1}w_2,\qquad \frac{dw_2}{d\tau}=-\tau^{1-2\nu}w_1,
+  \qquad\text{so}\qquad
+  w_1''+\frac{1-2\nu}{\tau}\,w_1'+w_1=0 .
+\]
+This is Bessel's equation in Lommel's form, solved by $w_1=\tau^\nu J_{\pm\nu}(\tau)$; with
+$u:=\tau^{1/2-\nu}w_1$ it becomes $-u''+(\nu^2-\frac14)\tau^{-2}u=u$, the operator of the
+guiding picture with energy $1$. The order is the exponent of the drift measured in the
+time of the rotation: the frame weight $N^{2\kappa'}$ becomes $\tau^{2\nu-1}$, and
+$2\nu-1=-2\kappa'/(\alpha-1)$. Balanced links give $\nu=\frac12$, where $J_{\pm1/2}$ are the
+sine and cosine and there is no singular potential.
+
+\paragraph{The solutions.} The second components follow from $w_2=\tau^{1-2\nu}w_1'$ and
+$\frac{d}{d\tau}(\tau^\nu J_\nu)=\tau^\nu J_{\nu-1}$, $\frac{d}{d\tau}(\tau^\nu J_{-\nu})=-\tau^\nu J_{1-\nu}$.
+Undoing the rescaling, with $N^{\kappa'}\tau^{1/2}=N_{\rm dec}^{\kappa'}\tau^{\nu}$, the two solutions of
+\eqref{eq:bessel-system} are
+\[
+  y_-(N)=\bigl(N^{\kappa'}\tau^{1/2}J_{-\nu}(\tau),\,-N^{-\kappa'}\tau^{1/2}J_{1-\nu}(\tau)\bigr),\qquad
+  y_+(N)=\bigl(N^{\kappa'}\tau^{1/2}J_{\nu}(\tau),\,N^{-\kappa'}\tau^{1/2}J_{\nu-1}(\tau)\bigr).
+\]
+Let $Y(N):=[y_-,y_+]$ and $\hat Y(N):=D(N)^{-1}Y(N)$, the solutions in the balanced frame.
+We use four facts about them.
+\begin{enumerate}
+\item[(B1)] $\det Y=\det\hat Y=\omega_0:=\frac2\pi\sin\nu\pi\neq0$. Indeed
+  $\det Y=\tau\bigl(J_\nu J_{1-\nu}+J_{-\nu}J_{\nu-1}\bigr)$, and this equals $2\sin(\nu\pi)/\pi$ by the
+  Wronskian $\mathscr W\{J_\nu,J_{-\nu}\}(\tau)=-2\sin(\nu\pi)/(\pi\tau)$ (DLMF 10.5.1) and the recurrences
+  $J_\mu'=J_{\mu-1}-(\mu/\tau)J_\mu=-J_{\mu+1}+(\mu/\tau)J_\mu$ (DLMF 10.6.2).
+\item[(B2)] As $\tau\to\infty$, uniformly for $\nu$ in compact subsets of $(0,1)$ (DLMF 10.17.3),
+  $\hat Y=\sqrt{2/\pi}\,Y_0+O(1/\tau)$ with
+  $Y_0=\bigl(\begin{smallmatrix}\cos a&\cos b\\-\sin a&-\sin b\end{smallmatrix}\bigr)$,
+  $a=\tau-\frac\pi4+\frac{\nu\pi}2$, $b=\tau-\frac\pi4-\frac{\nu\pi}2$, and
+  $\det Y_0=-\cos a\sin b+\sin a\cos b=\sin(a-b)=+\sin\nu\pi$. This is the near field seen from the far field:
+  equal amplitudes, phases $\tau\pm\frac{\nu\pi}2-\frac\pi4$.
+\item[(B3)] As $N\to\infty$, $Y(N)\to\operatorname{diag}(d_1,d_2)$ with
+  $d_1=2^\nu N_{\rm dec}^{\kappa'}/\Gamma(1-\nu)$ and $d_2=2^{1-\nu}N_{\rm dec}^{-\kappa'}/\Gamma(\nu)$, by
+  $J_\mu(\tau)\sim(\tau/2)^\mu/\Gamma(\mu+1)$ (DLMF 10.2.2) and $N^{\pm\kappa'}\tau^{1/2}=N_{\rm dec}^{\pm\kappa'}\tau^{1/2\pm(\nu-1/2)}$. The other entries tend to $0$ like $N^{1-\alpha\pm2\kappa'}$, which is where
+  $2|\kappa'|<\alpha-1$ is used. This is the limit-circle end: the two Bessel solutions become the
+  two solutions at $\lambda=0$.
+\item[(B4)] $|\hat y_\pm(N)|\le C\max(1,\tau^{-|\nu-1/2|})$.
+\end{enumerate}
+The ratio of the two limits in (B3) is the amplitude ratio of the guiding picture: the factor by
+which the far field multiplies the second coordinate at infinity relative to the first. It carries
+the whole dichotomy between the extensions,
+\begin{equation}\label{eq:Q}
+  Q(\lambda):=\frac{d_2}{d_1}=2^{1-2\nu}\frac{\Gamma(1-\nu)}{\Gamma(\nu)}\,N_{\rm dec}^{-2\kappa'}
+  =\Bigl(\frac{2(\alpha-1)}{\Lambda}\Bigr)^{1-2\nu}\frac{\Gamma(1-\nu)}{\Gamma(\nu)}
+  \ \asymp\ \lambda^{-2\kappa'/(\alpha-1)} .
+\end{equation}
+
+\subsection{Matching and the boundary values at infinity}
+
+The model \eqref{eq:bessel-system} is exact up to errors of relative size $\mu_m$ and
+$N_m^{-\delta}$, and its solutions are bounded in the balanced frame except for the factor in
+(B4) where $\tau\le1$. A Gronwall argument in the basis $Y$ therefore follows the chain from a
+block $M$ in the overlap to infinity; its proof is in \Cref{app:routine}.
+
+\begin{proposition}{Far field}{farfield}
+Let $M=M(\lambda)$ satisfy $N_M^{2\alpha-1}/N_\lambda^{2\alpha}\to\infty$ and
+$N_M^{\alpha-1+\delta}/N_\lambda^\alpha\to\infty$, and put $c_m:=Y(2m)^{-1}v_{2m-1}$ for $m\ge M$.
+Then $c_\infty:=\lim c_m$ exists, $v_\infty=Y(\infty)c_\infty$, and
+$|c_\infty-c_M|\le\epsilon_{\rm far}|c_M|$ with
+\[
+  \epsilon_{\rm far}\le C\bigl(\Lambda^2N_M^{1-2\alpha}+\Lambda N_M^{1-\alpha-\delta}+N_{\rm dec}^{-\delta}\bigr)\to0 .
+\]
+\end{proposition}
+
+The two conditions on $M$ and the near-field condition $N_M^{\alpha-1}/\lambda\to0$ of
+\Cref{prop:nearfield} are compatible: the far field needs
+$N_M\gg N_\lambda^{\max(2\alpha/(2\alpha-1),\,\alpha/(\alpha-1+\delta))}$, the near field
+$N_M\ll N_\lambda^{\alpha/(\alpha-1)}$, and both exponents on the left are smaller than
+$\alpha/(\alpha-1)$ because $\delta>0$. We fix $N_M:=N_\lambda^{\gamma}$ with $\gamma$ strictly
+between them.
+
+\begin{theorem}{Dimerised boundary values}{dimer}
+Assume \Cref{hyp:D}, $b\equiv0$ and $0<\nu<1$. Let $(\alpha_\infty,\beta_\infty)=v_\infty$ be the
+coordinates at infinity of the regular solution (\Cref{thm:count}(i)). There are a real
+function $\mathcal A(\lambda)\neq0$ and functions $r_1,r_2\to0$ such that, as
+$\lambda\to+\infty$,
+\[
+  \alpha_\infty=\mathcal A(\lambda)\bigl[\sin\bigl(\tfrac\pi4+\tfrac{\nu\pi}2-\Phi(\lambda)\bigr)+r_1(\lambda)\bigr],\qquad
+  \beta_\infty=\mathcal A(\lambda)Q(\lambda)\bigl[\sin\bigl(\Phi(\lambda)-\tfrac\pi4+\tfrac{\nu\pi}2\bigr)+r_2(\lambda)\bigr].
+\]
+The functions $r_1,r_2$ tend to $0$ uniformly for $\kappa'$ in compact subsets of
+$(-(\alpha-1)/2,(\alpha-1)/2)$ when the remaining data are fixed. For $\lambda\to-\infty$,
+$v_\infty(\lambda)=\Sigma_3v_\infty(|\lambda|)$.
+\end{theorem}
+
+\begin{proof}
+The near field delivers the phase $\Phi$ at block $M$; (B2) splits it between the two Bessel
+solutions; (B3) carries each to infinity with its amplitude $d_1$ or $d_2$.
+
+\step{near field} With $M$ as above, \Cref{prop:nearfield} gives
+$\chi_M=\sum_{m<M}\varphi_m-\kappa'\pi/(2\alpha)+o(1)$. The odd links are
+$A_m=c\,N_m^\alpha(1+(\kappa-\kappa')/N_m+O(N_m^{-1-\delta}))$, so \Cref{prop:evalS}(c) applied
+to them gives $S=N_\lambda I_\alpha-(\kappa-\kappa')\pi/(2\alpha)+o(1)$. The tail is
+$\sum_{m\ge M}\varphi_m=\sum_{m\ge M}\mu_m+O(\Lambda^3N_M^{1-3\alpha})=\tau(2M)+o(1)$, by the
+midpoint rule on $[2m,2m+2]$ and because $\tau(2M)/N_M=\Lambda N_M^{-\alpha}/(\alpha-1)\to0$.
+Hence $\chi_M+\tau(2M)=\Phi(\lambda)+o(1)$: the drift converts the odd-link constant
+$\kappa-\kappa'$ into $\kappa$.
+
+\step{matching} Write $z:=\Et(\mu_M)^{-1}D_M^{-1}v_{2M-1}=r(\cos\chi_M,\sin\chi_M)$, $r>0$.
+Then
+$c_M=Y(2M)^{-1}v_{2M-1}=\hat Y(2M)^{-1}\,[D(2M)^{-1}D_M]\,\Et(\mu_M)\,z
+=r\,\hat Y(2M)^{-1}\bigl[(\cos\chi_M,\sin\chi_M)+O(N_M^{-\delta}+\mu_M)\bigr]$. By (B2),
+$\hat Y(2M)^{-1}=\sqrt{\pi/2}\,Y_0^{-1}+O(1/\tau(2M))$, and solving
+$Y_0c=(\cos\chi,\sin\chi)$ by Cramer's rule gives
+\[
+  c_-=-\frac{\sin(\chi+b)}{\sin\nu\pi},\qquad c_+=\frac{\sin(\chi+a)}{\sin\nu\pi}.
+\]
+With $\chi=\chi_M$ and $\tau=\tau(2M)$, $\chi+b=\Phi-\frac\pi4-\frac{\nu\pi}2+o(1)$ and
+$\chi+a=\Phi-\frac\pi4+\frac{\nu\pi}2+o(1)$. All errors are $o(1)$ relative to $r$, and
+\Cref{prop:farfield} gives $v_\infty=\operatorname{diag}(d_1,d_2)c_\infty$ with
+$c_\infty=c_M(1+o(1))$. This is the statement with
+$\mathcal A=r\sqrt{\pi/2}\,d_1/\sin\nu\pi$. The frame angle enters only modulo $\pi$ here: replacing
+$\chi_M$ by $\chi_M+\pi$ changes $(c_-,c_+)$ into $-(c_-,c_+)$, so it multiplies $\alpha_\infty$ and
+$\beta_\infty$ by $-1$, which is absorbed into the sign of $\mathcal A$. The integer labels are fixed
+separately, by the homotopy in the proof of \Cref{cor:dimer}.
+
+\step{uniformity} The near-field error is uniform by \Cref{prop:nearfield}. In the far
+field the constants depend on $\kappa'$ through $1/\sin\nu\pi$, through the constants in
+(B2)--(B4), which are continuous for $\nu$ in compact subsets of $(0,1)$, and through the
+tail bound for $\log(\rho_mN_m^{2\kappa'})$, which is at most
+$\sum_{i\ge m}|\tilde\varepsilon_i|\le(C+C|\kappa'|)N_m^{-\delta}$. The window exponent $\gamma$
+can be fixed for all $\kappa'$ in a compact set. The negative half-line is the
+reflection identity of \Cref{thm:count}(iii).
+\end{proof}
+
+\subsection{Eigenvalues of every extension}
+
+\begin{corollary}\label{cor:dimer}
+Assume \Cref{hyp:D}, $b\equiv0$ and $0<\nu<1$, and put
+$\theta_0:=\kappa'\pi/(2(\alpha-1))=(\frac12-\nu)\frac\pi2$. Let $\lambda_j(t)$ be the
+eigenvalues of $H_t$, labelled by $\psi(\lambda_j(t))=t+j\pi$.
+\begin{enumerate}
+\item[(i)] $\Phi(\lambda_j(0))=j\pi+\theta_0+o(1)$ and
+  $\Phi(\lambda_j(\pi/2))=j\pi+\frac\pi2-\theta_0+o(1)$ as $j\to+\infty$.
+\item[(ii)] For $t\notin\{0,\pi/2\}$ the eigenvalues solve
+  $\tan t=Q(\lambda)\,\frac{\sin(\vartheta-\pi/4+\nu\pi/2)+r_2}{\sin(\pi/4+\nu\pi/2-\vartheta)+r_1}$ with
+  $\vartheta=\Phi(\lambda)$. Since $Q\to0$ if $\kappa'>0$ and $Q\to\infty$ if $\kappa'<0$,
+  $\Phi(\lambda_j(t))=j\pi+\frac\pi2-\theta_0+o(1)$ if $\kappa'>0$, and
+  $\Phi(\lambda_j(t))=j\pi+\theta_0+\pi[t>\pi/2]+o(1)$ if $\kappa'<0$, where $[t>\pi/2]$ is $1$ if
+  $t>\pi/2$ and $0$ otherwise.
+\item[(iii)] In terms of $\lambda$:
+  $\lambda_j^{1/\alpha}=(2c)^{1/\alpha}\frac\pi{I_\alpha}\bigl(j+\frac\kappa{2\alpha}+\frac{\theta_t}{\pi}\bigr)+o(1)$,
+  where $\theta_t$ is the offset of $H_t$ in (i) and (ii). For the counting function
+  $\mathcal N^+_t(\lambda):=\#(\operatorname{spec}H_t\cap(0,\lambda])$ this gives
+  \[
+    \mathcal N^+_t(\lambda)=\frac{\Phi(\lambda)-\theta_t}{\pi}+\frac12-[t=0]+r_t(\lambda),\qquad|r_t(\lambda)|\le\tfrac12+o(1);
+  \]
+  the indicator $[t=0]$ accounts for the eigenvalue $0$ of $H_0$, which is there whatever $\theta_0$ is.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+\step{zeros} The eigenvalues of $H_0$ are the zeros of $\beta_\infty$, those of $H_{\pi/2}$
+the zeros of $\alpha_\infty$ (\Cref{thm:count}(iv)). By \Cref{thm:dimer}, for $\lambda$ large
+$\beta_\infty$ has exactly one sign change near each solution of $\Phi=k\pi+\theta_0$ and none
+where $|\sin(\Phi-\theta_0)|$ is bounded below; near such a zero
+$\alpha_\infty=\mathcal A\bigl[(-1)^k\sin\nu\pi+o(1)\bigr]\neq0$, because
+$\frac\pi4+\frac{\nu\pi}2-\theta_0=\nu\pi$, and since $\psi$ increases and passes
+$\pi/2+\pi\ZZ$ exactly at zeros of $\alpha_\infty$, it cannot pass two multiples of $\pi$
+there. So for $\lambda\ge\lambda_0$ the zeros of $\beta_\infty$ correspond bijectively to
+integers $k\ge k_0$ with $\Phi=k\pi+\theta_0+o(1)$, and $j=k+j_1$ for a constant integer
+$j_1$; likewise for $\alpha_\infty$.
+
+\step{the label} Replace $\kappa'$ by $s\kappa'$, $s\in[0,1]$, keeping the other data. The parameter
+$s\kappa'$ stays in a compact subset of $(-(\alpha-1)/2,(\alpha-1)/2)$, which contains the balanced value
+$0$ at $s=0$ (where $\nu=\frac12$), so the uniformity in \Cref{thm:dimer} applies on the whole path. At a
+level $\lambda^*$ with $\Phi(\lambda^*)=K\pi+\frac{3\pi}4$ and $K$ large, it keeps
+$\beta^{(s)}_\infty(\lambda^*)\ne0$ for all $s$. The function $\beta^{(s)}_\infty(\lambda)$ is jointly continuous
+in $(s,\lambda)$: the shear weights depend continuously on $s$, and the tails $\sum_{k>K'}|\gamma^{(s)}_k|$ are
+small uniformly in $s$ and in $\lambda$ on compact sets, because the bounds of \Cref{prop:zero} are
+uniform for $\kappa'$ in compact sets. Its zeros are simple, since they are eigenvalues of $H_0^{(s)}$,
+and the zero at $\lambda=0$ is fixed for every $s$ because $b\equiv0$; so no zero enters $(0,\lambda^*]$
+through either end. Hence the number of eigenvalues of $H^{(s)}_0$ in $(0,\lambda^*]$ does not depend
+on $s$. At $s=0$ it is $K$ by \Cref{thm:discreteBS} and
+\Cref{prop:evalS}(c), so $j_1=0$; the same argument with $\alpha_\infty$ fixes the labels of
+$H_{\pi/2}$.
+
+\step{other extensions} For $t\in(0,\pi/2)$, $\lambda_j(t)$ lies between $\lambda_j(0)$ and
+$\lambda_j(\pi/2)$ and solves $\tan t=\beta_\infty/\alpha_\infty$, which is the displayed equation. If
+$Q\to0$ the right side can equal $\tan t$ only where the denominator is small, which is
+the law of $H_{\pi/2}$; if $Q\to\infty$, only where the numerator is small, the law of
+$H_0$. The case $t\in(\pi/2,\pi)$ is the same with $\lambda_j(\pi/2)<\lambda_j(t)<\lambda_{j+1}(0)$.
+\end{proof}
+
+\begin{remark}[Finite $Q$ and uniformity]\label{rem:finiteQ}
+The remainders $r_1,r_2$ of \Cref{thm:dimer} are uniform for $\kappa'$ in compact sets, but the terminal
+offsets of \Cref{cor:dimer}(ii) are not: they need $Q\to0$ or $Q\to\infty$, and $Q\asymp\lambda^{-2\kappa'/(\alpha-1)}$
+moves slowly when $\kappa'$ is small. Keeping $Q$, and writing $x:=\Phi(\lambda_j(t))-j\pi$ and $a:=\theta_0$,
+the boundary condition of $H_t$ reads $Q\cos t\,\sin(x-a)-\sin t\,\cos(x+a)=o(1)$, that is
+\[
+  \tan x=\frac{Q\cos t\,\sin a+\sin t\,\cos a}{Q\cos t\,\cos a+\sin t\,\sin a}+o(1),
+\]
+on the branch fixed by interlacing. At balance ($Q=1$, $a=0$) this is $x=t$. For a family with
+$\kappa'\to0$ and $\kappa'\log\lambda\to g$ it gives $Q\to e^{-2g/(\alpha-1)}$ and $a\to0$, so the limiting offset is
+the branch of $\operatorname{atan2}(\sin t,Q\cos t)$: the balanced limit and the high-energy limit do not
+commute. A fixed $t\ne0,\frac\pi2$ eventually leaves the transition region where $|\tan t|$ is comparable to $Q$,
+since $Q\to0$ or $Q\to\infty$, but a $t$ that depends on the energy need not. Uniformity up to
+$\nu=0$ or $\nu=1$ is not claimed.
+\end{remark}
+
+\Cref{fig:laws} shows both laws on computed eigenvalues. On a balanced chain each extension
+keeps its own offset $t$. On a dimerised chain with $\kappa'>0$ the offsets of $H_0$ and
+$H_{\pi/2}$ move to $\theta_0$ and $\frac\pi2-\theta_0$, and the generic extension $t=1$ joins
+the law of $H_{\pi/2}$.
+
+\esfiglabel{fig:laws}%
+\esincludefig[width=0.97\linewidth]{outputs/fig_laws.pdf}{FIG.\ \theesfig}{The phase
+$\Phi(\lambda_j(t))-j\pi$ of computed eigenvalues against $N_{\lambda_j}$, for three extensions
+of the balanced chain B3 (left) and of the dimerised chain D1 with $\kappa'=0.45$, $\nu=0.32$
+(right), from the data of \Cref{sec:numerics}. Thin dashed horizontal lines are the predicted offsets. On
+the balanced chain the three extensions keep the offsets $0$, $1$ and $\frac\pi2$. On the
+dimerised chain $H_0$ and $H_{\pi/2}$ move to $\theta_0$ and $\frac\pi2-\theta_0$, and the
+generic extension $t=1$ (hollow squares, dashed) leaves the balanced value $1$ (dotted) and lies
+on the law of $H_{\pi/2}$ (filled triangles), as \Cref{cor:dimer}(ii) predicts.}
+
+\begin{theorem}{Small diagonal}{dimerdiag}
+Assume \Cref{hyp:D}, $0<\nu<1$ and $|b_n|\le C_b(1+n)^\beta$ with $\beta<\alpha-1-2|\kappa'|$.
+Then $J$ is in the limit-circle case and \Cref{thm:dimer} holds verbatim for
+$\lambda\to+\infty$; for $\lambda\to-\infty$ it holds for $J_0-\operatorname{diag}(b)$ at $|\lambda|$. Consequently the
+offsets of \Cref{cor:dimer} hold modulo $\pi$, with labels shifted by an integer that
+depends on the chain.
+\end{theorem}
+
+\noindent The diagonal costs $N_\lambda^{1+\beta-\alpha}$ in the near field and is summable against the
+weights of (B4) in the far field; the proof is in \Cref{app:routine}. \Cref{thm:dimerdiag} is
+tested numerically in \Cref{sec:numerics} on one chain.
+
+\subsection{Birth--death processes with polynomial rates}\label{sec:bd}
+
+Let $\lambda_n=\prod_{j=1}^p(pn+e_j)$ $(n\ge0)$ and $\mu_n=\prod_{j=1}^p(pn+d_j)$ $(n\ge1)$,
+$\mu_0=0$, with positive rates, $p\ge3$, $\esum:=\sum e_j$, $\dsum:=\sum d_j$. The Stieltjes
+moment problem is indeterminate if and only if $p<\esum-\dsum<p(p-1)$ \cite{Valent1999,BergSzwarc2017}.
+The associated symmetric Hamburger problem \cite{Chihara1982},
+\cite[Prop.~3.2]{BergSzwarc2017} has the zero-diagonal links
+\[
+  a_{2n+1}=\sqrt{\lambda_n},\qquad a_{2n+2}=\sqrt{\mu_{n+1}},
+\]
+and expanding the square roots shows that \Cref{hyp:D} holds with $\delta=1$,
+$\alpha=p/2$, $c=(p/2)^{p/2}$, and
+\[
+  \kappa=\frac{\dsum+\esum}{2p}-\frac p4,\qquad \kappa'=\frac{\dsum-\esum}{2p}+\frac p4,\qquad
+  \nu=\frac{(\esum-\dsum)/p-1}{p-2} .
+\]
+Indeed, with $N=2n+1$ the odd link is
+$\prod_j(pn+e_j)^{1/2}=(p/2)^{p/2}N^{p/2}\prod_j\bigl(1+(2e_j/p-1)/N\bigr)^{1/2}$, so the odd links see
+$\kappa-\kappa'=\esum/p-p/2$; with $N=2n+2$ the even link is
+$(p/2)^{p/2}N^{p/2}\prod_j(1+2d_j/(pN))^{1/2}$, so the even links see $\kappa+\kappa'=\dsum/p$.
+The limit-circle condition $2|\kappa'|<\alpha-1$ is exactly Valent's indeterminacy range,
+and \Cref{prop:zero}(b) evaluates explicitly to
+$\vp=p^{p/2}2^{2\kappa'}\prod_j\Gamma(1+d_j/p)/\Gamma(e_j/p)$, since
+$P_{2m}^2=\prod_{i\le m}\lambda_{i-1}/\mu_i=\prod_j\Gamma(m+e_j/p)\Gamma(1+d_j/p)/\bigl(\Gamma(e_j/p)\Gamma(m+1+d_j/p)\bigr)$
+and $\Gamma(m+a)/\Gamma(m+b)\sim m^{a-b}$. Balanced rates are
+those with $\esum-\dsum=p^2/2$; this is the only case covered by \Cref{cor:balanced}.
+
+\paragraph{Symmetric extensions and N-extremal solutions.} The Stieltjes problem in the variable
+$x=\lambda^2$ has its own one-parameter family of N-extremal solutions, and only two of them are images
+of extensions $H_t$: for $b\equiv0$, $\Sigma_3H_t\Sigma_3=-H_{\pi-t}$ with $\Sigma_3=\operatorname{diag}((-1)^k)$,
+so only $H_0$ and $H_{\pi/2}$ have spectral measures symmetric under $\lambda\mapsto-\lambda$, and their
+images are the Krein solution $\mu_K$ and the Friedrichs solution $\mu_F$. The other N-extremal
+solutions of the Stieltjes problem are not images of the $H_t$ with $t\ne0,\frac\pi2$. In Valent's
+modified parametrisation \cite[eq.~(54)]{Valent2006} they are the zeros of $\mu(B-D/\alpha_V)-D$ with a
+real constant $\mu$, which in the coordinates of \Cref{thm:count} reads $\tan\psi(\lambda)=\mu'/\lambda$: the
+boundary angle tends to $0$ like $1/\lambda$ instead of being fixed. That is why part (c) below gives
+the Krein law for every admissible $\nu$, while \Cref{cor:dimer}(ii) gives the law of $H_{\pi/2}$, the
+Friedrichs law, for the generic $H_t$ when $\kappa'>0$. There is no contradiction: the equation of part
+(c) reads $Q(\lambda)q(\vartheta)=\mu'/\lambda$, and $\lambda Q(\lambda)\asymp\lambda^{2\nu}\to\infty$ for both signs
+of $\kappa'$, so its right side is small compared with $Q$ and the solutions sit near the zeros of the
+numerator, the Krein side.
+
+\begin{corollary}\label{cor:bd}
+In this setting, with $x$ the Stieltjes variable and
+$\tau_p:=\int_0^1(1-u^p)^{-2/p}du=\frac1p\B(\frac1p,1-\frac2p)$:
+\begin{enumerate}
+\item[(a)] the Krein spectrum (the support of the Krein solution $\mu_K$, the zeros of
+  the Nevanlinna entry $D$) satisfies
+  $\tau_p\sin(\pi/p)\,x_k^{1/p}=\pi\bigl(k+\frac{\dsum+\esum}{2p^2}-\frac\nu2\bigr)+o(1)$, $k=0,1,2,\dots$;
+\item[(b)] the Friedrichs spectrum (the support of the Friedrichs solution $\mu_F$) satisfies the same with
+  $+\frac\nu2$ in place of $-\frac\nu2$;
+\item[(c)] every other N-extremal measure has its large mass points asymptotic to the
+  Krein law, for every admissible $\nu$.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+As explained before the corollary, $H_0$ and $H_{\pi/2}$ are the extensions with symmetric spectral
+measures, and their images under $x=\lambda^2$ are the two positively supported N-extremal solutions at
+the ends of Valent's interval \cite{Chihara1982,Pedersen1995,Valent2006}. $H_0$ has the
+eigenvalue $0$ (eigenvector $P$), so its image is the Krein solution $\mu_K$, whose
+support contains $0$. $H_{\pi/2}$ is the limit of the even truncations, whose
+eigenvalues squared are the zeros of the Stieltjes polynomials, and by the
+Markov-type theorem of \cite[Prop.~5]{Valent2006} its image is the Friedrichs solution
+$\mu_F$ (see also \cite{Pedersen1995}). With $\lambda=\sqrt x$,
+$N_\lambda=(2/p)(x/4)^{1/p}$ and $(2/p)4^{-1/p}I_{p/2}=\tau_p\sin(\pi/p)$ (both sides are Beta values, and the
+identity follows from the duplication and reflection formulas for $\Gamma$), so
+$\Phi=\tau_p\sin(\pi/p)x^{1/p}-\kappa\pi/p$. With $\theta_0=(\frac12-\nu)\frac\pi2$ and
+$\kappa\pi/p=\pi\bigl(\frac{\dsum+\esum}{2p^2}-\frac14\bigr)$,
+$j\pi+\theta_0+\kappa\pi/p=\pi\bigl(j+\frac{\dsum+\esum}{2p^2}-\frac\nu2\bigr)$. This and \Cref{cor:dimer}(i) give
+(a) and (b). For (c), the entries $D(\lambda^2)$ and $\lambda\beta_\infty(\lambda)$ are even entire functions
+of order $<1$ in $\lambda$; both vanish to second order at $\lambda=0$ (the eigenvalue $0$ of $H_0$ is simple
+and is a simple zero of $D$ in $x$) and otherwise have the same simple zeros, hence they are
+proportional; likewise $B-D/\alpha_V$ (Valent's modified entry, $\alpha_V$ his parameter) and
+$\alpha_\infty$, which do not vanish at $0$. In Valent's modified
+parametrisation \cite[eq.~(54)]{Valent2006} the other N-extremal spectra are the
+zeros of $\mu(B-D/\alpha_V)-D$, that is $\tan\psi=\mu'/\lambda$. By \Cref{thm:dimer} this reads
+$Q(\lambda)q(\vartheta)=\mu'/\lambda$ with $q(\vartheta)$ the ratio of the two sines, and since
+$\lambda Q(\lambda)\asymp\lambda^{2\nu}\to\infty$ for every $\nu\in(0,1)$, the solutions approach
+$\Phi\equiv\theta_0$.
+\end{proof}
+
+\Cref{cor:bd} reproduces every closed form we know. For the Berg--Valent quartic
+rates ($\nu=\frac12$, $(\dsum+\esum)/(2p^2)=\frac14$) it is \Cref{ex:bv}. For Valent's cubic rates
+$\lambda_n=(3n+1)(3n+2)^2$, $\mu_n=(3n)^2(3n+1)$ \cite[Prop.~1]{Valent1999} it gives the offsets
+$\frac16$ (Krein) and $\frac12$ (Friedrichs), which are the zeros of
+$\sigma_2(\theta_3(1)z^{1/3})$ and $\sigma_0(\theta_3(1)z^{1/3})$ in his closed form. For the
+cubic families P1 and P2 of Gilewicz, Leopold, Ruffing and Valent \cite{GLRV2006}
+($\nu=\frac23$ and $\frac13$) it gives the Krein offsets $c+\frac56$ (P1, with the first index
+shifted by one) and $c+\frac16$ (P2), and the Friedrichs offset $c+\frac12$ for both. That the
+leading coefficient does not depend on $c$, which \cite[Remark 3]{GLRV2006} asked, also
+follows from their Proposition 13 by a Tauberian argument; the offsets are what the
+general theorem adds. They can be checked directly from the integral representations
+in \cite[Props.~8 and 10]{GLRV2006}: by Watson's lemma at $u=0$,
+$\int_0^1u^{3c-1}(1-u^3)^{-2/3}\sigma_l(\zeta\hat\theta(u))du
+=\frac23\Gamma(3c)\zeta^{-3c}e^{\zeta\theta_*/2}\bigl[\cos(\frac{\sqrt3}{2}\theta_*\zeta-\phi_l-c\pi)+O(\zeta^{-3})\bigr]$
+with $\phi_0=0$, $\phi_1=\pi/3$, $\phi_2=2\pi/3$, where $\theta_*$ is the constant written $\theta_0$
+in \cite{GLRV2006} (unrelated to our $\theta_0$).

@@ -1,0 +1,180 @@
+\section{The first-order law for balanced links}\label{sec:balanced}
+
+For balanced links the near field reaches all the way to infinity, and
+\Cref{prop:nearfield} with $M=\infty$ is already the discrete Bohr--Sommerfeld rule. This
+section states it (\Cref{thm:discreteBS}), evaluates the sum $S$ in closed form
+(\Cref{prop:evalS}), and draws the consequences for eigenvalues, counting functions,
+and the growth of the Nevanlinna matrix. Rates follow in \Cref{sec:rates}.
+
+\begin{theorem}{Discrete Bohr--Sommerfeld rule}{discreteBS}
+Assume \Cref{hyp:H} and $|b_n|\le C_b(1+n)^\beta$ with $\beta<\alpha-1$. Then
+\[
+  \psi(\lambda)-S(\lambda)\to0\quad(\lambda\to+\infty),\qquad
+  \psi(\lambda)+S(|\lambda|)\to0\quad(\lambda\to-\infty).
+\]
+\end{theorem}
+
+\begin{proof}
+For $\lambda\to+\infty$ this is \Cref{prop:nearfield} with $\kappa'=0$ and $M=\infty$, since
+$\chi_M\to\psi$ (\Cref{sec:blocks}) and $\varphi_m\to0$ fast enough that
+$\sum_{m<M}\varphi_m\to S$. For $\lambda\to-\infty$ apply this to $J_0-\operatorname{diag}(b)$, which satisfies the
+same hypotheses, and use $\psi_J(\lambda)=-\psi_{J_0-\operatorname{diag}(b)}(-\lambda)$ (\Cref{thm:count}(iii)).
+\end{proof}
+
+\subsection{The sum in closed form}
+
+\begin{proposition}{Evaluation of $S$}{evalS}
+\begin{enumerate}
+\item[(a)] If $r_n\to0$ then $S(\lambda)=N_\lambda I_\alpha(1+o(1))$.
+\item[(b)] If $r_n=O(1/n)$ then $S(\lambda)=N_\lambda I_\alpha+O(1)$.
+\item[(c)] If $r_n=\kappa/n+O(n^{-1-\delta'})$ for some $\delta'>0$, then $S(\lambda)=\Phi(\lambda)+o(1)$.
+\item[(d)] If $a_n=c(n+s)^\alpha$ exactly, then $S(\lambda)-\Phi(\lambda)=O(N_\lambda^{-1/2})$ with
+  $\kappa=\alpha s$, and this cannot be improved (\Cref{prop:hurwitz}).
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+$S$ is a nonincreasing function of each link $A_m$, so it suffices to evaluate it for
+shifted powers and to sandwich. For $A_m=c(2m+1+s)^\alpha$ put
+$g(x):=2\arcsin\bigl(\min(1,\lambda/(2c(2x+1+s)^\alpha))\bigr)$, so $S=\sum_{m\ge0}g(m)$ and,
+by $y=2x+1+s$,
+\[
+  \int_{-1/2}^\infty g\,dx=\int_s^\infty\arcsin\Bigl(\min\bigl(1,(N_\lambda/y)^\alpha\bigr)\Bigr)dy
+  =N_\lambda I_\alpha-\frac{s\pi}2 .
+\]
+On the intervals $[m-\frac12,m+\frac12]$ away from the kink of $g$ the midpoint error is at
+most $\frac1{24}\sup|g''|$, and $|g''|\le C/(N^2u^{3/2})$ there, so these errors sum to
+$C\sum_{d\ge1}N_\lambda^{-2}(N_\lambda/d)^{3/2}=O(N_\lambda^{-1/2})$; the far side contributes
+$O(N_\lambda^{-1})$ and the at most two intervals at the kink contribute
+$O(N_\lambda^{-1/2})$. This proves (d). For (c), $r_n-\kappa/n=O(n^{-1-\delta'})$ gives
+$c(n+\kappa/\alpha-\eta)^\alpha\le a_n\le c(n+\kappa/\alpha+\eta)^\alpha$ for $n\ge n(\eta)$; for large
+$\lambda$ the finitely many smaller blocks have $\varphi_m=\pi$ under every comparison, so
+$\limsup|S-\Phi|\le\eta\pi/2$ for every $\eta>0$. Parts (a) and (b) are the same sandwich
+with $(1\pm\eta)c\,n^\alpha$ and with $c(n\pm s_0)^\alpha$.
+\end{proof}
+
+The phase \eqref{eq:Phi} is thus $\Phi(\lambda)=\int_0^\infty\arcsin(\min(1,\lambda/(2c(y+\kappa/\alpha)^\alpha)))dy$,
+the classical action of the shifted power with the absent link $a_0$ placed at $y=0$.
+\Cref{prop:evalS}(d) says that the discrete sum $S$ carries an oscillating term of
+size $N_\lambda^{-1/2}$ that $\psi$ does not have; \Cref{prop:hurwitz} identifies it.
+
+\subsection{Eigenvalues and counting for every extension}
+
+\begin{corollary}\label{cor:balanced}
+Assume \Cref{hyp:H} with $|b_n|\le C_b(1+n)^\beta$, $\beta<\alpha-1$. Let
+$\lambda_j=\lambda_j(t)$ be the eigenvalues of $H_t$ labelled as in \Cref{thm:count}(v).
+\begin{enumerate}
+\item[(a)] $S(\lambda_j)=j\pi+t+o(1)$ as $j\to+\infty$ and $S(|\lambda_j|)=|j|\pi-t+o(1)$ as
+  $j\to-\infty$.
+\item[(b)] If $r_n=\kappa/n+O(n^{-1-\delta'})$, then
+  $\lambda_j^{1/\alpha}=(2c)^{1/\alpha}\frac{\pi}{I_\alpha}\bigl(j+\frac t\pi+\frac{\kappa}{2\alpha}\bigr)+o(1)$.
+\item[(c)] If $b\equiv0$, then $\mathcal N^+_t(\lambda):=\#(\operatorname{spec}H_t\cap(0,\lambda])$ satisfies
+  $\mathcal N^+_t(\lambda)=(S(\lambda)-t)/\pi+\frac12-[t=0]+r(\lambda)$ with $|r(\lambda)|\le\frac12+o(1)$, where
+  $[t=0]$ is $1$ if $t=0$ and $0$ otherwise.
+  Under the hypothesis of (b) this reads
+  \[
+    \mathcal N^+_t(\lambda)=C_\alpha(\lambda/c)^{1/\alpha}-\frac{\kappa}{2\alpha}-\frac t\pi+\frac12-[t=0]+r(\lambda),
+    \qquad C_\alpha=\frac{\sin(\pi/2\alpha)}{2\pi}\B\bigl(\tfrac1{2\alpha},1-\tfrac1\alpha\bigr)=\frac{2^{-1/\alpha}I_\alpha}{\pi}.
+  \]
+  On the negative half-line $\mathcal N^-_t=\mathcal N^+_{\pi-t}$ for $t>0$ and $\mathcal N^-_0=\mathcal N^+_0$.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+(a) is \Cref{thm:count}(v) with \Cref{thm:discreteBS}; (b) inserts \Cref{prop:evalS}(c).
+(c) For $b\equiv0$, $\psi(0)=0$ and the count is $\lfloor(\psi(\lambda)-t)/\pi\rfloor+1-[t=0]$;
+the floor differs from its argument by at most one, which gives the remainder
+$\frac12$ around the midpoint. The identity for $C_\alpha$ follows from $\B(x,y)=\Gamma(x)\Gamma(y)/\Gamma(x+y)$
+with Legendre's duplication formula and the reflection formula $\Gamma(z)\Gamma(1-z)=\pi/\sin\pi z$. The negative half-line follows from the reflection identity.
+\end{proof}
+
+\Cref{cor:balanced}(b) shows the structure of the law: the slope
+$(2c)^{1/\alpha}\pi/I_\alpha$ is determined by $c$ and $\alpha$, the offset $\kappa/(2\alpha)$ by
+the $1/n$ term of the links, and the extension enters additively through $t/\pi$ in
+the equal-amplitude normalisation of \Cref{prop:zero}.
+
+\begin{example}[The Berg--Valent chain]\label{ex:bv}
+The quartic birth--death rates $\lambda_n=(4n+1)(4n+2)^2(4n+3)$, $\mu_n=(4n-1)(4n)^2(4n+1)$
+give the symmetric links $a_k=2k\sqrt{4k^2-1}$ (by the symmetrisation of
+\Cref{sec:bd}), so $\alpha=2$, $c=4$, $\kappa=0$. The Krein and Friedrichs spectra are known in
+closed form \cite{BergValent1994,Valent2006}: in the Stieltjes variable
+$x_n=(2n\pi/K_0)^4$ and $((2n+1)\pi/K_0)^4$ with $K_0=K(1/\sqrt2)=\Gamma(\tfrac14)^2/(4\sqrt\pi)$.
+(Valent's text \cite{Valent2006} writes $K_0=\theta(1)=\int_0^1(1-u^4)^{-1/2}du$; only
+$K_0=\sqrt2\,\theta(1)$ is consistent with the type and with Chen--Ismail's closed form
+\cite{BergChenIsmail}.) In the symmetric variable $\lambda=\sqrt x$ and with
+$\B(\frac14,\frac12)=2\sqrt2K_0$, \Cref{cor:balanced}(b) predicts
+$\lambda_j^{1/2}=(2\pi/K_0)(j+t/\pi)$, which is exact for $t=0$ and $t=\pi/2$. This chain,
+together with the cubic family of \cite[Remark 3 after Prop.~14]{GLRV2006} (whose leading
+term is quoted there from \cite{GLV2005}, outside our balanced class), is the only previous
+instance we know of an eigenvalue law with an explicit constant in the limit-circle
+case.
+\end{example}
+
+\subsection{Order, type and indicator of the Nevanlinna matrix}
+
+\begin{corollary}\label{cor:type}
+Under \Cref{hyp:H} with a diagonal as in \Cref{cor:balanced}, the entries of the Nevanlinna
+matrix have order $1/\alpha$, are of completely regular growth, and have the indicator
+$\mathfrak h(\theta)=\frac{\pi\mathfrak n}{\sin(\pi/\alpha)}\bigl(\cos\frac{\theta-\pi}{\alpha}+\cos\frac\theta\alpha\bigr)$ on
+$[0,\pi]$ (and $\mathfrak h(-\theta)=\mathfrak h(\theta)$), with $\mathfrak n=C_\alpha c^{-1/\alpha}$. In particular the type is
+$T=\frac12c^{-1/\alpha}\B(\frac1{2\alpha},1-\frac1\alpha)$.
+\end{corollary}
+
+\begin{proof}
+The entries are entire of genus zero with the same order, type and indicator
+\cite{BergPedersen1994}. The zeros of the entry $B$ are the spectrum of one self-adjoint
+extension, so by \Cref{cor:balanced}(a) and \Cref{prop:evalS}(a) they are real with
+$n_\pm(r)\sim\mathfrak n\,r^{1/\alpha}$ on each half-line: an angular density of non-integral order
+$1/\alpha$ with point masses at $\arg z=0,\pi$. Levin's theorem \cite[Ch.~II \S1,
+Thm.~1]{Levin1964} (for zeros on rays: Ch.~I, Thms.~25 and 29) gives completely regular
+growth with the stated indicator, whose maximum $\pi\mathfrak n/\sin(\pi/(2\alpha))$ equals $T$.
+\end{proof}
+
+For $a_n=n^p$ this is Bochkov's theorem \cite{Bochkov2021}, here proved through the
+distribution of the zeros rather than through Taylor coefficients, and extended to the
+class of \Cref{hyp:H} with a small diagonal. For polynomial birth--death rates the two
+results overlap without nesting: Bochkov's theorem with the Berg--Szwarc reduction
+\cite[Thm.~1.11, Rem.~1.10]{BergSzwarc2017} covers all admissible rates, balanced or not.
+The indicator part of Valent's conjecture \cite[Conj.~1]{Valent1999} also follows from
+those results by a Tauberian argument: the positivity of the Taylor coefficients of the
+Stieltjes entry gives $\log M(r)\sim\tau r^{1/p}$, a theorem of Titchmarsh--Valiron type
+\cite[\S7.2]{BGT} turns this into the density of the positive zeros, and Levin's theorem
+gives the indicator. \Cref{cor:type} and its dimerised analogue (\Cref{cor:bd}) give a
+second route through the eigenvalue law; their new content is not the indicator but
+the $O(1)$ terms.
+
+\subsection{What the slowly varying hypothesis does and does not give}\label{sec:hypH}
+
+\Cref{thm:discreteBS} is stated under a condition on first differences because that is what the
+near-field sums need. The three remarks below record what this hypothesis does not give: uniformity,
+an offset, and a rate for chains that are not close to a smooth symbol. None of them is used later.
+
+\begin{remark}[No uniformity over \Cref{hyp:H}]\label{rem:nonuniform}
+The proof of \Cref{thm:discreteBS} gives the error $C(K^{-3/2}+(\ell K)^{-1})+\eta(\lambda)$ with
+$\eta(\lambda)=C(N_\lambda^{-\delta}\log N_\lambda+N_\lambda^{1+\beta-\alpha}+N_\lambda^{-1}\log N_\lambda)$,
+and the constant depends on the chain through $\sum|\tilde\varepsilon_m|$. Nothing is uniform
+over \Cref{hyp:H}, and for small $\delta$ the convergence can be invisible at every
+accessible $\lambda$: for $r_n=0.4(-1)^nn^{-1.1}$ ($\delta=0.1$) the frame normalisation
+$\rho_m$ approaches $1$ only like $m^{-0.1}$, so the error terms that involve
+$\tilde\varepsilon_m$ decay only like $N_\lambda^{-0.1}$. Such chains do have a rate; \Cref{thm:rate} gives $O(N_\lambda^{-0.1})$.
+\Cref{hyp:H} is sufficient but not necessary: the proof uses it only through the four
+sums estimated in \Cref{lem:nearsums}.
+\end{remark}
+
+\begin{remark}[No offset without the $1/n$ term]\label{rem:nooffset}
+Without the $\kappa/n$ hypothesis no offset need exist: there are chains satisfying
+\Cref{hyp:H} for which $S(\lambda)-N_\lambda I_\alpha$ is unbounded, for example
+$r_n=0.3\,n^{-0.15}\sin(2\log n)$. \Cref{thm:discreteBS} still holds for them, which is
+why it is stated with $S$.
+\end{remark}
+
+\begin{remark}[Chains with differences only]\label{rem:mollify}
+Under \Cref{hyp:H} with $\delta\in(\frac34,1]$, mollify the piecewise linear interpolant of
+$r_n$ at the variable scale $x^\vartheta$, $\vartheta\in(1-\delta/3,1)$. One derivative falls on the
+interpolant and each further one costs $x^{-\vartheta}$, so the mollified symbol satisfies
+\Cref{hyp:A}, and the remainder is $O(n^{\vartheta-1-\delta})$. \Cref{thm:rate} then gives
+$\psi-\bar\Phi=O(N_\lambda^{-\min(1,(4\delta-3)/3)+\epsilon}+N_\lambda^{1+\beta-\alpha})$ for every
+$\epsilon>0$, where $\bar\Phi$ is the smooth phase \eqref{eq:PhiA} of the mollified symbol. For
+$\delta\le\frac34$ the method gives no rate for a general chain in \Cref{hyp:H}, and no single rate
+holds over \Cref{hyp:H}, which fixes neither $\delta$ nor the constant.
+\end{remark}

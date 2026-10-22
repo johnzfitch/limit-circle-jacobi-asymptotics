@@ -1,0 +1,172 @@
+\section{The second-order term}\label{sec:second}
+
+For a shifted power the error in \Cref{thm:rate} is of exact order $N_\lambda^{-1}$, and its
+coefficient is universal up to the curvature of the links. This section computes it. The
+first-order phase is evaluated with the true link function, and the remaining
+$1/N_\lambda$ term is the first Born term of the uniform Airy approximation on the whole
+half-line, whose coefficient reduces to a Hadamard finite part of an explicit local
+density.
+
+Throughout this section $b\equiv0$ and
+\begin{equation}\label{eq:H2}
+  a_k=\tilde a(k)(1+e_k)\ (k\ge k_0),\qquad
+  \tilde a(y):=c\,(y+s)^\alpha\bigl(1+\kappa_2(y+s)^{-2}\bigr),\qquad |e_k|\le C_ek^{-3},
+\end{equation}
+with $\alpha>1$, $c>0$, $s,\kappa_2\in\RR$. Then \Cref{cor:rate} applies with $\kappa=\alpha s$.
+
+\begin{theorem}{Second-order Bohr--Sommerfeld rule}{second}
+Under \eqref{eq:H2}, as $\lambda\to+\infty$,
+\[
+  \psi(\lambda)=\Phi(\lambda)-\Bigl(\kappa_2+\frac{2\alpha-1}{24}\Bigr)\frac{J_\alpha}{N_\lambda}+O\bigl(N_\lambda^{-4/3}\bigr),
+  \qquad\psi(-\lambda)=-\psi(\lambda).
+\]
+Consequently the eigenvalues of every $H_t$ satisfy, with $\nu_j:=(j\pi+t+s\pi/2)/I_\alpha$,
+\[
+  (\lambda_j/2c)^{1/\alpha}=\nu_j+\Bigl(\kappa_2+\frac{2\alpha-1}{24}\Bigr)\frac{J_\alpha}{I_\alpha\nu_j}+O\bigl(\nu_j^{-4/3}\bigr).
+\]
+\end{theorem}
+
+The constant has two parts. The part $\kappa_2J_\alpha$ is classical: it is the change of the
+first-order action when the links are bent at relative order $n^{-2}$ (\Cref{lem:kappa2}).
+The part $(2\alpha-1)J_\alpha/24$ is the quantum correction (\Cref{prop:K2}). For the Berg--Valent
+chain, $a_k=2k\sqrt{4k^2-1}=4k^2(1-\frac1{8k^2}+O(k^{-4}))$, so $\alpha=2$, $s=0$ and
+$\kappa_2=-\frac18=-\frac{2\alpha-1}{24}$: the $1/N_\lambda$ term vanishes, consistently with Valent's
+closed form (\Cref{ex:bv}), although the exponentially small remainder seen there is a
+property of the exact solution and not of the rule.
+
+\subsection{Set-up on the half-line}\label{sec:halfline}
+
+Put $h:=1/N_\lambda$ and $a(t,h):=\tilde a(t/h)/\lambda=\frac12(t+hs)^\alpha(1+\kappa_2h^2(t+hs)^{-2})$,
+so that $p$ solves \eqref{eq:Lpert} with $d\equiv0$. Then $Z=1/(2\hat a)$ has the form
+$Z(t,h)=t^{-\alpha}\mathcal Z(h/t)$ with $\mathcal Z$ analytic near $0$ and $\mathcal Z(0)=1$; at $h=0$,
+$Z=t^{-\alpha}$ and $t_p=1$. On the oscillatory side write $r:=-\zeta>0$ and
+$\vartheta:=\arccos Z\in[0,\frac\pi2)$ (in this section $\vartheta$ always has this meaning), so
+$g^2=r^{1/2}/(\hat a\sin\vartheta)$, and write
+$\langle t\rangle:=\max(1,t)$ and $\mathcal G(t):=\hat a(t)g(t)$.
+
+\begin{remark}[Weyl--Moyal reading]\label{rem:moyal}
+The Jacobi operator with links $A(X\pm\frac12)$ has Weyl symbol $H=2A(X)\cos p$ (the shift
+$f\mapsto A(x+\frac12)f(x+1)$ has symbol $A(X)e^{ip}$). The second-order Bohr--Sommerfeld
+term for one-dimensional Weyl symbols is $\frac1{24}\frac{d}{dE}\oint(H_{XX}H_{pp}-H_{Xp}^2)\,dt$
+\cite{ColinDeVerdiere2005}. Applied formally to the half-orbit from the turning point to the
+limit-circle end, and regularised there, the curvature part
+$H_{XX}H_{pp}=-4AA''\cos^2p$ contributes $+(\alpha-1)^2J_\alpha/(24N)$ and the gradient part
+$-H_{Xp}^2=-4A'^2\sin^2p$ contributes $-\alpha^2J_\alpha/(24N)$, for $A=cX^\alpha$ (both are regularised Beta integrals of the
+type evaluated in \Cref{prop:K2}). The sum is
+$-(2\alpha-1)J_\alpha/(24N)$, so $2\alpha-1=\alpha^2-(\alpha-1)^2$ and $\frac1{24}$ is the Moyal coefficient.
+\Cref{thm:second} proves this formula for power symbols; it is not used in the proof, but it
+says what the proof computes: the $1/N$ term is the Moyal correction of the classical action.
+\end{remark}
+
+\subsection{Plan of the proof}
+
+The first-order phase is $\tilde\Phi$, the classical action of the true link function $\tilde a$; it
+differs from $\Phi$ by the classical curvature term $\kappa_2J_\alpha/N_\lambda$ (\Cref{lem:kappa2}). What
+remains is a quantum correction, and the proof computes it as the first Born term of the uniform
+Airy approximation on the whole half-line. Let $n_0:=\lceil\frac12/h\rceil$, let $f_A$ be the solution
+with $f_A=\psi_A$ at $n_0-1,n_0$, and write $(f_A(n),f_A(n+1))^{\mathsf T}=\Psi(n)c(n)$ as in
+\eqref{eq:vop}, with $c(n_0-1)=(1,0)$. Five steps, proved in \Cref{app:second}, lead to the constant.
+\begin{enumerate}
+\item[(i)] The Langer data of \Cref{lem:langer} extend analytically from a compact interval to the
+  half-line $[\frac14,\infty)$, with explicit growth (\Cref{lem:halfline}).
+\item[(ii)] The residual coefficients decay along the half-line: $\pp_n=h^2\pp_2(t)+O(h^3t^{-2}\mathcal G)$
+  and $\qq_n=O(h^{10/3}t^{-10/3}\mathcal G)$, where $\pp_2$ is the second Taylor coefficient of the frozen
+  residual $\mathcal P$ of \Cref{lem:R} and $\mathcal G=\hat ag$ (\Cref{lem:decay}).
+\item[(iii)] The forward induction of \Cref{thm:olver} runs to infinity, and the coefficient of
+  $\psi_B$ in $f_A$ converges to $\mathcal F_2+O(h^2)$, with the first Born term
+  $\mathcal F_2:=-\sum_{n\ge n_0}\psi_A(n)(\mathcal L\psi_A)(n)/W_n$ (\Cref{lem:forward}).
+\item[(iv)] A solution with limiting coefficients $(C_1,C_2)$ has its coordinates at infinity in the
+  direction $\tilde\Phi-\arg(C_1+iC_2)$, where
+  $\tilde\Phi(\lambda):=y_\lambda\pi/2+\int_{y_\lambda}^\infty\arcsin(\lambda/2\tilde a(y))\,dy$ and $y_\lambda$ is the largest
+  root of $2\tilde a=\lambda$ (\Cref{lem:reading}).
+\item[(v)] The Born term is an Airy-weighted Riemann sum: $\mathcal F_2=hK_2+O(h^{4/3})$ with
+  $K_2:=\frac12\int_1^\infty G_2(t)\,dt$ and $G_2:=g\pp_2r^{-1/2}$ at $h=0$ (\Cref{lem:riemann}). Because
+  $\Ai(-X)^2$ averages to $(2\pi X^{1/2})^{-1}$, the sum becomes the integral of a local density
+  against $r^{-1/2}$.
+\end{enumerate}
+The turning point contributes only $O(h^{4/3})$ to $\mathcal F_2$, not $O(h)$, for a reason that is
+visible in (ii): the frozen residual is even in the step, so it is $O(h^2)$ per site, and the turning
+window holds only $O(h^{-1/3})$ of the $h^{-1}$ sites that carry the density. So the whole coefficient of
+$1/N_\lambda$ comes from the oscillatory half-line, where it is the finite part computed next.
+
+\subsection{The constant}
+
+\begin{proposition}{The Born constant}{K2}
+On the oscillatory side at $h=0$, with $Z=t^{-\alpha}$, $\vartheta=\arccos Z$ and $S:=\sin\vartheta$,
+\[
+  G_2=\mathcal D(t)-\frac5{16}\,\vartheta\,r^{-3},\qquad
+  \mathcal D:=-\frac{Z'^2(S^4+17S^2-15)-Z''Z(S^4+6S^2)}{12\,S^5Z},
+\]
+and $K_2=\frac12\,\mathrm{f.p.}\!\int_1^\infty \mathcal D\,dt=\frac{2\alpha-1}{24}J_\alpha$.
+\end{proposition}
+
+\begin{proof}
+\step{the density} $\pp_2=F''(0)$ for $F(\eta)=\hat a(t+\frac\eta2)g(t+\eta)X_1(s_+(\eta);\eta)$, by
+parity. Expanding $X_1=X_{10}+\eta X_{11}+\eta^2X_{12}$ with $X_{10}=\cosh(ks)$, $k=\sqrt\zeta$, and
+$X_{11},X_{12}$ the solutions of $Y''-k^2Y=sX_{1,j-1}$ with zero data, and eliminating $g$, $\hat a$
+and the derivatives of $\zeta$ through the eikonal and amplitude identities and their
+derivatives, one obtains on the oscillatory side ($\sqrt\zeta=i\sqrt r$) exactly the two groups
+of terms displayed. The intermediate identities of this elimination are listed in \Cref{app:p2}.
+
+\step{the regulator} With $\mathcal A(t):=\int_1^t\vartheta$ we have $r^{3/2}=\frac32\mathcal A$, so
+$-\frac5{16}\vartheta r^{-3}=\frac5{36}(1/\mathcal A)'$, and for $t_0>1$,
+$\int_{t_0}^\infty G_2=\int_{t_0}^\infty \mathcal D-\frac5{36}\mathcal A(t_0)^{-1}$.
+
+\step{finite part} Near $t=1$, $S=(t-1)^{1/2}\cdot$(analytic, nonzero), so $\mathcal D=(t-1)^{-5/2}\cdot$(analytic)
+and $1/\mathcal A=(t-1)^{-3/2}\cdot$(analytic). Hence $\int_{t_0}^\infty \mathcal D=\mathrm{f.p.}\!\int_1^\infty \mathcal D+
+\sum_{j=0,1}c_j(t_0-1)^{j-3/2}+O((t_0-1)^{1/2})$, with no logarithm and no constant from
+$1/\mathcal A$. Since $G_2=g\pp_2r^{-1/2}$ is integrable at $1$, the singular terms cancel and
+$K_2=\frac12\,\mathrm{f.p.}\!\int_1^\infty \mathcal D$.
+
+\step{evaluation} Substitute $w=t^{-\alpha}$, so $Z'=-\alpha w^{1+1/\alpha}$, $Z''=\alpha(\alpha+1)w^{1+2/\alpha}$
+and $dt/dw=-\alpha^{-1}w^{-1-1/\alpha}<0$. Then, exactly,
+\[
+  \mathcal D\,\frac{dt}{dw}=\tfrac1{12}w^{1/\alpha}\bigl[-\sigma^{-1}+(11\alpha-6)\sigma^{-3}-15\alpha\sigma^{-5}\bigr],\qquad
+  \sigma:=(1-w^2)^{1/2},
+\]
+and $t\in(1,\infty)$ corresponds to $w$ decreasing from $1$ to $0$.
+The map $t\mapsto w$ is analytic with nonzero derivative at $t=1$ and the exponents are
+half-integers, so the finite part is the value at $\epsilon=0$ of the analytic continuation of
+$\int \mathcal D(t-1)^\epsilon dt$ and is unchanged by the substitution. With
+$\mathcal M(\gamma):=\int_0^1w^{1/\alpha}(1-w^2)^{-\gamma}dw=\frac12\B(\frac12+\frac1{2\alpha},1-\gamma)$ continued
+in $\gamma$, the recursion $\B(p,q-1)=\B(p,q)(p+q-1)/(q-1)$ gives $\mathcal M(\frac12)=\alpha J_\alpha$,
+$\mathcal M(\frac32)=-J_\alpha$ and $\mathcal M(\frac52)=(1-2\alpha)J_\alpha/(3\alpha)$. Hence
+\[
+  \mathrm{f.p.}\!\int_1^\infty \mathcal D\,dt=-\tfrac1{12}\bigl[-\mathcal M(\tfrac12)+(11\alpha-6)\mathcal M(\tfrac32)-15\alpha\mathcal M(\tfrac52)\bigr]
+  =-\tfrac1{12}(1-2\alpha)J_\alpha=\tfrac{2\alpha-1}{12}J_\alpha
+\]
+(a direct quadrature of $G_2$ gives the same value; \Cref{app:repro}).
+\end{proof}
+
+\begin{lemma}[The classical part]\label{lem:kappa2}
+$\tilde\Phi(\lambda)=\Phi(\lambda)-\kappa_2J_\alpha/N_\lambda+O(N_\lambda^{-3})$.
+\end{lemma}
+
+\begin{proof}
+At $\kappa_2=0$, $\tilde\Phi=\Phi$ exactly (\Cref{prop:evalS}). Differentiating
+$\tilde\Phi=y_\lambda\pi/2+\int_{y_\lambda}^\infty\arcsin W$, $W:=\lambda/2\tilde a$, in $\kappa_2$ at fixed $\lambda$,
+the boundary terms cancel because the integrand is $\pi/2$ at $y_\lambda$, and
+$\partial_{\kappa_2}W=-W(y+s)^{-2}(1+\kappa_2(y+s)^{-2})^{-1}$. At $\kappa_2=0$ this gives
+$-\int_N^\infty(N/v)^\alpha v^{-2}(1-(N/v)^{2\alpha})^{-1/2}dv=-J_\alpha/N$. In the variable $u=v/v_\lambda$, where
+$v_\lambda$ is the turning point, the turning point stays at $u=1$, each $\kappa_2$-derivative brings a
+factor $v_\lambda^{-2}$ and keeps the integrand $O((u-1)^{-1/2})$ at $u=1$, so the second derivative is
+$O(N^{-3})$ uniformly for bounded $\kappa_2$.
+\end{proof}
+
+\begin{proof}[Proof of \Cref{thm:second}]
+Apply \Cref{thm:olver} on the window $[n_0,n_1]$, $n_1h\approx3$, to obtain $f_B$; exactly as
+in \Cref{lem:K}, $p=c_K(f_A+\eta_Kf_B)$ with $|\eta_K|\le Ce^{-c/h}$, and the coefficients of $f_B$
+in the basis $(\psi_A,\psi_B)$ converge and stay bounded beyond $n_1$ by the forward
+induction of \Cref{lem:forward} (at $n_1$ the site is oscillatory, so $\Lambda^{(B)}(n_1)\le1+2d$).
+So the coefficient vector of $p/c_K$ converges to $C=c(\infty)+O(e^{-c/h})$, and by
+\Cref{lem:reading} and \Cref{lem:forward}, $\psi\equiv\tilde\Phi-\arg(C_1+iC_2)=\tilde\Phi-\mathcal F_2+O(h^2)$
+modulo $\pi$. Since $\psi-\Phi\to0$ (\Cref{cor:rate}), $\tilde\Phi-\Phi\to0$ and $\mathcal F_2\to0$, the
+integer is $0$. \Cref{lem:riemann}, \Cref{prop:K2} and \Cref{lem:kappa2} give the formula. The
+reflection is \Cref{thm:count}(iii), and the eigenvalue formula follows by solving
+$\psi(\lambda_j)=t+j\pi$ for $N_{\lambda_j}$.
+\end{proof}
+
+The remainder $O(N_\lambda^{-4/3})$ comes from the turning-point region in
+\Cref{lem:riemann} and is not sharp; numerically the deviation of $N_\lambda r_j$ from its limit decays
+like $N_\lambda^{-2}$, that is, the remainder is $O(N_\lambda^{-3})$ for smooth chains (\Cref{sec:numerics}). If $|e_k|\le C_ek^{-2-\delta}$ with $0<\delta<1$, the same proof gives the
+remainder $O(N_\lambda^{-4/3}+N_\lambda^{-1-\delta})$.

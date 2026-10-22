@@ -1,0 +1,11 @@
+chain DB: a_n = n^3, b_n = 2 n^1.5; sizes [1048576, 2097152, 4194304]; prediction constant (B0/(4 c alpha)) B(...) = 2.222159
+N=  10.773  N^(alpha-1-beta) r_A = +2.19192 (pred +2.22216)   N r_AB = -0.11070   size spread 2.8e-04
+N=  13.725  N^(alpha-1-beta) r_A = +2.20096 (pred +2.22216)   N r_AB = -0.08753   size spread 2.8e-04
+N=  19.654  N^(alpha-1-beta) r_A = +2.21045 (pred +2.22216)   N r_AB = -0.05816   size spread 2.8e-04
+N=  28.577  N^(alpha-1-beta) r_A = +2.21682 (pred +2.22216)   N r_AB = -0.03281   size spread 2.9e-04
+N=  40.495  N^(alpha-1-beta) r_A = +2.22056 (pred +2.22216)   N r_AB = -0.01316   size spread 2.9e-04
+N=  55.407  N^(alpha-1-beta) r_A = +2.22269 (pred +2.22216)   N r_AB = +0.00179   size spread 2.9e-04
+N=  80.775  N^(alpha-1-beta) r_A = +2.22421 (pred +2.22216)   N r_AB = +0.01691   size spread 2.9e-04
+N= 113.618  N^(alpha-1-beta) r_A = +2.22492 (pred +2.22216)   N r_AB = +0.02834   size spread 2.9e-04
+N= 159.906  N^(alpha-1-beta) r_A = +2.22522 (pred +2.22216)   N r_AB = +0.03798   size spread 2.9e-04
+time 1013.7s

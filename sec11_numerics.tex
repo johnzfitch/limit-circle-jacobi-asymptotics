@@ -1,0 +1,74 @@
+\section{Numerical confirmation}\label{sec:numerics}
+
+This section compares the headline formulas with eigenvalues computed by a method that is independent
+of the asymptotic machinery of the paper: it uses no frames, no normal form, and no Airy or Bessel
+functions. It does rely on the exact identification of the spectra in \Cref{thm:count}(i), as described
+next. The programs, their outputs and the computing details are listed in \Cref{app:repro}.
+
+\paragraph{Method.} By \Cref{thm:count}(i), $p_{2m+1}(\lambda)$ is a nonzero multiple of the second
+coordinate $v_{2m,2}$ and $p_{2m+2}(\lambda)$ of the first coordinate $v_{2m+1,1}$, because $\Pt$ vanishes on
+odd and $\Rt$ on even sites. The eigenvalues of the truncation to the sites $0,\dots,n-1$ are the
+zeros of $p_n$, so the eigenvalues of the odd-size truncations converge to the zeros of
+$\beta_\infty$ (the spectrum of $H_0$) and those of the even-size truncations to the zeros of
+$\alpha_\infty$ (the spectrum of $H_{\pi/2}$); a last diagonal entry $\vp\tan t/P_{2m}^2$ on an odd truncation
+imposes the boundary condition of $H_t$ at the cut. The $k$-th positive eigenvalue is located by
+Sturm counts, the number of negative pivots of the $LDL^{\mathsf T}$ factorisation of $J_n-\lambda$, in
+float64. Each eigenvalue is computed for three truncation sizes $n,2n,4n$ and extrapolated in $n^{-p}$,
+where $p$ is the decay exponent of the neglected tail of the shear weights. For each eigenvalue we
+report the residual $r_j:=\Phi(\lambda_j)-j\pi-\theta_t$, with $\theta_t$ the predicted offset ($t$ for balanced
+links, $\theta_0$ or $\frac\pi2-\theta_0$ for dimerised links), reduced modulo $\pi$ where the labels are not
+tracked.
+
+\paragraph{Validation.} The eigenvalues of a truncation of size $\approx800$ agree with a $40$-digit
+bisection to relative $1.7\cdot10^{-15}$. The spread between the three truncation sizes is
+recorded for every eigenvalue; it is small compared with the residuals in every row of
+\Cref{tab:numerics}.
+
+\paragraph{The test chains.} All parameters are new for this paper. B1--B3 are
+shifted powers with a curvature term, $a_k=c(k+s)^\alpha(1+\kappa_2(k+s)^{-2})$, with
+$(c,\alpha,s,\kappa_2)=(0.7,2.25,0.35,0.6)$, $(1.3,3.75,-0.2,-0.3)$ and $(0.5,5,0.6,0)$. SQ5m0, SQ5m3 and
+SQ6m1 are blocks of the squeezing operators of \Cref{cor:squeeze} ($k=5,6$). RS is $a_k=k^3(1+0.5\,k^{-3/2})$,
+a rough part without smoothness. D1 and D2 are dimerised,
+$a_k=c\,k^\alpha(1+(\kappa+\kappa'(-1)^k)/k)$ with $(c,\alpha,\kappa,\kappa')=(1,3.5,0.2,0.45)$ and
+$(0.8,2.75,-0.3,-0.25)$. BD6 is the symmetrised birth--death chain with $p=6$,
+$e=(2,3,4,5,6,7)$ and $d=(0,1,2,3,3,3)$, for which $\nu=0.375$ and the Krein offset of \Cref{cor:bd} is
+$(\dsum+\esum)/(2p^2)-\nu/2=0.3542$ levels.
+
+\begin{table}[h]
+\centering\small
+\input{outputs/numerics_table.tex}
+\caption{Residuals at the largest level computed. For balanced chains the prediction is the
+second-order constant $(\kappa_2+(2\alpha-1)/24)J_\alpha$ of \Cref{thm:second} (for the squeezing blocks
+$(k-1)^2J_{k/2}/(48k)$); for RS it is the constant of \Cref{prop:SH} plus the $N^{-1}$ term; for the
+dimerised chains the residual relative to the offsets of \Cref{cor:dimer} should tend to zero.
+The full sequences over $N_\lambda=10\dots320$ are part of the data listed in \Cref{app:repro}.}
+\label{tab:numerics}
+\end{table}
+
+\paragraph{Results.} On every balanced chain $N_\lambda r_j$ converges to the second-order constant of
+\Cref{thm:second}, for all extensions tested. It agrees with it to seven decimal places at $N_\lambda\approx320$ on
+B3 and SQ6m1 and to six on B2, to six digits at $N_\lambda\approx80$ on the $k=5$ squeezing blocks and to five digits at
+$N_\lambda\approx29$ on B1, where the slowly decaying tail ($\alpha=2.25$) limits the levels reached. The
+deviation decays like $N_\lambda^{-2}$, consistent with a remainder much smaller
+than the proved $O(N_\lambda^{-4/3})$. The extension enters only through $t$, as \Cref{thm:count} and the
+normalisation by $\vp$ predict: the three columns for B3 coincide. On RS, $N_\lambda^{1/2}r_j$ agrees with
+the constant of \Cref{prop:SH} plus the $N_\lambda^{-1}$ term to five digits. On the dimerised chains
+the residuals relative to $\theta_0$ and $\frac\pi2-\theta_0$ tend to zero (on D1 from $1.7\cdot10^{-3}$ at
+$N_\lambda=10$ to $9.6\cdot10^{-5}$ at $N_\lambda=320$, with local decay exponent rising from $0.6$ to $0.9$);
+the offsets are confirmed. \Cref{thm:dimer} gives no rate, and we do not infer one: on D1 the decay
+approaches $N_\lambda^{-1}$, but the local exponent is still moving at the largest level, and nothing
+says that other dimerised chains behave the same way over an accessible range. For the generic extension $t=1$ of D1
+($\kappa'>0$) the eigenvalues follow the law of $H_{\pi/2}$, as \Cref{cor:dimer}(ii) predicts. D2
+($\kappa'<0$) behaves in the same way; for its extension $H_0$, whose tail decays only like $n^{-1.25}$,
+only two levels ($N_\lambda\le14$) were reached. On BD6 the Krein offset is confirmed in the same way.
+
+\paragraph{A diagonal.} \Cref{thm:dimerdiag} was tested on D1 with the diagonal
+$b_k=0.5(1+k)^{1/2}$. Modulo $\pi$ the residuals relative to $\theta_0$ and
+$\frac\pi2-\theta_0$ decrease to $1.36\cdot10^{-4}$ at $N_\lambda=227$ and $7.7\cdot10^{-4}$ at $N_\lambda=56$, against
+$1.32\cdot10^{-4}$ and $7.1\cdot10^{-4}$ at the same levels for D1 without diagonal. For the rate theorem with a diagonal,
+the chain $a_n=n^3$, $b_n=2n^{3/2}$ gives
+$N_\lambda^{1/2}(\Phi_A(\lambda_j)\bmod\pi)=2.217,2.224,2.225$ at $N_\lambda\approx29,81,160$, against the first-order
+prediction $\frac{b_0}{4c\alpha}\B(\frac{\alpha-\beta-1}{2\alpha},\frac12)=2.2222$; so the $N_\lambda^{1+\beta-\alpha}$ term of
+\Cref{thm:rate} is attained with this constant. The truncation error of this chain decays only
+like $n^{-1/2}$ and limits the absolute accuracy of $r_j$ to about $10^{-4}$, which is not enough to test
+\Cref{conj:AB}.

@@ -1,0 +1,114 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{etch-math}
+\usepackage{etch-plot}
+
+% Conjectures are named, unproved claims: same inline register as definitions.
+\theoremstyle{esmath-tier3}
+\newtheorem{conjecture}{Conjecture}[section]
+\crefname{conjecture}{conjecture}{conjectures}
+\Crefname{conjecture}{Conjecture}{Conjectures}
+
+% Figures sit on the kit's non-floating plates; this counter makes them citable.
+\newcounter{esfig}
+\crefname{esfig}{figure}{figures}
+\Crefname{esfig}{Figure}{Figures}
+\newcommand{\esfiglabel}[1]{\refstepcounter{esfig}\label{#1}}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\Ai}{\operatorname{Ai}}
+\newcommand{\Bi}{\operatorname{Bi}}
+\newcommand{\B}{\operatorname{B}}
+\newcommand{\artanh}{\operatorname{artanh}}
+\newcommand{\arccosh}{\operatorname{arccosh}}
+\newcommand{\Pt}{\widetilde P}
+\newcommand{\Rt}{\widetilde R}
+\newcommand{\Et}{\widetilde E}
+\newcommand{\vp}{\varpi}
+\newcommand{\pp}{\mathfrak{p}}
+\newcommand{\qq}{\mathfrak{q}}
+\newcommand{\hl}{\widehat}
+\setlength{\emergencystretch}{3em}
+\newcommand{\Jr}{\mathsf{J}}          % generator of rotations (not the Jacobi matrix J)
+\newcommand{\Cres}{C_{\mathrm{res}}}  % residue constant of Section 11
+\newcommand{\dsum}{\mathfrak d}       % sum of the birth--death parameters d_j
+\newcommand{\esum}{\mathfrak e}       % sum of the birth--death parameters e_j
+
+\hypersetup{
+  pdftitle={Bohr--Sommerfeld Asymptotics for Limit-Circle Jacobi Matrices},
+  pdfauthor={John Zachary Fitch},
+  pdfsubject={Spectral theory of Jacobi matrices: eigenvalue asymptotics for all self-adjoint extensions in the limit-circle case},
+  pdfkeywords={Jacobi matrix, limit-circle case, self-adjoint extensions, eigenvalue asymptotics, Bohr--Sommerfeld rule, indeterminate moment problem, Airy and Bessel approximation, critical index}}
+
+\begin{document}
+
+\begin{center}
+\estitle{Bohr--Sommerfeld Asymptotics for Limit-Circle Jacobi Matrices}\\[4pt]
+\essubtitle{Explicit high-energy eigenvalue laws for every self-adjoint extension of a Jacobi matrix
+with links $c\,n^\alpha(1+(\kappa+\kappa'(-1)^n)/n+\cdots)$, $\alpha>1$: offsets that depend on
+the extension, rates for balanced links, and the second-order term for shifted powers.}\\[10pt]
+{\normalsize John Zachary Fitch}\\[1pt]
+{\small\texttt{zack@internetuniverse.org}}\\[1pt]
+{\small Version of 22 October 2026}
+\end{center}
+
+\esrule
+
+\begin{quote}\small
+\textsc{Abstract.} A Jacobi matrix whose off-diagonal entries grow regularly like $c\,n^\alpha$
+with $\alpha>1$, without a strong alternation between even and odd entries, is in the limit-circle
+case: it has a one-parameter family of self-adjoint extensions $H_t$, each with discrete spectrum.
+The growth of the eigenvalue counting function is known up to multiplicative constants, but no
+eigenvalue law with an explicit constant was known beyond a few explicitly solvable chains. We
+prove such a law, with an explicit offset, for every self-adjoint extension of a zero-diagonal
+Jacobi matrix with links $a_n=c\,n^\alpha\bigl(1+(\kappa+\kappa'(-1)^n)/n+O(n^{-1-\delta})\bigr)$ in
+the limit-circle range $2|\kappa'|<\alpha-1$. For $\kappa'=0$ the eigenvalues satisfy the
+Bohr--Sommerfeld rule
+\[
+  N_{\lambda_j} I_\alpha-\frac{\kappa\pi}{2\alpha}=j\pi+t+O\bigl(j^{-\min(1,\delta)}\bigr),
+  \qquad N_\lambda=(\lambda/2c)^{1/\alpha},\quad
+  I_\alpha=\tfrac12\B\bigl(\tfrac{\alpha-1}{2\alpha},\tfrac12\bigr),
+\]
+with no quarter-period correction in the normalisation of the extensions fixed by the solutions at
+$\lambda=0$, and for a shifted power with a curvature term the next coefficient is
+$(\kappa_2+(2\alpha-1)/24)\,J_\alpha$. For $\kappa'\neq0$ (dimerised links) the far field is a Bessel
+problem of order $\nu=\tfrac12-\kappa'/(\alpha-1)$: measured in units of $\pi$, the offsets of the two
+extensions $H_0$ and $H_{\pi/2}$ are shifted by $+\kappa'/(2(\alpha-1))$ and $-\kappa'/(2(\alpha-1))$
+from the balanced values $0$ and $\tfrac12$, every other extension follows one of these two laws, and
+the remainder is $o(1)$. The proofs combine an exact rotation identity for two-site blocks, an
+adiabatic normal form, a Bessel comparison for the far field, and a discrete Olver-type bound for Airy
+approximations that we prove from scratch; the last also extends a theorem of Fischer, Burgarth and
+Lonigro on singular limits from $\alpha>4/3$ to $\alpha>1$. Applications include the spectra of all
+symmetry-preserving self-adjoint extensions of higher-order squeezing operators and the Krein and
+Friedrichs spectra of birth--death processes with polynomial rates. For these processes we compute the
+critical indices of Berg and Szwarc exactly: $(1-\nu)/2$ for the Friedrichs solution and $(1+\nu)/2$
+for every other N-extremal solution, all of them determinate at the critical weight. The numerical
+claims are checked against an independent eigenvalue computation.
+
+\medskip\noindent\textsc{MSC 2020.} Primary 47B36; Secondary 34L20, 41A60, 44A60, 47A75, 47B25.
+
+\noindent\textsc{Keywords.} Jacobi matrix, limit-circle case, self-adjoint extensions, eigenvalue
+asymptotics, Bohr--Sommerfeld rule, indeterminate moment problem, Airy and Bessel comparison,
+critical index.
+\end{quote}
+
+\input{sec1_intro}
+\input{sec2_setting}
+\input{sec3_blocks}
+\input{sec4_turning}
+\input{sec5_balanced}
+\input{sec6_dimer}
+\input{sec7_olver}
+\input{sec8_rates}
+\input{sec9_second}
+\input{sec10_apps}
+\input{sec11_moments}
+\input{sec11_numerics}
+\input{sec12_open}
+\input{app_routine}
+\input{app_repro}
+\input{refs}
+
+\end{document}

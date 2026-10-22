@@ -1,0 +1,45 @@
+PASS C1 I_alpha integral = Beta form, alpha=9/8  0.0
+PASS C1 I_alpha integral = Beta form, alpha=9/4  0.0
+PASS C1 I_alpha integral = Beta form, alpha=3  4.59e-41
+PASS C1 I_alpha integral = Beta form, alpha=15/4  0.0
+PASS C1 I_alpha integral = Beta form, alpha=5  0.0
+PASS C2 counting constant duplication, alpha=9/8  0.e-172
+PASS C2 counting constant duplication, alpha=5/2  0.e-173
+PASS C2 counting constant duplication, alpha=7  0.e-173
+PASS C3 drift integral = pi/(2 alpha), alpha=1.5  0.0
+PASS C3 drift integral = pi/(2 alpha), alpha=2.75  0.0
+PASS C3 drift integral = pi/(2 alpha), alpha=3.5  0.0
+PASS C3 drift integral = pi/(2 alpha), alpha=6.0  0.0
+PASS C4 J_alpha, alpha=2.25  0.0
+PASS C4 J_alpha, alpha=3.75  0.0
+PASS C4 J_alpha, alpha=5.0  0.0
+PASS C5 f.p. int D dt = (2 alpha - 1) J_alpha / 12 (symbolic)  alpha/6 - 1/12
+PASS C6 w-substitution of the local density D (exact)  symbolic remainder: 0
+PASS C7 K2 by quadrature = (2a-1)J/24, alpha=2.25  -1.89e-12
+PASS C7 K2 by quadrature = (2a-1)J/24, alpha=3.75  -2.06e-12
+PASS C8a curvature integrand = -2(alpha-1) X_E^(alpha-1) w^(1/alpha)(1-w^2)^(-1/2)  2*X_E**(alpha - 1)*(1 - alpha)
+PASS C8b gradient integrand = alpha X_E^(alpha-1) w^(1/alpha)(1-w^2)^(-1/2)  X_E**(alpha - 1)*alpha
+PASS C8c N*C_I = (alpha-1)^2 J/24
+PASS C8d N*C_II = -alpha^2 J/24
+PASS C8e N*(C_I + C_II) = -(2alpha-1) J/24
+PASS C9 Wronskian tau(J_-nu J_{nu-1} + J_{1-nu} J_nu) = (2/pi) sin(nu pi)
+PASS C10 det M0 = +sin(nu pi)  sin(pi*nu)
+PASS C11 c_- = -sin(chi+b)/sin(nu pi), c_+ = sin(chi+a)/sin(nu pi)  0, 0
+PASS C12 Bessel limits and Q, alpha=3.5, kappa'=0.4500000000000000111022302462515654042363
+PASS C12 Bessel limits and Q, alpha=2.75, kappa'=-0.25
+PASS C13 max of zeta(-1/2, theta)  theta*=0.3027218285984 max=0.09336639094222 min=-0.2078862249774
+PASS C14 squeezing blocks: shift (2m-k+1)/(2k), kappa2 = -(k^2-1)/(48k), k = 3..6
+PASS C15 squeezing second-order coefficient kappa2 + (2alpha-1)/24 = (k-1)^2/(48k)
+PASS C16a nu = ((E-D)/p - 1)/(p-2)
+PASS C16b Krein offset (D+E)/(2p^2) - nu/2  0
+PASS C16c odd/even link constants
+PASS C17 Valent density = C_alpha c^(-1/alpha) for balanced rates, p = 3..10
+      alpha=2.25: J_alpha = [0.54564775292238202095 +/- 3.88e-21]  (2alpha-1)J/24 = [0.079573630634514044721 +/- 3.11e-22]
+      alpha=3.75: J_alpha = [0.35683398012918570470 +/- 3.52e-21]  (2alpha-1)J/24 = [0.096642536284987795022 +/- 3.68e-23]
+      alpha=5: J_alpha = [0.27745019184840557379 +/- 4.09e-21]  (2alpha-1)J/24 = [0.10404382194315209017 +/- 2.83e-22]
+PASS C18 arb evaluation completed
+PASS C19 block rotation E~^-1 T1(mu) E~ = R(2 arcsin(mu/2))
+PASS C20 Airy-window block matrix  Matrix([[2*(d - 1)**2 - 1, (-d + (d - 1)**2 + 1)/(2*l)], [8*d*l*(d - 1), 2*(d - 1)**2 - 1]])
+PASS C21 frame-change generator
+FAILED: none
+EXIT 0

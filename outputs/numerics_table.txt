@@ -1,0 +1,219 @@
+== B1  t = 0.000000  (balanced, alpha = 2.25, kappa = 0.7875, kappa' = 0), sizes [1048576, 2097152, 4194304], offset 0.0000000000
+   N =    10.648   N*r = +0.40697852   predicted +0.40696228   size spread 5.0e-07
+   N =    14.545   N*r = +0.40697098   predicted +0.40696228   size spread 1.0e-06
+   N =    21.044   N*r = +0.40696644   predicted +0.40696228   size spread 2.3e-06
+   N =    28.846   N*r = +0.40696451   predicted +0.40696228   size spread 4.7e-06
+== B1  t = 1.570796  (balanced, alpha = 2.25, kappa = 0.7875, kappa' = 0), sizes [1048576, 2097152, 4194304], offset 1.5707963268
+   N =     9.999   N*r = +0.40698071   predicted +0.40696228   size spread 4.3e-07
+   N =    13.896   N*r = +0.40697181   predicted +0.40696228   size spread 9.1e-07
+   N =    20.394   N*r = +0.40696671   predicted +0.40696228   size spread 2.2e-06
+   N =    28.196   N*r = +0.40696461   predicted +0.40696228   size spread 4.5e-06
+== B2  t = 0.000000  (balanced, alpha = 3.75, kappa = -0.75, kappa' = 0), sizes [131072, 262144, 524288], offset 0.0000000000
+   N =     9.457   N*r = -0.01031230   predicted -0.01040766   size spread 2.6e-13
+   N =    14.266   N*r = -0.01036580   predicted -0.01040766   size spread 1.2e-12
+   N =    19.075   N*r = -0.01038425   predicted -0.01040766   size spread 3.7e-12
+   N =    27.089   N*r = -0.01039606   predicted -0.01040766   size spread 1.4e-11
+   N =    39.913   N*r = -0.01040231   predicted -0.01040766   size spread 5.8e-11
+   N =    55.942   N*r = -0.01040494   predicted -0.01040766   size spread 2.1e-10
+   N =    79.986   N*r = -0.01040633   predicted -0.01040766   size spread 7.9e-10
+   N =   112.044   N*r = -0.01040698   predicted -0.01040766   size spread 2.8e-09
+   N =   160.132   N*r = -0.01040733   predicted -0.01040766   size spread 1.1e-08
+   N =   225.852   N*r = -0.01040749   predicted -0.01040766   size spread 3.9e-08
+   N =   320.425   N*r = -0.01040757   predicted -0.01040766   size spread 1.4e-07
+== B2  t = 1.000000  (balanced, alpha = 3.75, kappa = -0.75, kappa' = 0), sizes [131072, 262144, 524288], offset 1.0000000000
+   N =     9.967   N*r = -0.01032183   predicted -0.01040766   size spread 1.5e-12
+   N =    13.173   N*r = -0.01035856   predicted -0.01040766   size spread 1.5e-12
+   N =    19.585   N*r = -0.01038546   predicted -0.01040766   size spread 1.5e-12
+   N =    27.599   N*r = -0.01039648   predicted -0.01040766   size spread 9.5e-12
+   N =    40.423   N*r = -0.01040245   predicted -0.01040766   size spread 6.0e-11
+   N =    56.452   N*r = -0.01040499   predicted -0.01040766   size spread 2.1e-10
+   N =    78.893   N*r = -0.01040629   predicted -0.01040766   size spread 7.4e-10
+   N =   112.555   N*r = -0.01040699   predicted -0.01040766   size spread 2.8e-09
+   N =   159.039   N*r = -0.01040732   predicted -0.01040766   size spread 1.0e-08
+   N =   226.362   N*r = -0.01040749   predicted -0.01040766   size spread 3.9e-08
+   N =   319.332   N*r = -0.01040757   predicted -0.01040766   size spread 1.4e-07
+== B2  t = 1.570796  (balanced, alpha = 3.75, kappa = -0.75, kappa' = 0), sizes [131072, 262144, 524288], offset 1.5707963268
+   N =    10.258   N*r = -0.01032664   predicted -0.01040766   size spread 3.4e-13
+   N =    13.464   N*r = -0.01036066   predicted -0.01040766   size spread 1.0e-12
+   N =    19.876   N*r = -0.01038610   predicted -0.01040766   size spread 4.3e-12
+   N =    27.891   N*r = -0.01039671   predicted -0.01040766   size spread 1.5e-11
+   N =    39.111   N*r = -0.01040209   predicted -0.01040766   size spread 5.4e-11
+   N =    55.141   N*r = -0.01040486   predicted -0.01040766   size spread 2.0e-10
+   N =    79.184   N*r = -0.01040630   predicted -0.01040766   size spread 7.6e-10
+   N =   112.846   N*r = -0.01040699   predicted -0.01040766   size spread 2.9e-09
+   N =   159.331   N*r = -0.01040732   predicted -0.01040766   size spread 1.0e-08
+   N =   225.051   N*r = -0.01040749   predicted -0.01040766   size spread 3.8e-08
+   N =   319.623   N*r = -0.01040757   predicted -0.01040766   size spread 1.4e-07
+== B3  t = 0.000000  (balanced, alpha = 5.0, kappa = 3, kappa' = 0), sizes [65536, 131072, 262144], offset 0.0000000000
+   N =    10.764   N*r = +0.10405761   predicted +0.10404382   size spread 0.0e+00
+   N =    14.179   N*r = +0.10405158   predicted +0.10404382   size spread 0.0e+00
+   N =    21.009   N*r = +0.10404729   predicted +0.10404382   size spread 0.0e+00
+   N =    29.547   N*r = +0.10404556   predicted +0.10404382   size spread 0.0e+00
+   N =    41.501   N*r = +0.10404470   predicted +0.10404382   size spread 0.0e+00
+   N =    56.871   N*r = +0.10404429   predicted +0.10404382   size spread 1.6e-13
+   N =    80.780   N*r = +0.10404405   predicted +0.10404382   size spread 2.3e-13
+   N =   113.228   N*r = +0.10404394   predicted +0.10404382   size spread 8.8e-13
+   N =   161.047   N*r = +0.10404388   predicted +0.10404382   size spread 5.5e-12
+   N =   227.651   N*r = +0.10404385   predicted +0.10404382   size spread 3.0e-11
+   N =   321.580   N*r = +0.10404384   predicted +0.10404382   size spread 1.7e-10
+== B3  t = 1.000000  (balanced, alpha = 5.0, kappa = 3, kappa' = 0), sizes [65536, 131072, 262144], offset 1.0000000000
+   N =    11.308   N*r = +0.10405625   predicted +0.10404382   size spread 5.7e-14
+   N =    14.722   N*r = +0.10405100   predicted +0.10404382   size spread 5.7e-14
+   N =    21.552   N*r = +0.10404712   predicted +0.10404382   size spread 5.7e-14
+   N =    28.383   N*r = +0.10404571   predicted +0.10404382   size spread 7.8e-14
+   N =    40.337   N*r = +0.10404475   predicted +0.10404382   size spread 9.9e-14
+   N =    57.415   N*r = +0.10404428   predicted +0.10404382   size spread 0.0e+00
+   N =    81.324   N*r = +0.10404405   predicted +0.10404382   size spread 2.3e-13
+   N =   113.772   N*r = +0.10404394   predicted +0.10404382   size spread 2.8e-13
+   N =   161.590   N*r = +0.10404388   predicted +0.10404382   size spread 3.4e-12
+   N =   226.487   N*r = +0.10404385   predicted +0.10404382   size spread 2.9e-11
+   N =   320.416   N*r = +0.10404384   predicted +0.10404382   size spread 1.7e-10
+== B3  t = 1.570796  (balanced, alpha = 5.0, kappa = 3, kappa' = 0), sizes [65536, 131072, 262144], offset 1.5707963268
+   N =    11.618   N*r = +0.10405556   predicted +0.10404382   size spread 0.0e+00
+   N =    15.032   N*r = +0.10405070   predicted +0.10404382   size spread 0.0e+00
+   N =    21.863   N*r = +0.10404702   predicted +0.10404382   size spread 0.0e+00
+   N =    28.693   N*r = +0.10404567   predicted +0.10404382   size spread 0.0e+00
+   N =    40.647   N*r = +0.10404474   predicted +0.10404382   size spread 0.0e+00
+   N =    57.725   N*r = +0.10404428   predicted +0.10404382   size spread 0.0e+00
+   N =    81.634   N*r = +0.10404405   predicted +0.10404382   size spread 2.3e-13
+   N =   114.082   N*r = +0.10404394   predicted +0.10404382   size spread 9.1e-13
+   N =   160.193   N*r = +0.10404388   predicted +0.10404382   size spread 5.5e-12
+   N =   226.797   N*r = +0.10404385   predicted +0.10404382   size spread 3.0e-11
+   N =   320.726   N*r = +0.10404384   predicted +0.10404382   size spread 1.7e-10
+== BD6  t = 0.000000  (dimer, alpha = 3.0, kappa = 1.75, kappa' = 0.25), sizes [65536, 131072, 262144], offset 0.1963495408
+   N =    10.983   r = -4.027e-03   N*r = -0.04423   size spread 8.0e-11
+   N =    15.464   r = -3.124e-03   N*r = -0.04831   size spread 2.9e-10
+   N =    21.439   r = -2.416e-03   N*r = -0.05180   size spread 9.9e-10
+   N =    28.908   r = -1.890e-03   N*r = -0.05464   size spread 3.0e-09
+   N =    40.857   r = -1.408e-03   N*r = -0.05752   size spread 1.1e-08
+   N =    57.288   r = -1.047e-03   N*r = -0.05996   size spread 4.0e-08
+   N =    81.187   r = -7.653e-04   N*r = -0.06213   size spread 1.5e-07
+   N =   114.048   r = -5.606e-04   N*r = -0.06393   size spread 5.2e-07
+   N =   160.351   r = -4.084e-04   N*r = -0.06548   size spread 1.9e-06
+   N =   227.566   r = -2.937e-04   N*r = -0.06683   size spread 7.0e-06
+   N =   320.174   r = -2.122e-04   N*r = -0.06795   size spread 2.5e-05
+== BD6  t = 1.570796  (dimer, alpha = 3.0, kappa = 1.75, kappa' = 0.25), sizes [1048576, 2097152, 4194304], offset 1.3744467859
+   N =    11.541   r = -7.890e-03   N*r = -0.09105   size spread 9.8e-09
+   N =    14.529   r = -6.121e-03   N*r = -0.08894   size spread 1.6e-08
+   N =    20.505   r = -4.208e-03   N*r = -0.08628   size spread 3.6e-08
+   N =    29.467   r = -2.851e-03   N*r = -0.08401   size spread 8.0e-08
+   N =    41.417   r = -1.987e-03   N*r = -0.08230   size spread 1.7e-07
+== D1  t = 0.000000  (dimer, alpha = 3.5, kappa = 0.2, kappa' = 0.45), sizes [65536, 131072, 262144], offset 0.2827433388
+   N =     9.620   r = +1.659e-03   N*r = +0.01596   size spread 0.0e+00
+   N =    14.337   r = +1.329e-03   N*r = +0.01906   size spread 5.7e-14
+   N =    20.625   r = +1.034e-03   N*r = +0.02134   size spread 1.7e-13
+   N =    28.486   r = +8.091e-04   N*r = +0.02305   size spread 8.7e-13
+   N =    39.491   r = +6.217e-04   N*r = +0.02455   size spread 4.0e-12
+   N =    56.785   r = +4.579e-04   N*r = +0.02600   size spread 2.2e-11
+   N =    80.367   r = +3.385e-04   N*r = +0.02721   size spread 1.2e-10
+   N =   113.383   r = +2.492e-04   N*r = +0.02825   size spread 6.0e-10
+   N =   160.548   r = +1.818e-04   N*r = +0.02918   size spread 3.1e-09
+   N =   226.580   r = +1.323e-04   N*r = +0.02999   size spread 1.6e-08
+   N =   319.338   r = +9.610e-05   N*r = +0.03069   size spread 8.3e-08
+== D1  t = 1.000000  (dimer, alpha = 3.5, kappa = 0.2, kappa' = 0.45), sizes [1048576, 2097152, 4194304], offset 1.2880529880
+   N =    10.113   r = -2.003e-02   N*r = -0.20260   size spread 1.3e-09
+   N =    14.833   r = -1.231e-02   N*r = -0.18257   size spread 3.1e-09
+   N =    19.551   r = -8.627e-03   N*r = -0.16867   size spread 5.9e-09
+   N =    27.414   r = -5.563e-03   N*r = -0.15251   size spread 1.3e-08
+== D1  t = 1.570796  (dimer, alpha = 3.5, kappa = 0.2, kappa' = 0.45), sizes [4194304, 8388608, 16777216], offset 1.2880529880
+   N =    10.125   r = +4.482e-03   N*r = +0.04538   size spread 1.5e-10
+   N =    14.841   r = +2.927e-03   N*r = +0.04344   size spread 3.5e-10
+   N =    19.557   r = +2.166e-03   N*r = +0.04236   size spread 6.5e-10
+   N =    27.417   r = +1.506e-03   N*r = +0.04129   size spread 1.4e-09
+   N =    39.994   r = +1.008e-03   N*r = +0.04033   size spread 3.2e-09
+   N =    55.716   r = +7.116e-04   N*r = +0.03965   size spread 6.7e-09
+== D2  t = 0.000000  (dimer, alpha = 2.75, kappa = -0.3, kappa' = -0.25), sizes [1048576, 2097152, 4194304], offset -0.2243994753
+   N =     9.917   r = +4.630e-03   N*r = +0.04592   size spread 1.6e-07
+   N =    14.244   r = +3.303e-03   N*r = +0.04705   size spread 3.3e-07
+== D2  t = 1.570796  (dimer, alpha = 2.75, kappa = -0.3, kappa' = -0.25), sizes [131072, 262144, 524288], offset 1.7951958021
+   N =     9.403   r = +6.538e-03   N*r = +0.06147   size spread 1.5e-10
+   N =    13.730   r = +4.355e-03   N*r = +0.05980   size spread 5.6e-10
+   N =    19.499   r = +2.995e-03   N*r = +0.05839   size spread 1.9e-09
+   N =    28.153   r = +2.029e-03   N*r = +0.05711   size spread 7.1e-09
+   N =    39.692   r = +1.413e-03   N*r = +0.05609   size spread 2.4e-08
+   N =    55.559   r = +9.942e-04   N*r = +0.05524   size spread 7.9e-08
+   N =    80.080   r = +6.800e-04   N*r = +0.05446   size spread 2.9e-07
+   N =   113.256   r = +4.754e-04   N*r = +0.05384   size spread 9.8e-07
+   N =   159.414   r = +3.346e-04   N*r = +0.05333   size spread 3.3e-06
+   N =   225.766   r = +2.343e-04   N*r = +0.05290   size spread 1.1e-05
+   N =   319.524   r = +1.645e-04   N*r = +0.05255   size spread 3.8e-05
+== RS  t = 0.000000  (rough, alpha = 3.0, kappa = 0, kappa' = 0), sizes [1048576, 2097152, 4194304], offset 0.0000000000
+   N =    10.494   N^delta*r = +0.262794   predicted +0.235626 (+ 0.0898 N^(delta-1))   size spread 2.5e-11
+   N =    13.477   N^delta*r = +0.259719   predicted +0.235626 (+ 0.0898 N^(delta-1))   size spread 5.2e-11
+   N =    19.445   N^delta*r = +0.255786   predicted +0.235626 (+ 0.0898 N^(delta-1))   size spread 1.6e-10
+   N =    28.402   N^delta*r = +0.252365   predicted +0.235626 (+ 0.0898 N^(delta-1))   size spread 4.9e-10
+   N =    40.348   N^delta*r = +0.249701   predicted +0.235626 (+ 0.0898 N^(delta-1))   size spread 1.4e-09
+   N =    55.282   N^delta*r = +0.247667   predicted +0.235626 (+ 0.0898 N^(delta-1))   size spread 3.6e-09
+   N =    80.671   N^delta*r = +0.245604   predicted +0.235626 (+ 0.0898 N^(delta-1))   size spread 1.1e-08
+   N =   113.530   N^delta*r = +0.244043   predicted +0.235626 (+ 0.0898 N^(delta-1))   size spread 3.1e-08
+   N =   159.832   N^delta*r = +0.242724   predicted +0.235626 (+ 0.0898 N^(delta-1))   size spread 8.7e-08
+   N =   225.552   N^delta*r = +0.241603   predicted +0.235626 (+ 0.0898 N^(delta-1))   size spread 2.4e-07
+   N =   319.651   N^delta*r = +0.240648   predicted +0.235626 (+ 0.0898 N^(delta-1))   size spread 7.0e-07
+== RS  t = 1.570796  (rough, alpha = 3.0, kappa = 0, kappa' = 0), sizes [1048576, 2097152, 4194304], offset 1.5707963268
+   N =     9.749   N^delta*r = +0.263764   predicted +0.235626 (+ 0.0898 N^(delta-1))   size spread 2.0e-11
+   N =    14.223   N^delta*r = +0.259100   predicted +0.235626 (+ 0.0898 N^(delta-1))   size spread 6.1e-11
+   N =    20.192   N^delta*r = +0.255418   predicted +0.235626 (+ 0.0898 N^(delta-1))   size spread 1.8e-10
+   N =    27.656   N^delta*r = +0.252586   predicted +0.235626 (+ 0.0898 N^(delta-1))   size spread 4.5e-10
+   N =    39.601   N^delta*r = +0.249831   predicted +0.235626 (+ 0.0898 N^(delta-1))   size spread 1.3e-09
+   N =    56.028   N^delta*r = +0.247587   predicted +0.235626 (+ 0.0898 N^(delta-1))   size spread 3.7e-09
+   N =    79.924   N^delta*r = +0.245651   predicted +0.235626 (+ 0.0898 N^(delta-1))   size spread 1.1e-08
+   N =   112.783   N^delta*r = +0.244071   predicted +0.235626 (+ 0.0898 N^(delta-1))   size spread 3.1e-08
+   N =   160.578   N^delta*r = +0.242707   predicted +0.235626 (+ 0.0898 N^(delta-1))   size spread 8.8e-08
+   N =   226.298   N^delta*r = +0.241593   predicted +0.235626 (+ 0.0898 N^(delta-1))   size spread 2.5e-07
+   N =   320.398   N^delta*r = +0.240642   predicted +0.235626 (+ 0.0898 N^(delta-1))   size spread 7.0e-07
+== SQ5m0  t = 0.000000  (balanced, alpha = 2.5, kappa = -1, kappa' = 0), sizes [1048576, 2097152, 4194304], offset 0.0000000000
+   N =     9.383   N*r = +0.03342147   predicted +0.03341061   size spread 1.4e-08
+   N =    13.521   N*r = +0.03341584   predicted +0.03341061   size spread 3.4e-08
+   N =    19.039   N*r = +0.03341325   predicted +0.03341061   size spread 7.9e-08
+   N =    27.316   N*r = +0.03341189   predicted +0.03341061   size spread 2.0e-07
+   N =    39.732   N*r = +0.03341121   predicted +0.03341061   size spread 5.0e-07
+   N =    54.907   N*r = +0.03341093   predicted +0.03341061   size spread 1.1e-06
+   N =    79.739   N*r = +0.03341076   predicted +0.03341061   size spread 2.8e-06
+== SQ5m0  t = 1.570796  (balanced, alpha = 2.5, kappa = -1, kappa' = 0), sizes [1048576, 2097152, 4194304], offset 1.5707963268
+   N =    10.072   N*r = +0.03342003   predicted +0.03341061   size spread 1.6e-08
+   N =    12.831   N*r = +0.03341642   predicted +0.03341061   size spread 3.0e-08
+   N =    19.729   N*r = +0.03341306   predicted +0.03341061   size spread 8.7e-08
+   N =    28.006   N*r = +0.03341183   predicted +0.03341061   size spread 2.1e-07
+   N =    39.042   N*r = +0.03341124   predicted +0.03341061   size spread 4.8e-07
+   N =    55.597   N*r = +0.03341092   predicted +0.03341061   size spread 1.2e-06
+   N =    79.050   N*r = +0.03341076   predicted +0.03341061   size spread 2.8e-06
+== SQ5m3  t = 0.000000  (balanced, alpha = 2.5, kappa = 0.5, kappa' = 0), sizes [1048576, 2097152, 4194304], offset 0.0000000000
+   N =     9.796   N*r = +0.03342057   predicted +0.03341061   size spread 1.5e-08
+   N =    13.935   N*r = +0.03341553   predicted +0.03341061   size spread 3.6e-08
+   N =    20.832   N*r = +0.03341281   predicted +0.03341061   size spread 9.9e-08
+   N =    27.730   N*r = +0.03341185   predicted +0.03341061   size spread 2.0e-07
+   N =    40.146   N*r = +0.03341120   predicted +0.03341061   size spread 5.1e-07
+   N =    56.701   N*r = +0.03341091   predicted +0.03341061   size spread 1.2e-06
+   N =    80.153   N*r = +0.03341076   predicted +0.03341061   size spread 2.9e-06
+== SQ5m3  t = 1.570796  (balanced, alpha = 2.5, kappa = 0.5, kappa' = 0), sizes [1048576, 2097152, 4194304], offset 1.5707963268
+   N =    10.486   N*r = +0.03341930   predicted +0.03341061   size spread 1.8e-08
+   N =    14.624   N*r = +0.03341508   predicted +0.03341061   size spread 4.1e-08
+   N =    20.142   N*r = +0.03341296   predicted +0.03341061   size spread 9.1e-08
+   N =    28.420   N*r = +0.03341179   predicted +0.03341061   size spread 2.2e-07
+   N =    40.836   N*r = +0.03341118   predicted +0.03341061   size spread 5.3e-07
+   N =    56.011   N*r = +0.03341091   predicted +0.03341061   size spread 1.2e-06
+   N =    80.843   N*r = +0.03341075   predicted +0.03341061   size spread 2.9e-06
+== SQ6m1  t = 0.000000  (balanced, alpha = 3.0, kappa = -0.75, kappa' = 0), sizes [1048576, 2097152, 4194304], offset 0.0000000000
+   N =    10.271   N*r = +0.03744897   predicted +0.03742925   size spread 2.3e-11
+   N =    13.258   N*r = +0.03744108   predicted +0.03742925   size spread 5.0e-11
+   N =    19.232   N*r = +0.03743487   predicted +0.03742925   size spread 1.5e-10
+   N =    28.194   N*r = +0.03743186   predicted +0.03742925   size spread 4.8e-10
+   N =    40.143   N*r = +0.03743054   predicted +0.03742925   size spread 1.4e-09
+   N =    55.079   N*r = +0.03742993   predicted +0.03742925   size spread 3.6e-09
+   N =    78.978   N*r = +0.03742958   predicted +0.03742925   size spread 1.1e-08
+   N =   113.332   N*r = +0.03742941   predicted +0.03742925   size spread 3.1e-08
+   N =   159.636   N*r = +0.03742933   predicted +0.03742925   size spread 8.7e-08
+   N =   225.357   N*r = +0.03742929   predicted +0.03742925   size spread 2.4e-07
+   N =   319.458   N*r = +0.03742927   predicted +0.03742925   size spread 6.9e-07
+== SQ6m1  t = 1.570796  (balanced, alpha = 3.0, kappa = -0.75, kappa' = 0), sizes [1048576, 2097152, 4194304], offset 1.5707963268
+   N =     9.524   N*r = +0.03745219   predicted +0.03742925   size spread 1.8e-11
+   N =    14.004   N*r = +0.03743985   predicted +0.03742925   size spread 5.9e-11
+   N =    19.979   N*r = +0.03743446   predicted +0.03742925   size spread 1.7e-10
+   N =    27.447   N*r = +0.03743201   predicted +0.03742925   size spread 4.4e-10
+   N =    39.396   N*r = +0.03743059   predicted +0.03742925   size spread 1.3e-09
+   N =    55.826   N*r = +0.03742991   predicted +0.03742925   size spread 3.7e-09
+   N =    79.725   N*r = +0.03742957   predicted +0.03742925   size spread 1.1e-08
+   N =   112.585   N*r = +0.03742941   predicted +0.03742925   size spread 3.0e-08
+   N =   158.889   N*r = +0.03742933   predicted +0.03742925   size spread 8.6e-08
+   N =   226.104   N*r = +0.03742929   predicted +0.03742925   size spread 2.5e-07
+   N =   320.205   N*r = +0.03742927   predicted +0.03742925   size spread 7.0e-07

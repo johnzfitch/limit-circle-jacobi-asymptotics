@@ -1,0 +1,196 @@
+\section{Two-site blocks and an adiabatic normal form}\label{sec:blocks}
+
+The shear product of \Cref{thm:count} is a product of $2\times2$ matrices close to the
+identity, but the turning angle per block is not small: in the region where
+$\mu_m<2$ each block turns vectors by an angle of order one. This section shows that
+each block is exactly a rotation by $\varphi_m$ in a frame that changes slowly from
+block to block (\Cref{blem:block}), computes the frame change to first order
+(\Cref{lem:frame}), and sums the resulting errors by a normal-form transformation
+(\Cref{prop:adiabatic}). The proposition is stated for an arbitrary splitting of the
+frame change into a part that is kept and a part that is estimated; the balanced,
+dimerised and quantitative applications differ only in that choice.
+
+Throughout, $e_\pm:=(1,\pm1)/\sqrt2$, $\Jr:=\bigl(\begin{smallmatrix}0&-1\\1&0\end{smallmatrix}\bigr)$,
+$\Sigma_1:=\bigl(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\bigr)$,
+$\Sigma_3:=\operatorname{diag}(1,-1)$, and $R(\varphi)$ is the rotation by $\varphi$. A
+positive definite symmetric matrix moves every angle by less than $\pi/2$; its lift
+with this property is unique and is called its principal lift. A matrix $g$ with
+$\|g-I\|\le\epsilon<1$ also has a unique lift moving angles by at most
+$\arcsin\epsilon$, again called principal. Two continuous families of lifts of the
+same continuous family of maps differ by a constant multiple of $2\pi$; we use this
+homotopy argument repeatedly to identify lifts.
+
+\subsection{The block rotation}
+
+Let $b\equiv0$. The shear weights of block $m$ are $\gamma_{2m}=\lambda\Pt_{2m}^2=\mu_m\rho_m$
+and $\gamma_{2m+1}=\lambda\Rt_{2m+1}^2=\mu_m/\rho_m$, by \Cref{prop:zero}(c).
+
+\begin{boxedlemma}{Block rotation}{block}
+Let $T_m:=U(\gamma_{2m+1})L(\gamma_{2m})$ and $D_m:=\operatorname{diag}(\rho_m^{-1/2},\rho_m^{1/2})$.
+Then $T_m=D_mT_1(\mu_m)D_m^{-1}$ with
+$T_1(\mu)=\bigl(\begin{smallmatrix}1-\mu^2&-\mu\\\mu&1\end{smallmatrix}\bigr)$. For
+$0<\mu<2$ put $s=s(\mu):=\tfrac14\log\frac{2+\mu}{2-\mu}$ and let $\Et(\mu)$ be the
+symmetric matrix with $\Et e_+=e^{-s}e_+$ and $\Et e_-=e^{s}e_-$. Then
+\[
+  \Et(\mu)^{-1}T_1(\mu)\Et(\mu)=R(\varphi),\qquad \varphi=2\arcsin(\mu/2),
+\]
+and with $E_m:=D_m\Et(\mu_m)$ and the lifts described above,
+$\hl E_m^{-1}\circ\hl T_m\circ\hl E_m$ is exactly $\vartheta\mapsto\vartheta+\varphi_m$.
+Moreover $\tanh2s=\mu/2$, so $\sinh2s=\tan(\varphi/2)$, $\cosh2s=1/\cos(\varphi/2)$
+and $e^{2s}=\sqrt{(4-u)/u}$ with $u=2-\mu$.
+\end{boxedlemma}
+
+\begin{proof}
+$D_m^{-1}U(x)D_m=U(x\rho_m)$ and $D_m^{-1}L(y)D_m=L(y/\rho_m)$, which gives the first
+identity. $T_1(\mu)$ has determinant $1$ and trace $2-\mu^2=2\cos\varphi$. In the
+orthonormal basis $(e_+,e_-)$ one computes
+$T_1e_+=(1-\tfrac{\mu^2}{2})e_+-(\mu+\tfrac{\mu^2}{2})e_-$ and
+$T_1e_-=(\mu-\tfrac{\mu^2}{2})e_++(1-\tfrac{\mu^2}{2})e_-$; conjugating by
+$\operatorname{diag}(e^{-s},e^{s})$ in this basis turns the off-diagonal entries into
+$e^{2s}\mu(1-\mu/2)$ and $-e^{-2s}\mu(1+\mu/2)$, which are $+\sin\varphi$ and
+$-\sin\varphi$ exactly when $e^{4s}=(2+\mu)/(2-\mu)$, because
+$\sin\varphi=\tfrac{\mu}{2}\sqrt{4-\mu^2}$. In a positively oriented orthonormal basis the matrix
+$\bigl(\begin{smallmatrix}\cos\varphi&\sin\varphi\\-\sin\varphi&\cos\varphi\end{smallmatrix}\bigr)$ would be the
+rotation by $-\varphi$; but $\det[e_+,e_-]=-\frac12-\frac12=-1$, so $(e_+,e_-)$ is negatively oriented and
+the same matrix is the rotation by $+\varphi$ in the standard orientation. Both sides of the lift identity are lifts of $R(\varphi_m)$
+depending continuously on $(\mu,\rho)\in[0,2)\times(0,\infty)$; at $\mu=0$ all matrices
+are the identity and both lifts are the identity, so they agree everywhere. The
+hyperbolic identities follow from $e^{4s}=(2+\mu)/(2-\mu)$ and $\mu=2\sin(\varphi/2)$.
+\end{proof}
+
+The \emph{frame angle} of block $m$ is $\chi_m:=\hl E_m^{-1}(\psi_{2m-1})$, with
+$\psi_{-1}:=0$. By the lemma, $\psi_{2m+1}=\hl T_m(\psi_{2m-1})$ becomes
+\begin{equation}\label{eq:frame-recursion}
+  \chi_{m+1}=\hl F_m(\chi_m+\varphi_m),\qquad F_m:=E_{m+1}^{-1}E_m,\qquad
+  \hl F_m:=\hl E_{m+1}^{-1}\circ\hl E_m .
+\end{equation}
+If $\mu_M\to0$ and $\rho_M\to1$ then $E_M\to I$, so $\chi_M-\psi_{2M-1}\to0$ and
+$\chi_M\to\psi$.
+
+\subsection{The frame change}
+
+Write $s_m:=s(\mu_m)$, $\sigma_m:=s_m-s_{m+1}$, and recall
+$e^{2\varepsilon_m}=\rho_{m+1}/\rho_m$ from \eqref{eq:rho-ratio}. Then
+\begin{gather*}
+  F_m=G_mH_m,\qquad H_m:=\Et(\mu_m)^{-1}e^{\varepsilon_m\Sigma_3}\Et(\mu_m),\\
+  G_m:=\Et(\mu_{m+1})^{-1}\Et(\mu_m)=\cosh\sigma_m\,I-\sinh\sigma_m\,\Sigma_1 .
+\end{gather*}
+The first factor is diagonal in $(e_+,e_-)$ and $e_+e_+^{\mathsf T}-e_-e_-^{\mathsf T}=\Sigma_1$.
+For the second, $\Sigma_3$ exchanges $e_+$ and $e_-$, so in the basis $(e_+,e_-)$
+conjugation by $\Et$ multiplies its off-diagonal entries by $e^{\pm2s}$; written in the
+standard basis,
+\begin{equation}\label{eq:X}
+  H_m=\exp(\varepsilon_mX_m),\qquad X_m=\cosh(2s_m)\,\Sigma_3+\sinh(2s_m)\,\Jr .
+\end{equation}
+A one-parameter group $e^{\tau Y}$ moves the angle $\vartheta$ of a unit vector
+$v=(\cos\vartheta,\sin\vartheta)$ with velocity $\det[v,Yv]$, which equals $\cos2\vartheta$
+for $Y=\Sigma_1$, $-\sin2\vartheta$ for $Y=\Sigma_3$ and $1$ for $Y=\Jr$.
+
+\begin{lemma}[One block of frame change]\label{lem:frame}
+If $|\sigma_m|\le\frac12$ and $|\varepsilon_m|e^{2s_m}\le\frac13$, then for every $\vartheta$
+\[
+  \hl F_m(\vartheta)=\vartheta+\varepsilon_m\tan\tfrac{\varphi_m}{2}
+  +\operatorname{Re}\bigl(\Gamma_me^{2i\vartheta}\bigr)+\mathcal R_m(\vartheta),\qquad
+  \Gamma_m:=-\sigma_m+\frac{i\varepsilon_m}{\cos(\varphi_m/2)},
+\]
+with $|\mathcal R_m|\le C(\sigma_m^2+\varepsilon_m^2e^{4s_m})$ for an absolute constant $C$.
+\end{lemma}
+
+\begin{proof}
+By \eqref{eq:X} and \Cref{blem:block}, $H_m$ moves angles with velocity
+$\varepsilon_m(\tan\frac{\varphi_m}2-\frac{\sin2\vartheta}{\cos(\varphi_m/2)})$ along a flow
+of length one, and the velocity field and its $\vartheta$-derivative are bounded by
+$3|\varepsilon_m|e^{2s_m}$; so $\hl H_m(\vartheta)$ equals $\vartheta$ plus that velocity
+plus $O(\varepsilon_m^2e^{4s_m})$. Likewise $G_m=e^{-\sigma_m\Sigma_1}$ gives
+$\hl G_m(\vartheta)=\vartheta-\sigma_m\cos2\vartheta+O(\sigma_m^2)$. The composition adds a
+cross term bounded by $C|\sigma_m||\varepsilon_m|e^{2s_m}$, which is absorbed. The lift
+$\hl F_m$ is the time-one map of these flows because both depend continuously on
+$(\sigma,\varepsilon)$ and agree at $\sigma=\varepsilon=0$. Finally
+$-\sigma\cos2\vartheta-\frac{\varepsilon}{\cos(\varphi/2)}\sin2\vartheta
+=\operatorname{Re}(\Gamma e^{2i\vartheta})$.
+\end{proof}
+
+The first term, $\varepsilon_m\tan(\varphi_m/2)$, does not oscillate in $\vartheta$: it is a
+rotation of the frame, a \emph{drift}. Under \Cref{hyp:H} it is summable and harmless;
+for dimerised links $\varepsilon_m\approx-2\kappa'/N_m$ and the drift adds up to a
+finite, nonzero phase (\Cref{prop:nearfield}).
+
+\paragraph{A diagonal.} If $b\not\equiv0$, block $m$ is
+$T^b_m=U((\lambda-b_{2m+1})\Rt_{2m+1}^2)L((\lambda-b_{2m})\Pt_{2m}^2)$, and the computation
+in the proof of \Cref{blem:block} gives
+$D_m^{-1}T^b_mD_m=U(\mu''_m)L(\mu'_m)$ with $\mu'_m=(\lambda-b_{2m})/A_m$ and
+$\mu''_m=(\lambda-b_{2m+1})/A_m$; the factors $\rho_m$ cancel exactly. Hence in the frame
+$E_m$ the block is $R(\varphi_m)(I+\Delta_m)$ with
+\begin{equation}\label{eq:omega}
+  \|\Delta_m\|\le\omega_m:=C\,e^{2s_m}\,\frac{|b_{2m}|+|b_{2m+1}|}{A_m},
+\end{equation}
+and if $\omega_m\le\frac13$, deforming $b$ to $0$ shows that its lift is
+$\vartheta\mapsto\vartheta+\varphi_m+\delta_m(\vartheta)$ with $|\delta_m|\le2\omega_m$. Thus
+$\chi_{m+1}=\hl F_m(\chi_m+\varphi_m+\delta_m(\chi_m))$.
+
+\subsection{The normal form}
+
+\begin{proposition}{Adiabatic normal form}{adiabatic}
+Let $0\le m_1<M\le\infty$ and suppose that for $m_1\le m<M$ we have $\mu_m<2$,
+$|\sigma_m|\le\frac12$, $|\varepsilon_m|e^{2s_m}\le\frac13$ and $\omega_m\le\frac13$. Split
+$\varepsilon_m=\bar\varepsilon_m+\tilde\varepsilon_m$ and $\sigma_m=\bar\sigma_m+\tilde\sigma_m$ in
+any way, and put
+\[
+  \bar\Gamma_m:=-\bar\sigma_m+\frac{i\bar\varepsilon_m}{\cos(\varphi_m/2)},\qquad
+  \xi_m:=-\frac{\bar\Gamma_m\,e^{i\varphi_m}}{2i\sin\varphi_m},\qquad
+  y_m:=\chi_m+\operatorname{Re}\bigl(\xi_me^{2i\chi_m}\bigr),
+\]
+so that $|y_m-\chi_m|\le|\xi_m|$.
+Then, for $m_1\le M'\le M$ and an absolute constant $C$,
+\[
+  \Bigl|\,y_{M'}-y_{m_1}-\sum_{m_1\le m<M'}\Bigl(\varphi_m+\bar\varepsilon_m\tan\tfrac{\varphi_m}{2}\Bigr)\Bigr|
+  \le C\sum_{m_1\le m<M'}\mathcal E_m,
+\]
+\[
+  \mathcal E_m:=|\xi_{m+1}-\xi_m|+|\tilde\sigma_m|+|\tilde\varepsilon_m|e^{2s_m}+\sigma_m^2
+  +\varepsilon_m^2e^{4s_m}+\omega_m+|\xi_{m+1}|\bigl(|\sigma_m|+|\varepsilon_m|e^{2s_m}+\omega_m\bigr).
+\]
+\end{proposition}
+
+\begin{proof}
+Write $w_m(\vartheta):=\operatorname{Re}(\xi_me^{2i\vartheta})$ and
+$\chi^+_m:=\chi_m+\varphi_m+\delta_m(\chi_m)$. By \eqref{eq:frame-recursion} and
+\Cref{lem:frame}, with the split inserted,
+\[
+  \chi_{m+1}-\chi_m=\varphi_m+\bar\varepsilon_m\tan\tfrac{\varphi_m}2
+  +\operatorname{Re}\bigl(\bar\Gamma_me^{2i(\chi_m+\varphi_m)}\bigr)+r_m,
+\]
+where $r_m$ collects $\delta_m$, the change of $\operatorname{Re}(\Gamma_me^{2i\vartheta})$ between
+$\vartheta=\chi^+_m$ and $\vartheta=\chi_m+\varphi_m$, the parts of the drift and of
+$\operatorname{Re}(\Gamma_me^{2i(\chi_m+\varphi_m)})$ that come from $\tilde\sigma_m$ and
+$\tilde\varepsilon_m$, and $\mathcal R_m(\chi^+_m)$. The coefficient is kept unsplit until the diagonal
+perturbation has been handled, because only $\Gamma_m$, not its retained part, is controlled by the
+hypotheses: since $\tan(\varphi/2)=\sinh2s$ and $1/\cos(\varphi/2)=\cosh2s$ are at most $e^{2s}$,
+$|\Gamma_m|\le|\sigma_m|+|\varepsilon_m|e^{2s_m}\le1$, so the change is at most $2|\delta_m|$; and
+$|\Gamma_m-\bar\Gamma_m|\le|\tilde\sigma_m|+|\tilde\varepsilon_m|e^{2s_m}$. Hence
+$|r_m|\le C(|\tilde\sigma_m|+|\tilde\varepsilon_m|e^{2s_m}+\omega_m+\sigma_m^2+\varepsilon_m^2e^{4s_m})$, and no
+bound on $\bar\Gamma_m$ is needed.
+The choice of $\xi_m$ is the one that solves $\xi_m(e^{2i\varphi_m}-1)=-\bar\Gamma_me^{2i\varphi_m}$,
+so
+\[
+  \operatorname{Re}\bigl(\bar\Gamma_me^{2i(\chi_m+\varphi_m)}\bigr)
+  +w_{m+1}(\chi_m+\varphi_m)-w_m(\chi_m)
+  =\operatorname{Re}\bigl(e^{2i\chi_m}(\xi_{m+1}-\xi_m)e^{2i\varphi_m}\bigr).
+\]
+Adding $w_{m+1}(\chi_{m+1})-w_{m+1}(\chi_m+\varphi_m)$, which is at most
+$2|\xi_{m+1}|\,|\chi_{m+1}-\chi_m-\varphi_m|\le C|\xi_{m+1}|(|\sigma_m|+|\varepsilon_m|e^{2s_m}+\omega_m)$,
+gives $|y_{m+1}-y_m-\varphi_m-\bar\varepsilon_m\tan(\varphi_m/2)|\le C\mathcal E_m$. Summing
+proves the claim. No inversion of $\chi\mapsto y$ is needed.
+\end{proof}
+
+The size of $\xi_m$ is governed by $\sin\varphi_m=\mu_m\cos(\varphi_m/2)$ and
+$\cos^2(\varphi_m/2)=u_m(4-u_m)/4$:
+\begin{equation}\label{eq:xi-size}
+  |\xi_m|\le\frac{|\bar\sigma_m|}{2\sin\varphi_m}+\frac{2|\bar\varepsilon_m|}{\mu_mu_m(4-u_m)},
+  \qquad 2\sin\varphi_m\ge\mu_m\sqrt{2u_m}\quad(u_m\le2).
+\end{equation}
+The smooth part of $\sigma_m$ is small in the turning region because $s$ varies slowly
+in $\mu$ there:
+\begin{equation}\label{eq:sprime}
+  s'(\mu)=\frac{1}{u(4-u)}\le\frac1{2u},\qquad u=2-\mu\le2.
+\end{equation}

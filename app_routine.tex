@@ -1,0 +1,506 @@
+\appendix
+\crefalias{section}{appendix}
+
+\section{Technical estimates and auxiliary proofs}\label{app:routine}
+
+This appendix contains the estimates on which the main results rest but whose ideas are already
+explained in the main text: the geometry of the blocks near the turning point and the discretisation
+of the Airy equation (for \Cref{sec:turning}), the error sums of the normal form, the comparison with
+the Bessel system in weighted coordinates and the cost of a diagonal (for \Cref{sec:dimer}), the
+window lemmas of the rate theorem (\Cref{sec:rates}), the Langer functions on the half-line and the
+steps of the second-order theorem (\Cref{sec:second}), and two algebraic derivations.
+
+\subsection{Blocks near the turning point}
+
+Throughout this subsection \Cref{hyp:Hk} holds, $m_\lambda$ is the least $m\ge m_0$ with $\mu_m<2$
+and $N'_\lambda:=N_{m_\lambda}$, where $m_0$ is fixed so large that $A$ is increasing on
+$[m_0,\infty)$; $\ell$, $x_m$, $m_L$ and $m_R$ are as in \Cref{sec:turning}.
+
+\begin{lemma}[Block geometry]\label{lem:geometry}
+There are $m_0$ and $C$, and for each $\lambda$ large the following hold.
+\begin{enumerate}
+\item[(a)] $\log A_{m+1}-\log A_m=(2\alpha/N_m)(1+O(N_m^{-\delta}))$ for $m\ge m_0$; every link is
+  increasing in $n$ from some $n_1$ on; and $|\bar\ell_{m+1}-\bar\ell_m|\le CN_m^{-2}$.
+\item[(b)] $N'_\lambda=N_\lambda(1+o(1))$. For $m\ge m_\lambda$: $u_m\ge\min(1,\frac\alpha4(N_m-N'_\lambda)/N'_\lambda)$;
+  $u_m\le C(N_m-N'_\lambda+2)/N_\lambda$ when $N_m\le2N'_\lambda$; $\mu_m-\mu_{m+1}\le C\mu_m/N_m$;
+  $\mu_m\le C(N_\lambda/N_m)^\alpha$; and $u_m\ge1$ when $N_m\ge2N'_\lambda$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) $\log A_{m+1}-\log A_m=\alpha\log(1+2/N_m)+\Delta\hat e_m$. For the links,
+$\log a_{n+1}-\log a_n=(\alpha\mp2\kappa')/n+o(1/n)>0$ because $\alpha>2|\kappa'|$.
+
+(b) $N'_\lambda=N_\lambda(1+o(1))$ because $A_m=c\,N_m^\alpha(1+o(1))$. Summing (a) from $m_\lambda$
+to $m-1$, with the factors $1+O(N_i^{-\delta})\ge\frac12$ and $2/N_i\ge\int_{N_i}^{N_i+2}dN/N$, gives
+$\log(A_m/A_{m_\lambda})\ge\frac\alpha2\log(N_m/N'_\lambda)$, and $1-e^{-x}\ge x/2$ on $[0,1]$
+gives the lower bound on $u_m=2-\lambda/A_m\ge2(1-A_{m_\lambda}/A_m)$ for $N_m\le2N'_\lambda$.
+The upper bound uses $\lambda\ge2A_{m_\lambda-1}$ and the upper estimate
+$\log(A_m/A_{m_\lambda-1})\le4\alpha(N_m-N'_\lambda+2)/N'_\lambda$. The bound on $\mu_m-\mu_{m+1}$ is
+(a). For $N_m\ge2N'_\lambda$, (a) gives
+$\log(A_m/A_{m_\lambda})\ge\alpha(1-CN_\lambda^{-\delta})\log2$, and since
+$\lambda<2A_{m_\lambda}$ this yields $u_m\ge2-2\cdot2^{-\alpha(1-CN_\lambda^{-\delta})}\ge1$ once
+$\alpha(1-CN_\lambda^{-\delta})\ge1$, which holds for $\lambda$ large because $\alpha>1$.
+\end{proof}
+
+\begin{lemma}[Start of the window]\label{lem:startwindow}
+For $\lambda\ge\lambda_0(K)$ the hypothesis of \Cref{lem:hyperbolic} holds with $k_1=2m_L$, and
+$\psi_{2m_L-1}\in(m_L\pi-\pi/2,m_L\pi)$.
+\end{lemma}
+
+\begin{proof}
+At block $m_L$, $\lambda-2A_{m_L}=A_{m_L}x_{m_L}/(4\ell^2)\ge c\lambda KN_\lambda^{-2/3}$. For
+$n_1\le k\le2m_L$ the links increase and $a_{2m_L}\le A_{m_L}(1+C/N_\lambda)$, so
+$a_k+a_{k+1}\le2A_{m_L}(1+C/N_\lambda)$; the finitely many $k<n_1$ are covered for $\lambda$
+large; and $|b_k|\le CN_\lambda^\beta=o(\lambda N_\lambda^{-2/3})$ because
+$\beta<\alpha-2/3$. The location of $\psi_{2m_L-1}$ is \Cref{lem:hyperbolic} with $k=2m_L-1$.
+\end{proof}
+
+\begin{lemma}[Airy coordinates]\label{lem:airycoords}
+Fix $K\ge1$. For $\lambda\ge\lambda_0(K)$ and $m_L\le m<m_R$:
+\begin{enumerate}
+\item[(a)] $(X,Y)_{m+1}=M_m(X,Y)_m$ with $M_m=I+h_m\mathsf B(x_m)+\mathcal E_m$, where
+  $h_m:=x_m-x_{m+1}=\ell^{-1}(1+o(1))$ and $\|\mathcal E_m\|=o(1/\ell)$, uniformly in $m$;
+\item[(b)] $\|M_m-I\|\le C(K)/\ell<1$, and $\varrho_{m+1}=\hl M_m(\varrho_m)$ with $\hl M_m$ the principal lift;
+\item[(c)] $\varrho_{m_L}\in(-\pi/2,\pi/2)$ is the principal angle of $(X,Y)_{m_L}$, $X_{m_L}>0$, and
+  $Y_{m_L}/X_{m_L}\ge-C\ell/N_\lambda$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+\step{block matrices} By \Cref{blem:block}, $D_{m+1}^{-1}T_mD_m=e^{\varepsilon_m\Sigma_3}T_1(\mu_m)$.
+Hence $(X,Y)_{m+1}=M_m(X,Y)_m$ with $M_m=C_\ell^{-1}(-e^{\varepsilon_m\Sigma_3}T_1(\mu_m))C_\ell$,
+and with $\delta_m:=u_m/2=-x_m/(8\ell^2)$ the exact part is
+\[
+  C_\ell^{-1}\bigl(-T_1(2-2\delta_m)\bigr)C_\ell=
+  \begin{pmatrix}1-4\delta_m+2\delta_m^2&(1-\delta_m)(2-\delta_m)/(2\ell)\\
+  -8\ell\delta_m(1-\delta_m)&1-4\delta_m+2\delta_m^2\end{pmatrix}
+\]
+(by direct multiplication). Since $C_\ell^{-1}$ has norm at most $4\ell$, the mismatch contributes at
+most $C\ell|\varepsilon_m|\le C\ell/N_\lambda$, and a diagonal contributes at most
+$C\ell(|b_{2m}|+|b_{2m+1}|)/A_m\le C\ell N_\lambda^{\beta-\alpha}$ by the computation before
+\eqref{eq:omega}; both are $o(1/\ell)$ because $\ell^2\asymp N_\lambda^{2/3}$ and $\beta<\alpha-2/3$.
+The grid steps are $h_m=4\ell^2\mu_m(1-e^{-(\log A_{m+1}-\log A_m)})=16\alpha\ell^2N_\lambda^{-1}(1+o(1))
+=\ell^{-1}(1+o(1))$ uniformly on the window, by \Cref{lem:geometry}(a) and the choice of $\ell$.
+Comparing entries, the diagonal of the exact part is $1+O(K/\ell^2)$, its $(1,2)$ entry
+differs from $h_m$ by $o(1/\ell)$, and its $(2,1)$ entry equals $h_mx_m+o(K/\ell)$. This is (a).
+
+\step{lifts} Write $\Theta_m:=\hl D_m^{-1}(\psi_{2m-1})$, a lift of the angle of $z_m$. We
+claim $\Theta_{m+1}=\pi+\hl C_\ell\bigl(\hl M_m(\hl C_\ell^{-1}(\Theta_m))\bigr)$. Both sides are lifts
+of $D_{m+1}^{-1}T_mD_m=-C_\ell M_mC_\ell^{-1}$. Deform $(\mu_m,\rho_m,\rho_{m+1},b)$ linearly to
+$(2,1,1,0)$; along the path $\|M-I\|<1$. At the end, $T_1(2)$ carries $e_-$ (angle $-\pi/4$)
+through $L(2)$ to angle $\pi/4$ and through $U(2)$ to $3\pi/4$, with canonical increments
+$\pi/2$ each, while $M=\bigl(\begin{smallmatrix}1&1/\ell\\0&1\end{smallmatrix}\bigr)$ fixes the
+angle $0$; so both sides send $-\pi/4$ to $3\pi/4$, and they agree throughout. Since lifts
+of linear maps commute with translation by $\pi$, this is (b).
+
+\step{the start} At $m_L$, \Cref{lem:startwindow} and the fact that a positive diagonal
+matrix maps each open quadrant into itself give $\Theta_{m_L}\in(m_L\pi-\pi/2,m_L\pi)$; since
+$\hl C_\ell$ maps $(-\pi/2,\pi/2)$ onto $(-3\pi/4,\pi/4)$, $\varrho_{m_L}\in(-\pi/2,\pi/2)$ is
+the principal angle of $(X,Y)_{m_L}$. By \eqref{eq:zm} and \Cref{lem:hyperbolic},
+$X_{m_L}>0$ and $Y_{m_L}/X_{m_L}=4\ell(r-c'_{m_L})/(r+c'_{m_L})$ with
+$r=p_{2m_L}/p_{2m_L-1}\ge1$ and $c'_{m_L}=1+O(1/N_\lambda)$, so
+$Y_{m_L}/X_{m_L}\ge-C\ell/N_\lambda$.
+\end{proof}
+
+\begin{lemma}[Error sums beyond the window]\label{lem:nearsums}
+Fix $K\ge1$, let $M$ be as in \Cref{prop:nearfield}, and use the split of its proof. For
+$\lambda\ge\lambda_0(K)$ the hypotheses of \Cref{prop:adiabatic} hold for $m_R\le m<M$, and
+\[
+  \sum_{m_R\le m<M}\mathcal E_m+|\xi_{m_R}|+|\xi_M|
+  \le C\bigl(K^{-3/2}+(\ell K)^{-1}\bigr)+\eta(\lambda)+C\frac{\ell^2}{KN_\lambda}+C\frac{N_M^{\alpha-1}}{\lambda}[\kappa'\ne0],
+\]
+with $\eta(\lambda)=C(N_\lambda^{-\delta}\log N_\lambda+N_\lambda^{1+\beta-\alpha}+N_\lambda^{-1}\log N_\lambda)$ and
+$C$ independent of $K$, bounded for $\kappa'$ in compact sets. For $M=\infty$, $|\xi_M|$ is
+read as $\lim_M|\xi_M|=0$.
+\end{lemma}
+
+\begin{proof}
+\step{bounds per block} Let $m\ge m_R$. By \eqref{eq:sprime}, $\bar\ell_m\le2\alpha/N_m$ and
+monotonicity of $s'$,
+\[
+  \bar\sigma_m\le\mu_ms'(\mu_m)\bar\ell_m\le\frac{\alpha\mu_m}{N_mu_m},\qquad
+  |\tilde\sigma_m|\le\frac{\mu_m|\Delta\hat e_m|}{u_m}\le\frac{C\mu_m}{N_m^{1+\delta}u_m},
+\]
+and $e^{2s}\le2u^{-1/2}$ gives $|\tilde\varepsilon_m|e^{2s_m}\le CN_m^{-1-\delta}u_m^{-1/2}$,
+$\bar\varepsilon_m^2e^{4s_m}\le CN_m^{-2}u_m^{-1}$, $\omega_m\le CN_m^{\beta-\alpha}u_m^{-1/2}$. By
+\eqref{eq:xi-size},
+$|\xi_m|\le\alpha/(\sqrt2N_mu_m^{3/2})+C|\kappa'|/(N_m\mu_mu_m)$. For the differences we
+use $|\mu_m-\mu_{m+1}|\le C\mu_m/N_m$, $|\varphi_{m+1}-\varphi_m|\le C/(N_mu_m^{1/2})$,
+$|\Delta(1/\sin\varphi_m)|\le C/(N_m\mu_mu_m^{3/2})$ and
+$|\bar\sigma_{m+1}-\bar\sigma_m|\le C\mu_m/(N_m^2u_m^2)$; the last follows from
+$\partial_\mu[s(\mu)-s(\mu e^{-h})]\le Ch/u^2$, $\partial_h[\dots]\le C\mu/u$ and
+$|\bar\ell_{m+1}-\bar\ell_m|\le CN_m^{-2}$, and involves no second difference of $r$. The
+factor $\mu_m$ in $\bar\sigma$ cancels the $1/\mu_m$ in $\Delta(1/\sin\varphi)$, and
+\[
+  |\xi_{m+1}-\xi_m|\le\frac{C}{N_m^2u_m^{5/2}}+\frac{C|\kappa'|}{N_m^2\mu_mu_m^2}.
+\]
+
+\step{the near region $N_m\le2N'_\lambda$} Here $\mu_m\asymp1$ and $u_m\asymp(N_m-N'_\lambda)/N_\lambda$
+by \Cref{lem:geometry}(b), and $N_{m_R}-N'_\lambda\ge c\ell K$ because $|x_{m_R}|\ge K$ and
+$N_\lambda=16\alpha\ell^3$. Comparing sums with integrals,
+$\sum N_m^{-2}u_m^{-5/2}\le CN_\lambda^{1/2}(\ell K)^{-3/2}\le CK^{-3/2}$,
+$\sum N_m^{-2}u_m^{-2}\le C/(\ell K)$,
+$\sum|\tilde\sigma_m|\le CN_\lambda^{-\delta}\log N_\lambda$,
+$\sum(|\tilde\varepsilon_m|e^{2s_m}+\bar\varepsilon_m^2e^{4s_m})\le C(N_\lambda^{-\delta}+N_\lambda^{-1}\log N_\lambda)$ and
+$\sum\omega_m\le CN_\lambda^{1+\beta-\alpha}$. The cross terms are bounded by the same
+sums: $|\xi_{m+1}|\sigma_m\le CN_m^{-2}u_m^{-5/2}$ and
+$|\xi_{m+1}||\bar\varepsilon_m|e^{2s_m}\le CN_m^{-2}u_m^{-2}$.
+
+\step{the far region $N_m>2N'_\lambda$} Here $u_m\ge1$ and
+$\mu_m\le C(N_\lambda/N_m)^\alpha$. The balanced terms are $O(N_m^{-2})$, $O(\mu_mN_m^{-1-\delta})$
+and $O(N_m^{\beta-\alpha})$ and sum to $C(N_\lambda^{-1}+N_\lambda^{-\delta}+N_\lambda^{1+\beta-\alpha})$.
+The dimerised terms are $|\xi^{\rm dim}_m|\le C/(N_m\mu_m)\le CN_m^{\alpha-1}/\lambda$,
+$|\Delta\xi^{\rm dim}_m|\le CN_m^{\alpha-2}/\lambda$ and $|\xi_m||\bar\varepsilon_m|\le CN_m^{\alpha-2}/\lambda$;
+summed up to $M$ they are at most $CN_M^{\alpha-1}/\lambda\to0$. This is the only place
+where $M$ must be finite when $\kappa'\ne0$.
+
+\step{the side conditions and the boundary terms} $\bar\sigma_{m_R}\le C/(\ell K)$,
+$|\varepsilon_m|e^{2s_m}\le C\ell/(\sqrt KN_\lambda)$ and $\omega_m\to0$, so the hypotheses of
+\Cref{prop:adiabatic} hold for $\lambda\ge\lambda_0(K)$. The boundary terms satisfy
+$|y_{m_R}-\chi_{m_R}|\le|\xi_{m_R}|\le CK^{-3/2}+C\ell^2/(KN_\lambda)$ and
+$|y_M-\chi_M|\le|\xi_M|\to0$.
+\end{proof}
+
+\subsection{The far field and a diagonal}
+
+\begin{proof}[Proof of \Cref{prop:farfield}]
+Since $v_{2m+1}=T_mv_{2m-1}$ exactly, $c_{m+1}=(I+\mathcal E_m)c_m$ with
+$\mathcal E_m:=Y(2m+2)^{-1}(T_m-\Pi_m)Y(2m)$ and $\Pi_m:=Y(2m+2)Y(2m)^{-1}$ the model
+propagator over one block. For $2\times2$ matrices $(Y^{-1}x)_1=\det[x,y_+]/\det Y$ and
+$(Y^{-1}x)_2=\det[y_-,x]/\det Y$, and $\det$ is invariant under $D(N)$; hence
+$|(\mathcal E_m)_{ij}|\le|\hat y_{i'}(2m+2)|\,\|\hat\Delta_m\|\,|\hat y_j(2m)|/\omega_0$ with
+$\hat\Delta_m:=D(2m+2)^{-1}(T_m-\Pi_m)D(2m)$ and $i'$ the column other than $i$.
+
+The true step in balanced coordinates is $D(2m+2)^{-1}D(2m)\cdot X_m^{-1}T_1(\mu_m)X_m$ with
+$X_m:=D_m^{-1}D(2m)=\operatorname{diag}(x_m,1/x_m)$, and $x_m=1+O(N_m^{-\delta})$ by
+\Cref{prop:zero}(b); since $T_1-I=O(\mu)$, $X^{-1}T_1X=T_1+O(\mu_mN_m^{-\delta})$. The model
+step is the propagator of $d\hat z/dN=(\Lambda N^{-\alpha}\Jr-(\kappa'/N)\Sigma_3)\hat z$ over
+$[2m,2m+2]$: its drift part is exactly $D(2m+2)^{-1}D(2m)$, its rotation part is
+$I+(\int_{2m}^{2m+2}\Lambda N^{-\alpha}dN)\Jr+O(\mu_m^2)$, and the two parts commute up to
+$O(\mu_m/N_m)$. Since $\mu_m=2\Lambda N_m^{-\alpha}(1+O(N_m^{-1}))$, we get
+$\|\hat\Delta_m\|\le C(\mu_m^2+\mu_mN_m^{-\delta})$.
+
+By (B4), $\|\mathcal E_m\|\le C(\mu_m^2+\mu_mN_m^{-\delta})\max(1,\tau(2m)^{-|1-2\nu|})$. Where
+$\tau\ge1$ the sum over $m\ge M$ is at most $C(\Lambda^2N_M^{1-2\alpha}+\Lambda N_M^{1-\alpha-\delta})$.
+Where $\tau\le1$, $(\alpha-1)|1-2\nu|=2|\kappa'|$ gives terms
+$C\Lambda^{1-|1-2\nu|}N^{-\alpha-\delta+2|\kappa'|}$ with exponent below $-1-\delta$; their sum
+from $N_{\rm dec}$ is $CN_{\rm dec}^{-\delta}$ because $\Lambda N_{\rm dec}^{1-\alpha}=\alpha-1$, and the
+$\mu^2$ terms give $CN_{\rm dec}^{-1}$. So $\prod(I+\mathcal E_m)$ converges and
+$|c_\infty-c_M|\le(e^{\epsilon_{\rm far}}-1)|c_M|$. Finally $v_{2m-1}=Y(2m)c_m$, $Y(2m)\to Y(\infty)$
+by (B3), and $\|Y(2m)\|$ is bounded.
+\end{proof}
+
+\begin{proof}[Proof of \Cref{thm:dimerdiag}]
+$\sum|b_k|(\Pt_k^2+\Rt_k^2)\le C\sum k^{\beta-\alpha+2|\kappa'|}<\infty$, which gives
+\Cref{thm:count} and the limit-circle property (\Cref{prop:zero}(d)). The near field
+carries the diagonal through $\omega_m$ as in \Cref{lem:nearsums}, at a cost
+$CN_\lambda^{1+\beta-\alpha}+CN_M^{1+\beta-\alpha}$. In the far field the $b$-shears add at most
+$CN_m^{\beta-\alpha}$ to $\|\hat\Delta_m\|$; with the weights of the proof of
+\Cref{prop:farfield} (where $\tau\le1$ the weight is $\tau^{-|1-2\nu|}\le CN^{2|\kappa'|}\Lambda^{-|1-2\nu|}$ and
+$\Lambda^{|1-2\nu|}\asymp N_{\rm dec}^{2|\kappa'|}$) their sum is at most $C(N_M^{1+\beta-\alpha}+N_{\rm dec}^{1+\beta-\alpha})$,
+which tends to $0$; this uses that the exponent $\beta-\alpha+2|\kappa'|$ of the terms beyond
+$N_{\rm dec}$ is below $-1$. The reflection identity covers $\lambda\to-\infty$. The labelling
+argument of \Cref{cor:dimer} uses $\psi(0)=0$, which fails for $b\neq0$; hence only the
+offsets modulo $\pi$ are claimed.
+\end{proof}
+
+\subsection{The window lemmas of the rate theorem}\label{app:ratewindow}
+
+The notation is that of the window subsection of \Cref{sec:rates}.
+
+\begin{lemma}[Connection]\label{lem:K}
+For $\lambda$ large, $p=c_K(f_A+\eta_Kf_B)$ on the window, with $c_K\in\RR\setminus\{0\}$ and
+$|\eta_K|\le C\Ai(x_{n_0})/\Bi(x_{n_0})\le Ce^{-c/h}$.
+\end{lemma}
+
+\begin{proof}
+For large $k$ the links increase, and for $k\le n_0+2$,
+$a_k+a_{k+1}\le\lambda\bigl((t_{\rm in}+3h)^\alpha+o(1)\bigr)\le\lambda(2^{-1-\alpha}+o(1))$; the finitely many
+small $k$ and the diagonal ($|b_k|=o(\lambda)$) are covered for $\lambda$ large. By
+\Cref{lem:hyperbolic}, $p$ is positive and increasing up to $n_0+2$, so
+$r_p:=p_{n_0+1}/p_{n_0}\in[1,C]$. At $n_0$, $x_{n_0}\ge ch^{-2/3}>c_*$, so by (D1)
+$f_A=\psi_A(1+O(d))$ and $f_B=\psi_B(1+O(d))$ at $n_0,n_0+1$. As $x$ decreases by
+$|\zeta'|h^{1/3}$ per site, DLMF 9.7.5 and 9.7.7 give $r_A:=f_A(n_0+1)/f_A(n_0)=e^{k}(1+o(1))$ and
+$r_B:=f_B(n_0+1)/f_B(n_0)=e^{-k}(1+o(1))$ with $k:=\arccosh Z(t_{\rm in})\ge c>0$. Writing
+$p=c_Kf_A+c_Bf_B$ and using constancy of Casoratians,
+$c_K=\operatorname{Cas}[p,f_B]/\operatorname{Cas}[f_A,f_B]$, and at $n_0$
+$\operatorname{Cas}[p,f_B]=a_{n_0+1}p_{n_0}f_B(n_0)(r_B-r_p)\neq0$ because $r_B<1\le r_p$. Then
+$\eta_K:=c_B/c_K=\frac{f_A(n_0)}{f_B(n_0)}\cdot\frac{r_p-r_A}{r_B-r_p}$, and
+$\Ai(x)/\Bi(x)\le Ce^{-\frac43x^{3/2}}$.
+\end{proof}
+
+\begin{lemma}[Oscillatory form]\label{lem:O}
+For sites with $nh\in[t_p^0+\delta_w,t_{\rm fi}]$,
+\[
+  p_n=c_K\,\pi^{-1/2}g_n|x_n|^{-1/4}\bigl(\cos(\Xi_n-\tfrac\pi4)+O(\Gamma)\bigr),\qquad
+  \Xi_n:=\int_{X_\lambda}^{n+1/2}\arccos\frac{\lambda}{2A(x)}\,dx .
+\]
+\end{lemma}
+
+\begin{proof}
+There $x_n\le-ch^{-2/3}$, $\mathsf E=1$, and by (D1) $|f_A-\psi_A|\le dg\mathsf M$, while
+$|\eta_Kf_B|\le Ce^{-c/h}g\mathsf M$. DLMF 9.7.9 and 9.8.20 give
+$\Ai(x_n)=\pi^{-1/2}|x_n|^{-1/4}(\cos(\xi_n-\frac\pi4)+O(h))$ and $\mathsf M(x_n)=\pi^{-1/2}|x_n|^{-1/4}(1+O(h))$
+with $\xi_n=\frac23|x_n|^{3/2}$. Finally the phase is exact: $\xi_n=h^{-1}\int_{t_p}^{nh}\arccos Z(u)\,du$,
+and the substitution $x=u/h+\frac12$ turns $Z(u)=\lambda/(2A(u/h+\frac12))$ into the integrand of
+$\Xi_n$ and the limits into $X_\lambda$ and $n+\frac12$.
+\end{proof}
+
+\begin{lemma}[Frame angle in the window]\label{lem:C}
+Let $m$ be a block with $u_m\ge1$ whose sites $2m-1,2m$ satisfy the hypothesis of
+\Cref{lem:O}. Then
+$\chi_m\equiv-\Xi(2m)+O(\Gamma)\pmod\pi$, where $\Xi(X):=\int_{X_\lambda}^X\arccos(\lambda/2A(x))\,dx$.
+\end{lemma}
+
+\begin{proof}
+By \eqref{eq:zm}, $z_m=D_m^{-1}v_{2m-1}$ is a nonzero real multiple of
+$(p_{2m},-c'_mp_{2m-1})$ with $c'_m=1+O(h)$. Over $[2m-\frac12,2m+\frac12]$,
+$\lambda/2A(x)=\frac{\mu_m}2(1+O(h+|e_{2m+1}|))\le\frac58$, and $\arccos$ is Lipschitz on $[0,\frac58]$, so
+$\Xi_{2m}-\Xi_{2m-1}=\frac\pi2-\frac{\varphi_m}2+O(\Gamma)$; also $g_{2m-1}|x_{2m-1}|^{-1/4}$ and
+$g_{2m}|x_{2m}|^{-1/4}$ differ by a factor $1+O(h)$. By \Cref{lem:O}, with
+$\Theta:=\Xi_{2m}-\frac\pi4$, $z_m$ is a real multiple of $w+O(\Gamma)$, where
+$w:=(\cos\Theta,-\sin(\Theta+\varphi_m/2))$ and $|w|^2\ge1-\sin(\varphi_m/2)=u_m/2\ge\frac12$. In the basis
+$e_\pm$, with $\Theta':=\Theta-\frac\pi4+\frac{\varphi_m}4$,
+\[
+  w=-\sqrt2\sin\bigl(\tfrac\pi4-\tfrac{\varphi_m}4\bigr)\sin\Theta'\,e_++\sqrt2\cos\bigl(\tfrac\pi4-\tfrac{\varphi_m}4\bigr)\cos\Theta'\,e_- .
+\]
+Since $\tan^2(\frac\pi4-\frac{\varphi}4)=(1-\sin\frac\varphi2)/(1+\sin\frac\varphi2)=e^{-4s}$ by
+\Cref{blem:block}, $\Et(\mu_m)^{-1}w$ is a positive multiple of
+$\cos\Theta'e_--\sin\Theta'e_+=R(-\Theta')e_-$, whose angle is
+$-\frac\pi4-\Theta'=-\Xi_{2m}+\frac\pi4-\frac{\varphi_m}4$. As $\|\Et^{-1}\|\le e^{s}\le C$ and $|w|^2\ge\frac12$,
+the frame angle $\chi_m$ (the angle of $\Et(\mu_m)^{-1}z_m$) is this value modulo $\pi$ up to
+$O(\Gamma)$. Finally $\Xi_{2m}=\Xi(2m)+\frac12\arccos(\mu_m/2)+O(h)=\Xi(2m)+\frac\pi4-\frac{\varphi_m}4+O(h)$.
+\end{proof}
+
+\begin{lemma}[Elliptic tail]\label{lem:tail}
+Let $m_1$ be a block with $N_{m_1}\ge X_\lambda$ and $u_m\ge1$ for $m\ge m_1$. Then
+\[
+  \Bigl|\psi-\chi_{m_1}-\sum_{m\ge m_1}\varphi_m\Bigr|+\Bigl|\sum_{m\ge m_1}\varphi_m-\int_{2m_1}^\infty\arcsin\frac\lambda{2A(x)}\,dx\Bigr|
+  \le C\Gamma .
+\]
+\end{lemma}
+
+\noindent This is \Cref{prop:adiabatic} with no drift and the sums taken over the elliptic
+region, where $u_m\ge1$; the proof is below.
+
+
+\begin{proof}[Proof of \Cref{lem:tail}]
+Apply \Cref{prop:adiabatic} from $m_1$ to $\infty$ with $\bar\varepsilon_m:=0$ and
+$\bar\sigma_m:=s(\mu_m)-s(\mu_me^{-\bar\ell_m})$, $\bar\ell_m:=\log A(N_{m+1})-\log A(N_m)$. Since
+$u_m\ge1$, all powers of $u_m$ are bounded, $\sin\varphi_m\ge c\mu_m$, and
+$\mu_m\le C(X_\lambda/N_m)^\alpha$. From $|(\log A)^{(j)}|\le Cx^{-j}$ we get $\bar\sigma_m\le C\mu_m/N_m$,
+$|\bar\sigma_{m+1}-\bar\sigma_m|\le C\mu_m/N_m^2$, hence $|\xi_m|\le C/N_m$ and
+$|\xi_{m+1}-\xi_m|\le C/N_m^2$; and $|\tilde\sigma_m|\le C\mu_mN_m^{-1-\delta''}$,
+$|\varepsilon_m|\le C(N_m^{-2}+N_m^{-1-\delta''})$, $\omega_m\le CN_m^{\beta-\alpha}$. Summed over
+$N_m\ge X_\lambda$ these give $C\Gamma$, the boundary terms $|\xi_{m_1}|$ and $\lim|\xi_M|$ are
+$O(1/X_\lambda)$, and $\chi_M\to\psi$. For the second difference, $\varphi_m$ is the midpoint value
+on $[2m,2m+2]$ of $2\arcsin(\lambda/2a_{2m+1})$; the function $\arcsin(\lambda/2A)$ has second
+derivative $O(x^{-2})$ there, and replacing $a_{2m+1}$ by $A(2m+1)$ costs $O(\mu_m|e_{2m+1}|)$;
+the sums are $O(X_\lambda^{-1}+X_\lambda^{-\delta''})$.
+\end{proof}
+
+\subsection{Langer data}
+
+\begin{proof}[Proof of \Cref{lem:langer}]
+$Z\in C^4$ and $Z-1$ has a simple zero at $t_p$, so $Z(u)-1=(t_p-u)Y(u)$ with
+$Y(u)=-\int_0^1Z'(t_p+\vartheta(u-t_p))d\vartheta\in C^3$ and $Y>0$. Write
+$\arccosh(1+w)=\sqrt{2w}\,K(w)$ with $K$ analytic on $\CC\setminus(-\infty,-2]$; on the
+oscillatory side $w\in(-1,0)$ the same $K$ serves with $\arccosh=i\arccos$ and
+$\sqrt{2w}=i\sqrt{2|w|}$. Then $F:=\sqrt{2Y}\,K(Z-1)\in C^3$, and on both sides of $t_p$
+\[
+  \int_t^{t_p}\arccosh Z=(t_p-t)^{3/2}H(t),\qquad H(t):=\int_0^1\sqrt\vartheta\,F(t_p+(t-t_p)\vartheta)\,d\vartheta>0,
+\]
+so $\zeta=(t_p-t)\,(\tfrac32H)^{2/3}$ and $g^4=(\tfrac32H)^{2/3}/(\hat a^2Y(Z+1))$ are $C^3$. Each
+operation used (the root $t_p$, division by a simple zero, composition with $K$, the
+$\vartheta$-integral, a power of a positive function) is continuous from $C^4$ to $C^3$ near
+the $h=0$ data, so the bounds and positivity statements, which hold at $h=0$, persist.
+The identities are the definitions differentiated: $\sqrt\zeta\,\zeta'=-\arccosh Z$ and
+$\sinh^2(\arccosh Z)=Z^2-1$. In the analytic case every step preserves analyticity.
+\end{proof}
+
+
+\subsection{The second-order term on the half-line}\label{app:second}
+
+This subsection proves the five steps listed in the plan of the proof of \Cref{thm:second}; the
+notation is that of \Cref{sec:halfline}.
+
+\begin{lemma}[The half-line]\label{lem:halfline}
+There are $h_0,c_0>0$ such that the Langer data of \Cref{lem:langer} extend analytically to
+$t$ in a neighbourhood of $[\frac14,\infty)$ containing the sector
+$\{|\operatorname{Im}t|<c_0\operatorname{Re}t\}$ for large $\operatorname{Re}t$, jointly analytic in complex
+$|h|\le h_0$. For real $t$: $\zeta'<0$ on $[\frac14,\infty)$, $|\zeta(t)|\ge r_0\min(|t-t_p|,|t-t_p|^{2/3})$,
+and for $t\ge T_1$, $r\asymp t^{2/3}$, $|\zeta'|\asymp t^{-1/3}$, $g^2\asymp t^{1/3-\alpha}$, $\mathcal G\asymp t^{\alpha/2+1/6}$
+and $|\vartheta-\frac\pi2|\le Ct^{-\alpha}$.
+\end{lemma}
+
+\begin{proof}[Proof of \Cref{lem:halfline}]
+On a compact neighbourhood of $[\frac14,T_1]$ this is \Cref{lem:langer} in its analytic form.
+In the sector, $|Z|\le\frac12$ for large $\operatorname{Re}t$, so $\vartheta=\arccos Z$ is analytic with
+$|\vartheta-\frac\pi2|\le C|t|^{-\alpha}$; then $\mathcal A(t):=\int_{t_p}^t\vartheta$ (along a path in the
+domain) satisfies $\mathcal A=\frac\pi2t+O(1)$, $r=(\frac32\mathcal A)^{2/3}$ is analytic and agrees with
+$-\zeta$ on the real axis, and $g^2=r^{1/2}/(\hat a\sin\vartheta)$ is analytic and nonvanishing.
+\end{proof}
+
+\begin{lemma}[Residuals with decay]\label{lem:decay}
+Let $\pp_2(t):=\frac12\partial_\eta^2\mathcal P(t,\eta)|_{\eta=0,h=0}$, with $\mathcal P$ as in the proof of
+\Cref{lem:R}. For $0<h\le h_0$ and all sites with $t=nh\ge\frac12-h$:
+\begin{enumerate}
+\item[(a)] $|\pp_n-h^2\pp_2(t)|\le Ch^3\mathcal G(t)\langle t\rangle^{-2}$ and $|\pp_2(t)|\le C\mathcal G(t)\langle t\rangle^{-2}$;
+\item[(b)] $|\qq_n|\le Ch^{10/3}\mathcal G(t)\langle t\rangle^{-10/3}$;
+\item[(c)] $W_n=-(h^{1/3}/\pi)(1+\omega_n)$ with $|\omega_n|\le Ch^2\langle t\rangle^{-2}$;
+\item[(d)] $\pp_2$ is real-analytic on $[\frac14,\infty)$ and $|\pp_2'(t)|\le C\mathcal G(t)\langle t\rangle^{-3}$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}[Proof of \Cref{lem:decay}]
+On the compact part this is \Cref{lem:R} in its analytic form, together with
+$\mathcal P=\eta^2\mathcal P_2(t;h)+O(\eta^4)$ and $\mathcal P_2(t;h)=\pp_2(t)+O(h)$ by analyticity in
+$h$. For $t\ge T_1$ take $|\eta|\le c_1t$ with $c_1$ small. Then $t\pm\eta$ stays in the sector,
+$|\hat a(t\pm\eta/2)|\le C\hat a(t)$, $|g(t\pm\eta)|\le Cg(t)$, $|s_\pm|\le Ct^{-1/3}$, and along the
+segment from $0$ to $s_\pm$ the coefficient of $Y''=(\zeta+\eta s)Y$ is $O(t^{2/3})$, so
+$|X_1|\le C$ and $|X_2|\le Ct^{-1/3}$. Hence $|\mathcal P|\le C\mathcal G$ and $|\mathcal Q|\le C\mathcal Gt^{-1/3}$ on the disc
+$|\eta|\le c_1t$, also for complex $h$. Cauchy's estimate on this disc, with the parity and the
+two identities of \Cref{lem:R}, gives (a), (b) and the Casoratian bound, and Cauchy in $h$
+gives $|\mathcal P_2(t;h)-\pp_2(t)|\le C|h|\mathcal Gt^{-2}$; (d) is Cauchy in $t$ on a disc of radius $c_1t$.
+The rough part adds, by \eqref{eq:Wlemma} and $|e_k|\le C_eh^3t^{-3}$, at most
+$Ch^3t^{-3}\mathcal G$ to $\pp_n$, $Ch^{10/3}t^{-10/3}\mathcal G$ to $\qq_n$ and $Ch^3t^{-3}$ to $\omega_n$.
+\end{proof}
+
+\begin{lemma}[Forward bound on the half-line]\label{lem:forward}
+$V\le C_Vh$; $c(n)\to c(\infty)$ with $|c_1(\infty)-1|,|c_2(\infty)|\le e^{2V}-1$; and
+\[
+  \Bigl|c_2(\infty)-\mathcal F_2\Bigr|\le V(e^{2V}-1)=O(h^2),\qquad
+  \mathcal F_2:=-\sum_{n\ge n_0}\frac{\psi_A(n)\,(\mathcal L\psi_A)(n)}{W_n}.
+\]
+\end{lemma}
+
+\begin{proof}
+On the compact part, $\sum v_n\le Ch$ by \Cref{lem:V}. For $t\ge T_1$, (A3) gives
+$\mathsf M^2\le\mathsf m_0h^{1/3}r^{-1/2}$, the identity $\hat ag^2r^{-1/2}=1/\sin\vartheta\le2$ holds, and
+$\mathsf k\le\mathsf k_0(1+|x|)^{1/2}\le Ch^{-1/3}r^{1/2}$; with \Cref{lem:decay} this gives
+$v_n\le C(h^2t^{-2}+h^3t^{-3})$, whose sum over sites spaced by $h$ is $O(h)$. Steps 1--4 of
+the proof of \Cref{thm:olver} are a forward induction that never uses a right endpoint;
+since $x_n$ is strictly decreasing on the half-line and $W_n\ne0$, they give
+$\Lambda(n)\le e^{2V}$ and summable increments, hence the convergence and the bounds. For the
+last claim write $c(n-1)=(1,0)+\delta c(n-1)$; then
+$c_2(n)-c_2(n-1)=-\psi_A(n)(\mathcal L\psi_A)(n)/W_n-\psi_A(n)\sigma_\delta(n)/W_n$, where $\sigma_\delta$ is the
+residual of $\delta c_1\Ai+\delta c_2\Bi$, bounded by
+$(|\pp_n|+\mathsf k_n|\qq_n|)\mathsf E_n^{-1}\mathsf M_n(e^{2V}-1)$ by the second step of that proof. With
+$|\psi_A|\le g\mathsf E^{-1}\mathsf M$ each term is at most $v_n(e^{2V}-1)$.
+\end{proof}
+
+\begin{lemma}[Reading the phase at infinity]\label{lem:reading}
+Let $\tilde\Phi(\lambda):=y_\lambda\pi/2+\int_{y_\lambda}^\infty\arcsin(\lambda/2\tilde a(y))\,dy$, with $y_\lambda$ the
+largest root of $2\tilde a=\lambda$. If a real solution satisfies
+$u(n)=C_1(n)\psi_A(n)+C_2(n)\psi_B(n)$ with $C(n)\to(C_1,C_2)\ne0$, then its coordinates
+$(\alpha_\infty,\beta_\infty)$ of \Cref{thm:count}(i) are a positive multiple of
+$(\cos(\tilde\Phi-\delta_C),\sin(\tilde\Phi-\delta_C))$, where $\delta_C:=\arg(C_1+iC_2)$.
+\end{lemma}
+
+\begin{proof}
+With DLMF 9.8.3, $\Ai(-X)=\mathsf M_D(X)\cos\theta_D(X)$ and $\Bi(-X)=\mathsf M_D(X)\sin\theta_D(X)$, where
+$\theta_D=\frac\pi4-\xi(1+O(X^{-3}))$, $\xi=\frac23X^{3/2}$ (DLMF 9.8.20--9.8.22). Hence
+$u(n)=g_n\mathsf M_D(|x_n|)|C|\bigl(\cos(\xi_n-\frac\pi4+\delta_C)+o(1)\bigr)$. As in \Cref{lem:O},
+$\xi_n=\int_{y_\lambda}^{n+1/2}\arccos(\lambda/2\tilde a)$, and writing $\arccos=\frac\pi2-\arcsin$ gives
+$\xi_n-\frac\pi4=\frac{n\pi}2-\tilde\Phi+o(1)$. So $u_{2m}=(-1)^mg\mathsf M_D|C|(\cos(\tilde\Phi-\delta_C)+o(1))$
+and $u_{2m+1}=(-1)^mg\mathsf M_D|C|(\sin(\tilde\Phi-\delta_C)+o(1))$. By \Cref{thm:count}(i) and the
+vanishing pattern of $\Pt,\Rt$, $\alpha_\infty=\lim u_{2m}/\Pt_{2m}$ and $\beta_\infty=\lim u_{2m+1}/\Rt_{2m+1}$,
+where $\Pt_{2m}=(-1)^m(\rho_m/A_m)^{1/2}$, $\Rt_{2m+1}=(-1)^m(\rho_mA_m)^{-1/2}$ and $\rho_m\to1$. Finally
+$g_n^2\mathsf M_D^2=(h^{1/3}/\pi)(1+o(1))/(\hat a\sin\vartheta)$ with $\hat a(nh)=\tilde a(n+\frac12)/\lambda$ and
+$\sin\vartheta\to1$, so both amplitudes tend to the same limit $(h^{1/3}\lambda/\pi)^{1/2}$.
+\end{proof}
+
+\begin{lemma}[An Airy-weighted Riemann sum]\label{lem:riemann}
+$\mathcal F_2=hK_2+O(h^{4/3})$, where $K_2:=\frac12\int_1^\infty G_2(t)\,dt$ and
+$G_2:=g\pp_2r^{-1/2}$ at $h=0$.
+\end{lemma}
+
+\begin{proof}
+\step{reduction} $\mathcal F_2=-\sum_ng_n\Ai(x_n)(\pp_n\Ai(x_n)+\qq_n\Ai'(x_n))/W_n$. Dropping $\qq$, replacing
+$W_n$ by $-h^{1/3}/\pi$ and $\pp_n$ by $h^2\pp_2(t_n)$ costs $O(h^2)$, by \Cref{lem:decay} and the
+bounds in the proof of \Cref{lem:forward}. So
+$\mathcal F_2=\pi h^{5/3}\sum_{n\ge n_0}F(t_n)\Ai(x_n)^2+O(h^2)$ with $F:=g\pp_2$, where
+$|F|\le C\langle t\rangle^{-5/3}$, $|F'|\le C\langle t\rangle^{-8/3}$ and $F$ is analytic near $t_p$.
+
+\step{near the turning point} Fix $L\ge1$. Sites with $|t_n-t_p|\le h^{2/3}L$ number at most
+$CLh^{-1/3}$ and have $|\Ai|\le1$, so they contribute $O(Lh^{1/3})$ to
+$\pi h^{2/3}\sum F\Ai^2$; on the hyperbolic side $\Ai(x)^2\le e^{-\frac43x^{3/2}}$ and the
+contribution is $O(h^{1/3})$; the matching piece of $\frac12\int_{t_p}F r^{-1/2}$ is
+$O((h^{2/3}L)^{1/2})$.
+
+\step{the oscillatory region} For $t_n>t_p+h^{2/3}L$, $X_n:=|x_n|\ge cL$ and
+$\Ai(-X)^2=(2\pi X^{1/2})^{-1}(1+\sin2\xi+O(X^{-3/2}))$. With $X_n^{-1/2}=h^{1/3}r_n^{-1/2}$ the
+sum becomes $\frac12\sum_nh\,\phi(t_n)(1+\sin2\xi_n+O(X_n^{-3/2}))$ with $\phi:=Fr^{-1/2}$. The
+error term sums to $O(h^{1/3}/L)$. The mean term is a Riemann sum of a function with
+$|\phi|\le C(t-t_p)^{-1/2}$ and $|\phi'|\le C(t-t_p)^{-3/2}$ near $t_p$ and $|\phi'|\le C\langle t\rangle^{-3}$
+far out, so it equals $\int_{t_p+h^{2/3}L}^\infty\phi+O(h^{2/3}L^{-1/2})$. For the oscillating
+term let $\varphi_n:=\xi_{n+1}-\xi_n\in(0,\frac\pi2]$, which satisfies
+$\varphi_n\ge c\min(1,(t_n-t_p)^{1/2})$; summation by parts with
+$e^{2i\xi_n}=(e^{2i\xi_{n+1}}-e^{2i\xi_n})/(e^{2i\varphi_n}-1)$ bounds it by $O(h^{1/3}/L)$.
+
+\step{the limit} Fixing $L$, $\pi h^{2/3}\sum F\Ai^2=\frac12\int_{t_p}^\infty Fr^{-1/2}dt+O(h^{1/3})$.
+With $t=t_p(h)+v^2$ the right side is analytic in $h$, so it equals $K_2+O(h)$.
+\end{proof}
+
+
+\subsection{The discrete transport identity}\label{app:transport}
+
+This is the computation behind $\partial_\eta\mathcal Q(t,0)=0$ in the proof of \Cref{lem:R}. Put
+$k:=\sqrt\zeta$ (imaginary on the oscillatory side; the computation is algebraic) and $\Theta:=k\zeta'$, so
+that the eikonal identity reads $\cosh\Theta=Z$ and the amplitude identity reads
+$\hat a\,g^2\sinh\Theta/k=-1$. The solution of $Y''=(\zeta+\eta s)Y$ with $Y(0)=0$, $Y'(0)=1$ is
+$X_2=X_{20}+\eta X_{21}+O(\eta^2)$ with
+\[
+  X_{20}(s)=\frac{\sinh ks}{k},\qquad X_{21}(s)=\frac{s^2\cosh ks}{4k^2}-\frac{s\sinh ks}{4k^3},
+\]
+the solution of $Y''-k^2Y=sX_{20}$ with zero data; $X_{20}$ is odd and $X_{21}$ is even in $s$. With
+$s_\pm(\eta)=\pm\zeta'+\eta\zeta''/2+O(\eta^2)$,
+\[
+  \mathcal Q(t,\eta)=\hat a(t+\tfrac\eta2)g(t+\eta)X_2(s_+(\eta);\eta)+\hat a(t-\tfrac\eta2)g(t-\eta)X_2(s_-(\eta);\eta).
+\]
+At $\eta=0$ the two terms cancel because $X_{20}$ is odd. Differentiating once at $\eta=0$ and using
+$X_{20}'=\cosh ks$,
+\[
+  \partial_\eta\mathcal Q(t,0)=(\hat a'g+2\hat ag')\frac{\sinh\Theta}{k}
+  +\hat ag\Bigl[\zeta''\cosh\Theta+\frac{\zeta'^2\cosh\Theta}{2k^2}-\frac{\zeta'\sinh\Theta}{2k^3}\Bigr],
+\]
+where the bracket is $\zeta''\cosh\Theta+2X_{21}(\zeta')$. Differentiating the amplitude identity, with
+$k'=\zeta'/(2k)$ and $\Theta'=k'\zeta'+k\zeta''$, gives
+\[
+  (\hat a'g+2\hat ag')\frac{\sinh\Theta}{k}=-\hat ag\Bigl[\cosh\Theta\Bigl(\zeta''+\frac{\zeta'^2}{2k^2}\Bigr)-\frac{\zeta'\sinh\Theta}{2k^3}\Bigr].
+\]
+The two displays add up to zero. The Casoratian factor of \Cref{lem:R} at $\eta=0$ is
+$\hat ag^2X_{20}(\zeta')=\hat ag^2\sinh\Theta/k=-1$, the amplitude identity itself.
+
+\subsection{The local density of the Born constant}\label{app:p2}
+
+These are the intermediate identities of the elimination in the first step of the proof of
+\Cref{prop:K2}. Put $w:=\arccosh Z$, so that the eikonal identity is $\sqrt\zeta\,\zeta'=-w$, and express every
+derivative through the jets $Z,Z',Z'',Z^{(3)}$ and $\zeta$:
+\[
+  \zeta'=-w\zeta^{-1/2},\qquad \zeta''=-w'\zeta^{-1/2}-\tfrac12w^2\zeta^{-2},\qquad
+  w'=\frac{Z'}{\sinh w},\qquad w''=\frac{Z''-\cosh w\,w'^2}{\sinh w},
+\]
+and $\zeta^{(3)}$ by one more differentiation; $\hat a=1/(2Z)$, $\hat a'=-Z'/(2Z^2)$,
+$\hat a''=-Z''/(2Z^2)+Z'^2/Z^3$; and $g=\zeta^{1/4}(\hat a\sinh w)^{-1/2}$, differentiated by the chain rule.
+The solution of $Y''=(\zeta+\eta s)Y$ with $Y(0)=1$, $Y'(0)=0$ is $X_1=X_{10}+\eta X_{11}+\eta^2X_{12}+O(\eta^3)$ with
+$X_{10}=\cosh ks$,
+\[
+  X_{11}=\frac{s^2\sinh ks}{4k}-\frac{s\cosh ks}{4k^2}+\frac{\sinh ks}{4k^3},
+\]
+\[
+  X_{12}=\frac{s\bigl(3k^3s^3\cosh ks-10k^2s^2\sinh ks+21ks\cosh ks-21\sinh ks\bigr)}{96k^5},
+\]
+where $X_{1j}$ solves $Y''-k^2Y=sX_{1,j-1}$ with zero data. Put
+$F(\eta):=\hat a(t+\frac\eta2)g(t+\eta)X_1(s_+(\eta);\eta)$ with $s_+(\eta)=\zeta'+\eta\zeta''/2+\eta^2\zeta^{(3)}/6+O(\eta^3)$.
+Since $\mathcal P(t,\eta)=F(\eta)+F(-\eta)-g$ is even in $\eta$, $\pp_2=\frac12\partial_\eta^2\mathcal P(t,0)=F''(0)$, and the
+constant term $2F(0)-g=g(2\hat a\cosh w-1)$ vanishes by the eikonal identity. Expanding $F$ to second order
+with the jets above, then passing to the oscillatory side by $\zeta=-r$, $\sqrt\zeta=i\sqrt r$, $w=i\vartheta$,
+the terms with $Z^{(3)}$ cancel and
+\[
+  g\,\pp_2\,r^{-1/2}=\mathcal D-\frac5{16}\,\vartheta\,r^{-3},\qquad
+  \mathcal D=-\frac{Z'^2(S^4+17S^2-15)-Z''Z(S^4+6S^2)}{12\,S^5Z},\quad S=\sin\vartheta,
+\]
+which is the formula of \Cref{prop:K2}. The expansion is long but mechanical; it was carried out and
+checked in exact arithmetic (\Cref{app:repro}).

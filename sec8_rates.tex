@@ -1,0 +1,222 @@
+\section{Rates for balanced links}\label{sec:rates}
+
+The first-order law of \Cref{sec:balanced} has no rate, and none is uniform over
+\Cref{hyp:H} (\Cref{rem:nonuniform}). This section identifies the hypothesis that
+controls the rate, which is closeness of the links to a \emph{smooth} power-like function
+rather than a condition on differences, and proves the rate with the discrete Olver
+bound. The phase that converges fast is not the block sum $S$, which carries the
+oscillating term of \Cref{prop:hurwitz}, but the integral of the smooth link function.
+
+\begin{hypothesis}[smooth symbol]\label{hyp:A}
+$a_n=A(n)(1+e_n)$ for $n\ge k_0$, where $A\in C^4[x_0,\infty)$,
+$A(x)=c\,x^\alpha(1+r(x))$ with $\alpha>1$, $c>0$ and $x^jr^{(j)}(x)\to0$ for $0\le j\le4$, and
+$|e_n|\le C_en^{-1-\delta''}$ for some $\delta''>0$. The diagonal satisfies
+$|b_n|\le C_b(1+n)^\beta$ with $\beta<\alpha-1$. Finitely many entries are arbitrary.
+\end{hypothesis}
+
+\noindent The hypothesis implies $xA'/A\to\alpha$ and $|(\log A)^{(j)}(x)|\le Cx^{-j}$ for
+$1\le j\le4$, so the links are eventually increasing and
+$|\varepsilon_m|\le C(N_m^{-2}+N_m^{-1-\delta''})$. \Cref{prop:zero}(b)--(d) and \Cref{thm:count}
+therefore hold, with the same proofs and $\delta:=\min(1,\delta'')$. \Cref{hyp:A} and
+\Cref{hyp:H} are not nested: $r(x)=0.3/\log(x+2)$ satisfies \Cref{hyp:A} but has
+$|r_{n+1}-r_n|\asymp1/(n\log^2n)$, while chains in \Cref{hyp:H} with small $\delta$ need not
+be close to any smooth symbol (\Cref{rem:mollify}). Let $X_\lambda$ be the largest root of
+$2A(X)=\lambda$, so $X_\lambda=N_\lambda(1+o(1))$, and define the \emph{smooth phase}
+\begin{equation}\label{eq:PhiA}
+  \Phi_A(\lambda):=\int_0^\infty\arcsin\Bigl(\min\bigl(1,\tfrac{\lambda}{2A(x)}\bigr)\Bigr)dx
+  =\frac{X_\lambda\pi}2+\int_{X_\lambda}^\infty\arcsin\frac{\lambda}{2A(x)}\,dx ,
+\end{equation}
+which does not depend on $A$ below $x_0$ once $\lambda$ is large. For
+$A(x)=c(x+\kappa/\alpha)^\alpha$ it is exactly $\Phi$ (\Cref{prop:evalS}).
+
+\begin{theorem}{Rate}{rate}
+Under \Cref{hyp:A}, as $\lambda\to+\infty$,
+\[
+  |\psi(\lambda)-\Phi_A(\lambda)|\le C\bigl(N_\lambda^{-1}+N_\lambda^{-\delta''}+N_\lambda^{1+\beta-\alpha}\bigr),
+\]
+and $|\psi(-\lambda)+\Phi_A(\lambda)|$ satisfies the same bound. The constant depends only on
+$\alpha$, $c$, $x_0$, the moduli of convergence in \Cref{hyp:A}, $C_e$, $\delta''$, $C_b$, $\beta$
+and the finitely many initial entries, and is uniform for $\alpha$ in compact subsets of
+$(1,\infty)$ when these data are.
+\end{theorem}
+
+\paragraph{Idea of the proof.} The regular solution is compared with Airy functions on a window of
+macroscopic size around the turning point, by \Cref{thm:olver}; the phase is read off in the frame of
+\Cref{sec:blocks} at a block where the chain is already oscillatory; and the adiabatic normal form
+carries it to infinity. These steps determine $\psi$ modulo $\pi$. The integer is fixed by deforming
+the chain to $c\,n^\alpha$, where \Cref{thm:discreteBS} already knows it; this homotopy is the one point
+that is not an estimate.
+
+\subsection{The window and the estimate that matters}
+
+Define $h=h(\lambda)$ by $A(1/h+\frac12)=\lambda$, so $h\asymp N_\lambda^{-1}$, and put
+$a(t,h):=A(t/h)/\lambda$. Dividing the recurrence by $\lambda$, the regular solution
+$f(n):=p_n$ solves the operator \eqref{eq:Lpert} with $e_n$ the rough part and $d_n:=b_n/\lambda$.
+By \Cref{hyp:A}, $a(\cdot,h)\to t^\alpha$ in $C^4$ on compact subsets of $(0,\infty)$, so
+\eqref{eq:ahyp} holds with $a_0(t)=t^\alpha$ and $t_p^0=2^{-1/\alpha}$. The turning point of the
+Langer construction is $t_p=h(X_\lambda-\frac12)$. We fix
+\[
+  t_{\rm in}:=t_p^0/2,\qquad t_1:=1,\qquad t_{\rm fi}:=2,\qquad\delta_w:=(t_1-t_p^0)/3,
+\]
+and the sites $n_0:=\lceil t_{\rm in}/h\rceil-1$, $n_1:=\lfloor t_{\rm fi}/h\rfloor+1$. On the window,
+$n\asymp1/h$ and $\lambda\asymp h^{-\alpha}$, so $\bar\eta\le C(h^{1+\delta''}+h^{\alpha-\beta})$, and by
+\Cref{lem:V}, which is the estimate that sets the rate,
+\begin{equation}\label{eq:Gamma}
+  d:=e^{2V/(1-\theta_D)}-1\le C\Gamma,\qquad
+  \Gamma:=N_\lambda^{-1}+N_\lambda^{-\delta''}+N_\lambda^{1+\beta-\alpha}.
+\end{equation}
+Let $f_A,f_B$ be the solutions of \Cref{thm:olver} for this operator and window.
+
+The comparison yields three facts, proved in \Cref{app:ratewindow}. First, for $\lambda$ large
+the regular solution is, on the window, a real multiple of $f_A+\eta_Kf_B$ with $|\eta_K|\le Ce^{-c/h}$
+(\Cref{lem:K}): it enters the window as the recessive Airy solution up to an exponentially small
+admixture. Second, on the oscillatory part of the window it has the WKB form
+$p_n=c_K\pi^{-1/2}g_n|x_n|^{-1/4}(\cos(\Xi_n-\frac\pi4)+O(\Gamma))$ with the exact phase
+$\Xi_n:=\Xi(n+\frac12)$, $\Xi(X):=\int_{X_\lambda}^{X}\arccos(\lambda/2A(x))\,dx$ (\Cref{lem:O}), and read in the block
+frame this gives $\chi_m\equiv-\Xi(2m)+O(\Gamma)\pmod\pi$ at every block of the window with $u_m\ge1$
+(\Cref{lem:C}). Third, beyond such a block the adiabatic normal form with no drift adds
+$\int_{2m}^\infty\arcsin(\lambda/2A)$ up to $O(\Gamma)$ (\Cref{lem:tail}).
+
+\subsection{Proof of the theorem}
+
+\begin{proof}[Proof of \Cref{thm:rate}]
+\step{modulo $\pi$} Let $m^*$ be the least block with $N_{m^*}\ge X_\lambda$ and $u_{m^*}\ge1$.
+Then $A_{m^*}=\lambda(1+O(h))$, so its sites satisfy $nh=t_1+o(1)=1+o(1)$ and lie in the range
+of \Cref{lem:O}; and $u_m\ge1$ for all $m\ge m^*$ because the links increase. \Cref{lem:C,lem:tail} give
+\[
+  \psi\equiv-\Xi(2m^*)+\int_{2m^*}^\infty\arcsin\frac{\lambda}{2A}+O(\Gamma)
+  =\Phi_A-m^*\pi+O(\Gamma)\pmod\pi,
+\]
+using $\arccos=\frac\pi2-\arcsin$ on $[X_\lambda,2m^*]$. So $\psi-\Phi_A=j(\lambda)\pi+O(\Gamma)$ with
+$j(\lambda)\in\ZZ$, and since $\psi$ and $\Phi_A$ are continuous, $j$ is constant on
+$[\lambda_0,\infty)$.
+
+\step{the integer} For $s\in[0,1]$ let $J^{(s)}$ have links $(1-s)a_n+sc\,n^\alpha$ and
+diagonal $(1-s)b_n$. For $n\ge k_0$ the links are $A_s(n)(1+e^{(s)}_n)$ with
+$A_s(x)=c\,x^\alpha(1+(1-s)r(x))$ and $|e^{(s)}_n|\le C|e_n|$, so every $J^{(s)}$ satisfies
+\Cref{hyp:A} with the same data, and the first step holds uniformly in $s$:
+$|\psi_s-\Phi_{A_s}-j_s\pi|\le C\Gamma$. Both $\psi_s(\lambda)$ and $\Phi_{A_s}(\lambda)$ are continuous
+in $s$ (for $\psi_s$: $\vp^{(s)}$ is continuous because the series defining it converges
+uniformly, each shear increment is continuous in its weight, and the tails
+$\sum_{k>K}|\gamma^{(s)}_k|$ are small uniformly in $s$). Hence $j_s$ is independent of $s$. At
+$s=1$ the chain is $c\,n^\alpha$ with $b\equiv0$, for which \Cref{thm:discreteBS} and
+\Cref{prop:evalS}(c) give $\psi-N_\lambda I_\alpha\to0$, while $\Phi_{A_1}=N_\lambda I_\alpha$. So $j=0$. This
+step uses no estimate beyond the uniformity of the first step in $s$; it is what turns a statement
+modulo $\pi$ into a statement about labelled eigenvalues.
+
+\step{negative $\lambda$ and uniformity} $\psi_J(-\lambda)=-\psi_{J_0-\operatorname{diag}(b)}(\lambda)$ by
+\Cref{thm:count}(iii), and $J_0-\operatorname{diag}(b)$ satisfies the same hypotheses. Every constant above comes
+from the $h=0$ data $t^\alpha$ (which depend continuously on $\alpha$ and are nondegenerate for
+$\alpha>0$), from the far-field sums of \Cref{lem:tail} (continuous in $\alpha$), and from the
+listed data; so it is uniform on compact $\alpha$-intervals in $(1,\infty)$.
+\end{proof}
+
+Nothing is claimed as $\alpha\to1^+$: the main term $\Phi_A\asymp X_\lambda/(\alpha-1)$ diverges, and for
+$b\ne0$ so does the constant through $\sum_{N\ge X}N^{\beta-\alpha}$.
+
+\subsection{Consequences and sharpness}
+
+\begin{lemma}[Comparing phases]\label{lem:M}
+If $A_1,A_2$ satisfy \Cref{hyp:A} and $|A_1/A_2-1|\le Cx^{-1-\nu}$ with $\nu>0$, then
+$\Phi_{A_1}-\Phi_{A_2}=O(N_\lambda^{-\nu})$.
+\end{lemma}
+
+\begin{proof}
+$\Phi_A$ is nonincreasing in $A$, so it suffices to compare $A_2$ with $A_2(1\pm w)$,
+$w=Cx^{-1-\nu}$. Along $A_\vartheta:=A_2(1+\vartheta w)$ the moving turning point contributes
+nothing, because the integrand equals $\pi/2$ there, and
+$|\partial_\vartheta\Phi_{A_\vartheta}|\le\int_{X_\vartheta}^\infty v\,w\,(1-v^2)^{-1/2}dx$ with $v=\lambda/2A_\vartheta$.
+On $[X,2X]$, $1-v^2\ge c(x-X)/X$, so this part is $O(X^{-\nu})$; on $[2X,\infty)$,
+$v\le C(X/x)^\alpha$ and the part is $O(X^{-\nu})$.
+\end{proof}
+
+\begin{corollary}\label{cor:rate}
+Let $a_n=c\,n^\alpha(1+\kappa/n+O(n^{-1-\delta'}))$, with no condition on differences, and
+$|b_n|\le C_b(1+n)^\beta$, $\beta<\alpha-1$. Put $\gamma:=\min(1,\delta',\alpha-1-\beta)$. Then
+$\psi(\lambda)-\Phi(\lambda)=O(N_\lambda^{-\gamma})$, and the eigenvalues of every $H_t$ satisfy
+\[
+  \lambda_j^{1/\alpha}=(2c)^{1/\alpha}\frac{\pi}{I_\alpha}\Bigl(j+\frac t\pi+\frac{\kappa}{2\alpha}\Bigr)+O(j^{-\gamma}).
+\]
+If $b\equiv0$, the counting remainder $r(\lambda)$ of \Cref{cor:balanced}(c) satisfies
+$|r(\lambda)|\le\frac12+O(\lambda^{-\min(1,\delta')/\alpha})$.
+\end{corollary}
+
+\begin{proof}
+Take $A(x):=c\,x^\alpha(1+\kappa/x)$ for $x\ge x_0>|\kappa|+1$ and
+$e_n:=(1+r_n)/(1+\kappa/n)-1=O(n^{-1-\delta'})$. \Cref{thm:rate} applies with $\delta''=\delta'$, and
+$A/(c(x+\kappa/\alpha)^\alpha)=1+O(x^{-2})$, so \Cref{lem:M} and \Cref{prop:evalS} give
+$\Phi_A-\Phi=O(N_\lambda^{-1})$. The eigenvalue law follows from \Cref{thm:count}(v) since
+$N_{\lambda_j}\asymp j$, and the counting statement as in \Cref{cor:balanced}(c).
+\end{proof}
+
+This covers every link sequence with an expansion in powers of $1/n$, and in particular
+the Berg--Valent chain and the squeezing chains of \Cref{sec:apps}. Of the three terms
+in \Cref{thm:rate}, the middle one is attained, by the following proposition. The first
+is attained on every shifted power, where \Cref{thm:second} below identifies its
+constant. The third is attained numerically, with the constant predicted by first-order
+perturbation in $b$ (\Cref{sec:numerics,sec:open}).
+
+\begin{proposition}{Sharpness of the rough term}{SH}
+Assume \Cref{hyp:A} with $\beta<\alpha-1-\delta''$, $0<\delta''<1$, and $e_n=e(n)$ for a $C^4$ function
+with $x^je^{(j)}(x)=O(x^{-1-\delta''})$ $(j\le4)$ and $x^{1+\delta''}e(x)\to\kappa_e\ne0$. Then
+\[
+  \psi(\lambda)-\Phi_A(\lambda)=-\frac{\kappa_e}{2\alpha}\B\Bigl(\frac{\alpha+\delta''}{2\alpha},\frac12\Bigr)N_\lambda^{-\delta''}+o(N_\lambda^{-\delta''}).
+\]
+\end{proposition}
+
+\begin{proof}
+$A':=A(1+e)$ satisfies \Cref{hyp:A}, and the chain is $A'$ with no rough part, so
+\Cref{thm:rate} gives $\psi-\Phi_{A'}=O(N^{-1}+N^{1+\beta-\alpha})=o(N^{-\delta''})$. The derivative in
+the proof of \Cref{lem:M} is an identity:
+$\Phi_{A'}-\Phi_A=-\int_0^1\int_{X_\vartheta}^\infty v_\vartheta e\,(1+\vartheta e)^{-1}(1-v_\vartheta^2)^{-1/2}dx\,d\vartheta$ with
+$v_\vartheta=\lambda/(2A(1+\vartheta e))$. Substituting $x=X_\vartheta u$ and using dominated convergence,
+the inner integral is $\kappa_eX^{-\delta''}\bigl(\int_1^\infty u^{-\alpha-1-\delta''}(1-u^{-2\alpha})^{-1/2}du+o(1)\bigr)$,
+and $w=u^{-2\alpha}$ evaluates the integral as $\B(\frac{\alpha+\delta''}{2\alpha},\frac12)/(2\alpha)$.
+\end{proof}
+
+The block sum $S$ of \Cref{thm:discreteBS} carries an
+oscillating term of exact order $N_\lambda^{-1/2}$ from the kink of the summand at the turning
+point, which the next proposition identifies.
+
+\begin{proposition}{The midpoint term}{hurwitz}
+Let $A$ satisfy \Cref{hyp:A}, let $S_A$ be the sum $S$ with links $A(2m+1)$ and
+$\Phi_A$ the phase \eqref{eq:PhiA}. Put $X:=X_\lambda$, $x_t:=(X-1)/2$,
+$\theta_\lambda:=\lceil x_t\rceil-x_t\in(0,1]$ (with $\theta_\lambda=1$ if $x_t\in\ZZ$) and
+$\alpha_X:=XA'(X)/A(X)$. Then
+\[
+  S_A(\lambda)-\Phi_A(\lambda)=-4\sqrt{\alpha_X/X}\,\zeta(-\tfrac12,\theta_\lambda)+O(1/X),
+\]
+with $\zeta(s,\theta)$ the Hurwitz zeta function. Since $\zeta(-\frac12,\cdot)$ ranges over
+$[-0.2078862\ldots,\,0.0933663\ldots]$ on $(0,1]$ and $\theta_\lambda$ sweeps $(0,1]$ infinitely
+often, $\limsup_{\lambda}\sqrt{N_\lambda}\,|S_A-\Phi_A|=4\sqrt\alpha\,|\zeta(-\frac12)|>0$.
+\end{proposition}
+
+\begin{proof}
+With $g(x):=2\arcsin(\min(1,\lambda/2A(2x+1)))$ we have $\Phi_A=\int_{-1/2}^\infty g$, so
+$S_A-\Phi_A=\sum_m\bigl(g(m)-\int_{m-1/2}^{m+1/2}g\bigr)$, and only $m+\frac12>x_t$
+contributes. Near the kink, with $u:=x-x_t\ge0$, \Cref{hyp:A} gives
+$\log A(X+2u)-\log A(X)=2\alpha_Xu/X+R(u)$ with $|R^{(j)}(u)|\le Cu^{2-j}/X^2$, and
+$2\arcsin v=\pi-2\sqrt{2(1-v)}(1+O(1-v))$ gives $g=\pi-c_Xu^{1/2}(1+q(u))$ with
+$c_X:=4\sqrt{\alpha_X/X}$ and $|q^{(j)}(u)|\le Cu^{1-j}/X$ $(j\le2)$ on $0\le u\le c'X$. For the
+square-root model, the sites $m_0+k$ have $u=k+\theta_\lambda$ and the integrals cover
+$u\in[0,K+\theta_\lambda+\frac12]$, so the model contributes
+$-c_X\bigl[\sum_{k=0}^K(k+\theta)^{1/2}-\frac23(K+\theta+\frac12)^{3/2}\bigr]=-c_X\bigl[\zeta(-\frac12,\theta)+O(K^{-1/2})\bigr]$,
+by the midpoint Euler--Maclaurin form of the Hurwitz function (DLMF \S25.11). Taking
+$K=\lfloor c'X\rfloor$, the correction $c_Xu^{1/2}q$ and the region $u>c'X$ contribute
+$O(1/X)$ by the midpoint rule. The range of $\zeta(-\frac12,\cdot)$ on $(0,1]$ follows from
+$\partial_\theta\zeta(-\frac12,\theta)=\frac12\zeta(\frac12,\theta)$ (DLMF 25.11.17), which has one zero in $(0,1)$; the
+endpoint value is $\zeta(-\frac12)=-0.2078862\ldots$ and the maximum is $0.0933663\ldots$, evaluated at
+that zero (\Cref{app:repro}).
+\end{proof}
+
+So the discrete sum converges to $\psi$ only at the rate $N_\lambda^{-1/2}$, while the smooth
+phase does much better (\Cref{thm:rate}). The rule of \Cref{thm:discreteBS} is the right
+statement under \Cref{hyp:H}, where no smooth phase need exist; for rates one should
+use $\Phi_A$.
+
+\begin{remark}[The block sum]\label{rem:blocksum}
+By \Cref{prop:hurwitz} and \Cref{thm:rate}, if $\delta''>\frac12$ and $\beta<\alpha-\frac32$, then
+$\limsup_{\lambda\to\infty}\sqrt{N_\lambda}\,|\psi(\lambda)-S(\lambda)|=4\sqrt\alpha\,|\zeta(-\frac12)|$, using
+$|S-S_A|=O(N^{-\delta''}+N^{-(1+\delta'')/2})$: the exponent $\frac12$ in $\psi-S$ cannot be improved. For
+chains that satisfy only a difference condition see \Cref{rem:mollify}.
+\end{remark}

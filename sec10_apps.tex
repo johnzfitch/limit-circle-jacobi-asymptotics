@@ -1,0 +1,158 @@
+\section{Applications}\label{sec:apps}
+
+This section gives two applications in which limit-circle Jacobi matrices with power
+links arise from physics: the spectra of the self-adjoint extensions of higher-order
+squeezing operators, where \Cref{thm:second} gives the eigenvalues to second order, and
+the essentially singular limits of Fischer, Burgarth and Lonigro, where
+\Cref{thm:olver} removes a restriction on the growth exponent.
+
+\subsection{Higher-order squeezing}
+
+The $k$-photon squeezing operator $a^k+a^{\dagger k}$ on $\ell^2(\NN_0)$ commutes with the
+number operator modulo $k$, and decomposes into $k$ Jacobi blocks: block $m\in\{0,\dots,k-1\}$
+acts on the Fock states $|m+nk\rangle$, $n\ge0$, with zero diagonal and links
+\[
+  a^{(m)}_n=\Bigl(\prod_{l=1}^k\bigl(m+(n-1)k+l\bigr)\Bigr)^{1/2}\qquad(n\ge1).
+\]
+For $k\ge3$ each block is in the limit-circle case and the operator has deficiency indices
+$(k,k)$ \cite{FBL2025,FBL2026}; for $k\le2$ it is essentially self-adjoint. The extensions that
+commute with the $\ZZ_k$ symmetry are exactly the direct sums of extensions $H^{(m)}_{t_m}$ of
+the blocks.
+
+\begin{corollary}\label{cor:squeeze}
+Let $k\ge3$, $0\le m<k$ and $t\in[0,\pi)$. The eigenvalues of $H^{(m)}_t$ satisfy, with
+$s_m:=(2m-k+1)/(2k)$ and $\nu_j:=(j\pi+t+s_m\pi/2)/I_{k/2}$,
+\[
+  \Bigl(\frac{\lambda_j}{2k^{k/2}}\Bigr)^{2/k}=\nu_j+\frac{(k-1)^2}{48k}\,\frac{J_{k/2}}{I_{k/2}\,\nu_j}+O\bigl(\nu_j^{-4/3}\bigr)
+  \qquad(j\to+\infty),
+\]
+and $\lambda_{-j}(t)=-\lambda_{j-1}(\pi-t)$ for $0<t<\pi$, $\lambda_{-j}(0)=-\lambda_j(0)$.
+\end{corollary}
+
+\begin{proof}
+Write $a^{(m)}_n=k^{k/2}\bigl(\prod_l(x+c_l)\bigr)^{1/2}$ with $x=n+s_m$ and
+$c_l=(l-\frac{k+1}2)/k$, so $\sum_lc_l=0$ and $\sum_lc_l^2=(k^2-1)/(12k)$. Then
+$\prod_l(x+c_l)=x^k(1-\frac{k^2-1}{24k}x^{-2}+O(x^{-3}))$, so \eqref{eq:H2} holds with
+$c=k^{k/2}$, $\alpha=k/2$, $s=s_m$ and $\kappa_2=-(k^2-1)/(48k)$. \Cref{thm:second} applies, and
+$\kappa_2+(2\alpha-1)/24=(k-1)^2/(48k)$. The negative eigenvalues follow from the reflection
+identity $\psi(-\lambda)=-\psi(\lambda)$ of \Cref{thm:count}(iii): for $0<t<\pi$,
+$\psi(-\lambda_j(t))=-j\pi-t=(-j-1)\pi+(\pi-t)$, so $-\lambda_j(t)=\lambda_{-j-1}(\pi-t)$, which is the stated
+identity with $j$ replaced by $j-1$ and $t$ by $\pi-t$; for $t=0$, $\psi(-\lambda_j(0))=-j\pi$ gives
+$-\lambda_j(0)=\lambda_{-j}(0)$.
+\end{proof}
+
+In particular the first-order offset is $\kappa/(2\alpha)=s_m/2$: the blocks of one operator
+are distinguished, at first order, only by their offsets $(2m-k+1)/(4k)$. Fischer, Knapp,
+Burgarth and Lonigro announce the transfer of eigenvalue asymptotics from the Jacobi
+literature to multiphoton models as future work \cite[p.~3]{FKBL2026}; as far as we know
+\Cref{cor:squeeze} is the first such statement with an explicit constant.
+
+\subsection{Essentially singular limits for \texorpdfstring{$\alpha>1$}{alpha > 1}}
+
+Fischer, Burgarth and Lonigro \cite{FBL2026} study the family
+$J(\lambda)=J(0)+\lambda F$, where $J(0)$ is a Jacobi matrix with links $a_n$ and $F$ is diagonal
+with entries $f_n$, in their indexing
+\begin{equation}\label{eq:fbl}
+  a_nu_{n+1}+(\lambda f_n-z)u_n+a_{n-1}u_{n-1}=0\qquad(n\ge1).
+\end{equation}
+Their Hypothesis~2.2 asks for positivity (i), $a_n=n^\alpha(1+c_a/n+O(n^{-2}))$ with
+$\alpha>\frac43$ (ii), $f_n=n^\beta(1+c_f/n+O(n^{-2}))$ with $\beta>\alpha$ (iii), and a
+total-variation condition (iv). For $\lambda>0$ the operator $J(\lambda)$ is self-adjoint,
+while $J(0)$ is in the limit-circle case, and their Theorem~2.7 shows that the limits of
+$J(\lambda)$ as $\lambda\to0$ in the strong resolvent sense are exactly the self-adjoint extensions
+$J_t$ of $J(0)$, each attained along a sequence. They write that it remains open whether
+this holds under $\alpha>1$ \cite[\S4.7, p.~54]{FBL2026}. The exponent $\frac43$ enters their proof in
+two places. The first is the $\lambda$-uniform majorant $|u_n|\le C(|u_0|+|u_1|)n^{-\alpha/2+1/6}$ of their
+Theorem~2.8 (restated as their Theorem~3.34), which is square-summable exactly when $\alpha>\frac43$ and is
+used twice to apply dominated convergence, at (3.109) and (3.120). The second is the perturbation
+estimate of their Lemma~4.14, where the bound $h^\alpha\le h^{4/3}$ in (4.94) uses $\alpha>\frac43$; this lemma
+feeds their turning-point analysis (their \S4.4). Their Remark~3.35 and \S4.7 say that within their
+strategy the restriction is necessary. Our proof replaces their \S\S4.4--4.6, so neither use remains.
+The $\frac16$ is real: the eigenvector has an Airy hump of relative
+height $h^{-1/6}$ at the turning point, $h:=\lambda^{1/(\beta-\alpha)}$. But the hump is only
+$h^{-1/3}$ sites wide, and with Olver's envelopes its $\ell^2$ mass is of order $h^{\alpha-1}$.
+
+\begin{theorem}{Uniform tails}{fbl}
+Assume Hypothesis~2.2 of \cite{FBL2026} with (ii) weakened to $\alpha>1$, and let
+$\Omega\subset\CC$ be compact. There are $\Lambda_0>0$ and $C$ such that for $0\le\lambda<\Lambda_0$, $z\in\Omega$
+and every square-summable solution $u$ of \eqref{eq:fbl},
+\[
+  |u_n|\le C\,n^{-\alpha/2}\bigl(h^{2/3}+|nh-t_p|\bigr)^{-1/4}(|u_0|+|u_1|)\quad(\lambda>0),\qquad
+  \sum_{n\ge N}|u_n|^2\le CN^{1-\alpha}(|u_0|+|u_1|)^2,
+\]
+where $t_p=t_p(h)\to2^{1/(\beta-\alpha)}$. Consequently Theorem~2.7 of \cite{FBL2026} holds for every
+$\alpha>1$, and so does the bound of their Theorem~2.8.
+\end{theorem}
+
+\begin{proof}
+\step{the regions outside the window} Put $\delta:=\beta-\alpha$ and use the regions of
+\cite[Def.~4.1, Lemma~4.2]{FBL2026}, $N_1<N_2<N_3<N_4$ with $N_ih\to x_i$,
+$x_1^\delta=\frac58$, $x_2^\delta=\frac78$, $x_3^\delta=\frac{33}8$, $x_4^\delta=\frac{39}8$. Their Lemma~4.5 and
+Proposition~4.10 (Tur\'an determinants) give $|u_n|\le Cn^{-\alpha/2}(|u_0|+|u_1|)$ for
+$n\le N_2$, and their Proposition~4.31 gives the same for all $n$ when $\lambda=0$; their
+Proposition~4.29 (a Riccati disc) gives $|u_{n+1}/u_n|\le\frac38$ for $n\ge N_3$ (we use this together
+with $a_n/a_{n+1}\le1+\frac18$, as in their (4.198)). None of these uses $\alpha>\frac43$ or the Airy
+comparison: Lemma~4.5 uses only compactness and their Lemma~4.2 ($a_{n-1}/a_n\to1$, $a_n\to\infty$);
+Proposition~4.10 uses the finite total variations of $(1/a_n)$ and $(a_{n-1}/a_n)$, the convergence of
+$\sum1/a_n$ (their Lemma~3.19, where $\alpha>1$ suffices) and their Hypothesis~2.2(iv); Proposition~4.29 uses
+the Poincar\'e--Perron asymptotics, which need $\lambda f_n/a_n\to\infty$, that is $\beta>\alpha$, and their
+Lemma~4.2; and Proposition~4.31 assumes $\alpha>1$ explicitly.
+
+\step{the window equation} For $N_1\le n\le N_4$ put $u_n=(-1)^nw_n/\sqrt{\tilde b_n}$ with
+$\tilde a(x,h):=x^\alpha(1+c_ah/x)$, $\tilde b(x,h):=x^\beta(1+c_fh/x)$, $\tilde a_n:=\tilde a(nh,h)$,
+$\tilde b_n:=\tilde b(nh,h)$. Multiplying \eqref{eq:fbl} by $(-1)^{n+1}h^\alpha/\sqrt{\tilde b_n}$ and using
+$h^\alpha\lambda=h^\beta$ gives
+\[
+  \mathcal A((n+1)h)(1+e_{n+1})w_{n+1}+\mathcal A(nh)(1+e_n)w_{n-1}-(1-d_n)w_n=0,\qquad
+  \mathcal A(s):=\frac{\tilde a(s-h,h)}{\sqrt{\tilde b(s-h,h)\tilde b(s,h)}},
+\]
+with $1+e_{n+1}:=h^\alpha a_n/\tilde a_n$ and $d_n:=(\tilde b_n-h^\beta f_n+h^\alpha z)/\tilde b_n$. On the window
+$n\asymp1/h$, so $|e_n|\le Ch^2$ and $|d_n|\le C(h^2+h^\alpha)$ uniformly in $z\in\Omega$; $d_n$ is
+complex. The coefficient $\mathcal A(s,h)$ is real-analytic in $(s,h)$ near $[x_1/2,x_4+1]\times\{0\}$, and
+$\mathcal A(s,0)=s^{-\delta}$ is decreasing. Reflecting the site index, $\tilde w(m):=w(-m)$ solves an
+equation of the form \eqref{eq:Lpert} with coefficient $a(t,h):=\mathcal A(h-t,h)$, increasing in $t$
+at $h=0$; here $h$ is both the lattice step and a parameter of the coefficient, which
+\eqref{eq:ahyp} allows. So \Cref{lem:langer,lem:R} apply, and \Cref{lem:V} gives
+$V\le C(h+h^{\alpha-1})$ and $\theta_D\le C(h^2+h^\alpha)$. This is where $\alpha>1$ enters the turning
+point: the spectral parameter contributes $h^\alpha z$ per site over $h^{-1}$ sites.
+
+\step{the solution is almost recessive} In the original orientation the Langer variable
+$x_n$ increases with $n$, and \Cref{thm:olver} gives exact solutions $f_A$, equal to $g\Ai(x_n)$ at
+the right end $n_1:=N_4-1$, and $f_B$, equal to $g\Bi(x_n)$ at the left end $n_0:=N_1$, with
+$d:=e^{2V/(1-\theta_D)}-1\le C(h+h^{\alpha-1})\to0$. By (D2) they are independent, so $w=c_Af_A+c_Bf_B$.
+At $n_1\ge N_3$, $x_{n_1}\asymp h^{-2/3}$; by (D1) and the monotonicity of $\Ai,\Bi$ there, the
+ratios $r_A=f_A(n_1+1)/f_A(n_1)$ and $r_B=f_B(n_1+1)/f_B(n_1)$ satisfy $|r_A|\le\frac12$ and
+$|r_B|\ge\frac34$, while $r_w:=w_{n_1+1}/w_{n_1}$ has $|r_w|\le\frac12$ by the first step. Hence
+$c_A\ne0$ and $|c_B/c_A|\le20\Ai(x_{n_1})/\Bi(x_{n_1})=20\,\mathsf E(x_{n_1})^{-2}$.
+
+\step{the envelope} For $n_0\le n\le n_1$, (D1) and the monotonicity of $\mathsf E$ give
+$|w(n)|\le|c_A|(1+d)g_n\mathsf E_n^{-1}\mathsf M_n(1+20\,\mathsf E_n^2/\mathsf E(x_{n_1})^2)\le C|c_A|(1+|x_n|)^{-1/4}$.
+On $[N_1,N_2]$, $x_n\le-ch^{-2/3}$ and the phase steps $\xi_n-\xi_{n+1}=\arccos Z(nh)+O(h)$ lie in
+$[1.11,1.26]$, so of two consecutive sites one has $|\Ai(x_m)|\ge\mathsf M(x_m)/3$, and there
+$|w(m)|\ge|c_A|g_m\mathsf M(x_m)/4\ge c|c_A|h^{1/6}$. Combining with the first step at $m\le N_2$
+and undoing the substitution ($\tilde b_n\asymp1$ on the window, $|\zeta(t)|\ge r_0|t-t_p|$, $m\asymp n$)
+gives the envelope for $N_1\le n\le N_4$.
+
+\step{assembly} For $n<N_1$ the first step applies, and for $n>N_4$ the ratio bound $\frac38$
+propagates the envelope at $N_4$ with a geometric factor that absorbs $(n/N_4)^{\alpha/2}$.
+Summing the envelope over the window gives at most
+$Ch^\alpha\bigl(h^{-2/3}+h^{-1}\int_0^{x_4}s^{-1/2}ds\bigr)\le Ch^{\alpha-1}$ (the first term
+counts the $O(h^{-1/3})$ sites with $|nh-t_p|\le h^{2/3}$), which is at most $CN^{1-\alpha}$
+when the window lies beyond $N$, that is when $h\le x_4/N$; the other parts contribute
+$CN^{1-\alpha}$. The pointwise form gives $|u_n|\le Cn^{-\alpha/2}h^{-1/6}\le C'n^{-\alpha/2+1/6}$, which is
+the bound of their Theorem~2.8.
+
+\step{Theorem 2.7} If $x^{(j)}\to x$ pointwise with $x\in\ell^2$ and
+$\sup_j\sum_{n\ge N}|x^{(j)}_n|^2\to0$ as $N\to\infty$, then $x^{(j)}\to x$ in $\ell^2$. Their proof of
+Theorem~2.7 uses Theorem~2.8 exactly twice, in (3.107)--(3.110) for the Green's function
+columns and in (3.119)--(3.124) for the eigenvectors, both times to obtain $\ell^2$ convergence
+from pointwise convergence by dominated convergence. The tail bound and the remark just
+made give that convergence directly. Elsewhere in their \S3 the growth exponent enters through
+their Lemma~3.19, whose conclusions (finite total variation and $\sum1/a_n<\infty$) hold for $\alpha>1$;
+we have checked the places where $\alpha$ is invoked, not every line of their \S3.
+\end{proof}
+
+The threshold $\alpha>1$ is exact: for $\alpha\le1$, $\sum1/a_n=\infty$, so $J(0)$ is self-adjoint by
+Carleman's criterion, $\ell_0$ is a common core, and $J(\lambda)\to J(0)$ in the strong resolvent
+sense \cite[Thm.~VIII.25]{ReedSimon1}. The gain is in the range $1<\alpha\le\frac43$ of the general
+class; the squeezing operators already have $\alpha=k/2\ge\frac32$.
