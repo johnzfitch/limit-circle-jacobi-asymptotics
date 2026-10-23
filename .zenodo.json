@@ -1,0 +1,28 @@
+{
+  "title": "Bohr–Sommerfeld Asymptotics for Limit-Circle Jacobi Matrices",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "description": "<p>A Jacobi matrix whose off-diagonal entries grow regularly like \\(c\\,n^\\alpha\\) with \\(\\alpha&gt;1\\), without a strong alternation between even and odd entries, is in the limit-circle case: it has a one-parameter family of self-adjoint extensions \\(H_t\\), each with discrete spectrum. The growth of the eigenvalue counting function is known up to multiplicative constants, but no eigenvalue law with an explicit constant was known beyond a few explicitly solvable chains. We prove such a law, with an explicit offset, for every self-adjoint extension of a zero-diagonal Jacobi matrix with links \\(a_n=c\\,n^\\alpha(1+(\\kappa+\\kappa'(-1)^n)/n+O(n^{-1-\\delta}))\\) in the limit-circle range \\(2|\\kappa'|&lt;\\alpha-1\\). For \\(\\kappa'=0\\) the eigenvalues satisfy the Bohr&ndash;Sommerfeld rule \\(N_{\\lambda_j} I_\\alpha-\\kappa\\pi/(2\\alpha)=j\\pi+t+O(j^{-\\min(1,\\delta)})\\), where \\(N_\\lambda=(\\lambda/2c)^{1/\\alpha}\\) and \\(I_\\alpha=\\tfrac12\\mathrm{B}(\\tfrac{\\alpha-1}{2\\alpha},\\tfrac12)\\), with no quarter-period correction in the normalisation of the extensions fixed by the solutions at \\(\\lambda=0\\), and for a shifted power with a curvature term the next coefficient is \\((\\kappa_2+(2\\alpha-1)/24)\\,J_\\alpha\\). For \\(\\kappa'\\neq0\\) (dimerised links) the far field is a Bessel problem of order \\(\\nu=\\tfrac12-\\kappa'/(\\alpha-1)\\): measured in units of \\(\\pi\\), the offsets of the two extensions \\(H_0\\) and \\(H_{\\pi/2}\\) are shifted by \\(+\\kappa'/(2(\\alpha-1))\\) and \\(-\\kappa'/(2(\\alpha-1))\\) from the balanced values \\(0\\) and \\(\\tfrac12\\), every other extension follows one of these two laws, and the remainder is \\(o(1)\\).</p><p>The proofs combine an exact rotation identity for two-site blocks, an adiabatic normal form, a Bessel comparison for the far field, and a discrete Olver-type bound for Airy approximations that we prove from scratch; the last also extends a theorem of Fischer, Burgarth and Lonigro on singular limits from \\(\\alpha&gt;4/3\\) to \\(\\alpha&gt;1\\). Applications include the spectra of all symmetry-preserving self-adjoint extensions of higher-order squeezing operators and the Krein and Friedrichs spectra of birth&ndash;death processes with polynomial rates. For these processes we compute the critical indices of Berg and Szwarc exactly: \\((1-\\nu)/2\\) for the Friedrichs solution and \\((1+\\nu)/2\\) for every other N-extremal solution, all of them determinate at the critical weight. The numerical claims are checked against an independent eigenvalue computation.</p><p>This record archives the paper (PDF and LaTeX source) together with its code and stored outputs. The paper and outputs are licensed CC BY 4.0; the code (all .py files) is MIT-licensed, as stated in the LICENSE file.</p>",
+  "creators": [
+    {
+      "name": "Fitch, John Zachary",
+      "affiliation": "Independent Researcher",
+      "orcid": "0009-0007-7953-1531"
+    }
+  ],
+  "version": "v1.1.1",
+  "publication_date": "2026-10-22",
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "keywords": [
+    "Jacobi matrix",
+    "limit-circle case",
+    "self-adjoint extensions",
+    "eigenvalue asymptotics",
+    "Bohr-Sommerfeld rule",
+    "indeterminate moment problem",
+    "Airy and Bessel comparison",
+    "critical index"
+  ],
+  "language": "eng"
+}
