@@ -50,9 +50,9 @@ $40$ to $60$ significant digits (mpmath) by \texttt{exact\_checks.py}, unless an
 
 \subsection{The eigenvalue computations}
 
-The Sturm counts of \Cref{sec:numerics} are the only long computation (\texttt{sturm.py},
-\texttt{truncation\_run.py}; with a diagonal \texttt{sturm\_diag.py}, \texttt{diag\_run.py},
-\texttt{diag\_balanced.py}). The $k$-th positive eigenvalue was found by bisection on the counts, and
+The Sturm counts of \Cref{sec:numerics} are the only long computation. They are made by
+\texttt{sturm.py} and \texttt{truncation\_run.py}, and for chains with a diagonal by
+\texttt{sturm\_diag.py}, \texttt{diag\_run.py} and \texttt{diag\_balanced.py}. The $k$-th positive eigenvalue was found by bisection on the counts, and
 for most chains by $256$-section, which evaluates $256$ spectral parameters per pass over the sites;
 on a test case $256$-section left the eigenvalues bit-for-bit unchanged and cut the number of passes
 about fourfold. The cases B3, SQ6m1 and D1 at $t=0$ were computed with bisection, the others with
@@ -73,7 +73,7 @@ The \LaTeX\ sources of this paper, all programs named above (folder \texttt{scri
 outputs (folder \texttt{outputs}, including the per-eigenvalue truncation data behind
 \Cref{tab:numerics} and \Cref{fig:laws}) are published in the repository
 \href{https://github.com/johnzfitch/limit-circle-jacobi-asymptotics}{\texttt{github.com/johnzfitch/limit-circle-jacobi-asymptotics}},
-release tag \texttt{v1.0}. The file \texttt{SHA256SUMS.txt} in the release lists a SHA-256 checksum for
+release tag \texttt{v1.1}. The file \texttt{SHA256SUMS.txt} in the release lists a SHA-256 checksum for
 every file. From the repository root, with Python~3, mpmath and SymPy, the cross-checks are reproduced by
 \begin{quote}\small\ttfamily
 python scripts/exact\_checks.py\\
@@ -92,5 +92,6 @@ The eigenvalue data are reproduced by \texttt{python scripts/validate\_sturm.py}
 contains the NumPy reference implementation of the count that was used for validation). Finally
 \texttt{python scripts/make\_table.py} and \texttt{python scripts/fig\_laws.py} rebuild
 \Cref{tab:numerics} and \Cref{fig:laws} from the stored data (the figure script uses the plotting
-style module \texttt{es\_figure} of the typesetting kit, and matplotlib). The computations were designed and run
-by the author; their independence is from the asymptotic proofs, not from the author.
+style module \texttt{es\_figure} of the typesetting kit, and matplotlib). The computations were directed by the author
+and written and run by Claude Code (\Cref{sec:history}); their independence is from the asymptotic
+proofs, not from the people and tools that wrote them.

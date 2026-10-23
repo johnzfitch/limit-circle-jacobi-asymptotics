@@ -71,10 +71,12 @@ $|b_n|\le C_b(1+n)^\beta$ with $\beta<\alpha-1-2|\kappa'|$.
 We use $\Lambda:=\lambda/(2c)$, $N_\lambda:=\Lambda^{1/\alpha}$ (the position where
 $2c\,N^\alpha=\lambda$), and the constants
 \begin{equation}\label{eq:constants}
+  \begin{gathered}
   I_\alpha:=\int_0^\infty\arcsin\bigl(\min(1,y^{-\alpha})\bigr)\,dy
-  =\tfrac12\B\bigl(\tfrac{\alpha-1}{2\alpha},\tfrac12\bigr),\qquad
+  =\tfrac12\B\bigl(\tfrac{\alpha-1}{2\alpha},\tfrac12\bigr),\\
   J_\alpha:=\int_1^\infty\frac{y^{-\alpha-2}\,dy}{\sqrt{1-y^{-2\alpha}}}
   =\frac{1}{2\alpha}\B\bigl(\tfrac12+\tfrac1{2\alpha},\tfrac12\bigr).
+  \end{gathered}
 \end{equation}
 (The first identity follows by writing $I_\alpha=\pi/2+\int_1^\infty\arcsin(y^{-\alpha})dy$,
 integrating by parts and substituting $w=y^{-2\alpha}$; the second by the same
@@ -286,9 +288,9 @@ alone is an entry of the Nevanlinna matrix. The Airy comparison sequences $\psi_
 \Cref{sec:olver} are not phases, and $\gamma$ denotes the shear weights $\gamma_k$ here but a local exponent
 in \Cref{sec:dimer,sec:rates,sec:moments}. For a statement $P$, $[P]$ is $1$ if $P$ holds and $0$ otherwise.
 
-\begin{table}[h]
+\begin{table}[htbp]
 \centering\footnotesize
-\begin{tabular}{lll}
+\begin{tabular}{l>{\raggedright\arraybackslash}p{0.5\linewidth}l}
 \toprule
 \estabhead{symbol} & \estabhead{meaning} & \estabhead{where}\\
 \midrule

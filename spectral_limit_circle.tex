@@ -1,6 +1,13 @@
-\documentclass[11pt,letterpaper]{article}
+\documentclass[12pt,letterpaper]{article}
 \usepackage{etch-math}
 \usepackage{etch-plot}
+\usepackage{array}
+% 12 pt review copy: the kit maps 12 pt text (its \large heading size at 11 pt) to
+% 8 pt math. At the 12 pt class 12 pt is the body size, so restore standard math sizes.
+\DeclareMathSizes{12}{12}{8}{6}
+
+% Float-only pages: start floats at the top of the page.
+\makeatletter\setlength\@fptop{0pt}\setlength\@fpbot{0pt plus 1fil}\makeatother
 
 % Conjectures are named, unproved claims: same inline register as definitions.
 \theoremstyle{esmath-tier3}
@@ -107,8 +114,10 @@ critical index.
 \input{sec11_moments}
 \input{sec11_numerics}
 \input{sec12_open}
+\input{sec13_history}
 \input{app_routine}
 \input{app_repro}
+\input{app_provenance}
 \input{refs}
 
 \end{document}

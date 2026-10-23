@@ -1,0 +1,53 @@
+% =============================================================================
+\section{Motivation and the use of AI}
+\label{sec:history}
+
+The question of this paper came from quantum geometry, and I reached quantum geometry
+from an unexpected direction. Since late June 2026 I had been building an attention layer
+whose edges carry operators on the Albert algebra, the exceptional Jordan algebra, and whose
+pair interactions are classified in advance: the tensor square of a traceless element splits
+into five irreducible channels, $26\otimes26=1\oplus26\oplus52\oplus273\oplus324$
+\cite{FitchPairChannels}. In October that work led me to the quantum tetrahedron. The five
+channels turned out to label a basis of the shapes of a quantum tetrahedron whose four faces
+carry the exceptional group $F_4$. For $\mathrm{SU}(2)$ faces the orientation operator of
+that tetrahedron is the triple product $J_1\cdot(J_2\times J_3)$, the four-valent volume
+operator of loop quantum gravity. The volume operator then took me to the dynamics of loop
+quantum gravity, where it enters the construction of the Hamiltonian constraint. There I
+tried self-dual variables, in which the edge labels belong to $\mathfrak{su}(1,1)$ instead
+of $\mathfrak{su}(2)$. In a recoupling basis the triple product becomes the zero-diagonal
+Jacobi matrix with cubically growing links mentioned in the introduction. It is in the
+limit-circle case. So the volume operator is not determined until a boundary condition at
+infinity is chosen, and different choices give different spectra.
+
+That raised the question this paper answers in general: given a Jacobi matrix in the
+limit-circle case, where exactly are the eigenvalues of each of its self-adjoint
+extensions? For the cubic chains the answer first appeared numerically, as a
+Bohr--Sommerfeld rule in which the extension angle enters as a phase. The rest of the paper
+is what was needed to prove that rule, and to see how far it extends: to every growth
+exponent $\alpha>1$, to dimerised links, and to the moment problems of \Cref{sec:moments}.
+The companion paper on the volume gap~\cite{FitchVolumeGap} grew from the same operator,
+with $\mathfrak{su}(2)$ labels. \Cref{app:provenance} describes how the results were
+reached.
+
+\paragraph{Use of AI.} I posed the questions, chose the problems and the order in which to
+pursue them, and set the standard a result had to meet. I directed the computations and
+decided what this paper claims. Large language models were used throughout. Anthropic's
+Claude was used in two ways. In sessions on claude.ai it carried out the earlier
+calculations on quantum tetrahedra and began the calculation on the dynamics, from which
+this paper's question came. Through Claude Code it wrote and ran the programs of
+\Cref{app:repro}, ran the agent campaigns, and drafted and revised the text. It also gave
+the first written proofs of the results here, among them the rotation identity and the
+discrete Bohr--Sommerfeld rule (\Cref{thm:discreteBS}), the discrete Olver bound
+(\Cref{thm:olver}), the second-order term (\Cref{thm:second}), the dimerised law
+(\Cref{thm:dimer}) and the critical indices (\Cref{thm:valent}). Separate Claude agents
+refereed each result as it was written, and an independent Claude referee read the whole
+paper. OpenAI's GPT models were used through ChatGPT and Codex. ChatGPT produced the first
+document on the tetrahedron in the Albert algebra. A Codex session independently checked
+the rate and the counting law, and another compared \Cref{cor:squeeze} with directly
+computed spectra. GPT also reviewed the paper. Google's Gemini reviewed only the companion
+paper and had no part in this one. Review comments were adopted only after they had been
+checked against the source and our own computations. The claims rest on the following, and
+not on any model's assertion: the written proofs in this paper, none of which depends on a
+computation; exact symbolic checks of the identities listed in \Cref{app:repro}; the
+independent eigenvalue computations of \Cref{sec:numerics}; and cited results.
+Responsibility for the content, and for any error that remains, is mine.

@@ -1,0 +1,68 @@
+% =============================================================================
+\section{How the results were reached}
+\label{app:provenance}
+
+The work was kept in a running findings ledger and a task log, with corrections recorded as
+they happened. It began on 12~October~2026, when I asked whether the tetrahedron has any
+place in the theory of Jordan algebras. By 17~October it had become a study of quantum
+tetrahedra over the four rank-three Jordan algebras, in which the volume of a quantum
+tetrahedron reappears as the commutator of two pair Casimirs. From there it moved to the
+dynamics of loop quantum gravity: whether a Lorentzian Hamiltonian constraint can close on
+an off-shell space. That question was not settled, and the companion
+paper~\cite{FitchVolumeGap} describes it. This appendix follows the branch that became the
+present paper.
+
+On 20~October, testing whether self-dual variables could tell Lorentzian dynamics apart from
+a formal factor of $i$, the four-valent volume with $\mathfrak{su}(1,1)$ labels was written
+as a tridiagonal matrix and found not to be essentially self-adjoint. The first reading was
+that the extension angle was an invisible phase. A referee corrected it: for equal labels on
+two legs only $t=0$ and $t=\frac\pi2$ respect the orientation, and they give different
+smallest volumes. A literature search showed that the closed form of the matrix elements was
+classical, and that the infinite representations behind it had been studied. What was not
+found anywhere was the limit-circle property and the extension it forces, so that was proved
+first, for four classes of chains. The novelty assessment was candid: probably new, but a
+short exercise for a specialist.
+
+The same afternoon the spectra of these extensions were seen to obey a Bohr--Sommerfeld rule
+in which the extension angle appears as a phase. A referee found the first account's claim
+about the meaning of $t=0$ and $t=\frac\pi2$ wrong, since it depends on how the legs are
+labelled. The rigorous proof rests on the factorisation of the transfer matrix into shears,
+which is classical~\cite{Kac1999}, and on an exact rotation identity for two-site blocks.
+With these it reached the counting law for cubic links, but at first without a rate. The
+rate $O(\lambda^{-1/3})$ was first derived from Geronimo's turning-point
+theorem~\cite{Geronimo2009}. A referee then found that the printed proof of that theorem
+relies on an Airy weight that cannot exist, so the rate was only conditional. It was
+replaced by the discrete Olver bound of \Cref{thm:olver}, proved from scratch, and a second
+referee judged the rate unconditional. Meanwhile the rule was proved for every exponent
+$\alpha>1$, and the second-order constant $(2\alpha-1)/24$, first seen numerically, was
+proved as well. A check of this stage by Codex confirmed the cubic rate. It also found an
+auxiliary threshold that was false, with the counterexample $a_n=n^2+100n$.
+
+A novelty audit of the general law found it new but not large: its leading constant is the
+one Valent's conjecture predicts, and the Codex check located isolated leading terms for
+special cubic chains in earlier work cited by Gilewicz, Leopold, Ruffing and
+Valent~\cite{GLRV2006}. I judged that a general law with a predicted constant was not
+enough, and asked for named open problems. That led to three of them. The first was the
+dimerised links of \Cref{sec:dimer} and Valent's conjecture, where a referee showed that the
+indicator follows in half a page from known results, so that what is new is the $O(1)$
+term. The second was the question of Fischer, Burgarth and Lonigro~\cite{FBL2026}, answered
+in \Cref{thm:fbl}. The third was the open problem of Berg and Szwarc~\cite{BergSzwarc2026}
+on critical indices. Our determinacy criterion for it turned out to be, in substance, a
+theorem of Borichev and Sodin~\cite{BorichevSodin1998}, and the attribution was checked
+against their 1998 preprint before it was cited. That material was first planned as a
+separate paper and was folded into \Cref{sec:moments} on 21~October, because it does not
+stand on its own.
+
+The paper was written from 21~October, from the primary sources and not from our working
+notes. I asked for a revision that explains the central mechanisms, the phase budget behind
+the missing quarter-period and the Bessel far field, before their proofs, with the routine
+estimates moved to \Cref{app:routine}. An independent Claude referee then read the whole
+paper and checked its constants with its own Wronskian code. It found no wrong theorem, but
+it did find a gap in a remark on the class~$\mathbf A$, which was repaired. A GPT referee
+found that the reflection formula for negative eigenvalues in \Cref{cor:squeeze} was off by
+one in its index. It also found that the solutions defining the boundary conditions must
+solve the recurrence only away from the first site. Both findings were confirmed against
+\Cref{thm:count} before they were adopted. The final revision also found and fixed an
+inconsistent diagonal value on one page. When the code was first published, 52 of its
+checksums failed because the repository had normalised line endings; this was fixed before
+the release was cited here.

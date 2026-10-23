@@ -34,7 +34,7 @@ same hypotheses, and use $\psi_J(\lambda)=-\psi_{J_0-\operatorname{diag}(b)}(-\l
 \end{proposition}
 
 \begin{proof}
-$S$ is a nonincreasing function of each link $A_m$, so it suffices to evaluate it for
+Since $S$ is nonincreasing in each link $A_m$, it suffices to evaluate it for
 shifted powers and to sandwich. For $A_m=c(2m+1+s)^\alpha$ put
 $g(x):=2\arcsin\bigl(\min(1,\lambda/(2c(2x+1+s)^\alpha))\bigr)$, so $S=\sum_{m\ge0}g(m)$ and,
 by $y=2x+1+s$,
@@ -73,8 +73,10 @@ $\lambda_j=\lambda_j(t)$ be the eigenvalues of $H_t$ labelled as in \Cref{thm:co
   $[t=0]$ is $1$ if $t=0$ and $0$ otherwise.
   Under the hypothesis of (b) this reads
   \[
-    \mathcal N^+_t(\lambda)=C_\alpha(\lambda/c)^{1/\alpha}-\frac{\kappa}{2\alpha}-\frac t\pi+\frac12-[t=0]+r(\lambda),
-    \qquad C_\alpha=\frac{\sin(\pi/2\alpha)}{2\pi}\B\bigl(\tfrac1{2\alpha},1-\tfrac1\alpha\bigr)=\frac{2^{-1/\alpha}I_\alpha}{\pi}.
+    \begin{gathered}
+    \mathcal N^+_t(\lambda)=C_\alpha(\lambda/c)^{1/\alpha}-\frac{\kappa}{2\alpha}-\frac t\pi+\frac12-[t=0]+r(\lambda),\\
+    C_\alpha=\frac{\sin(\pi/2\alpha)}{2\pi}\B\bigl(\tfrac1{2\alpha},1-\tfrac1\alpha\bigr)=\frac{2^{-1/\alpha}I_\alpha}{\pi}.
+    \end{gathered}
   \]
   On the negative half-line $\mathcal N^-_t=\mathcal N^+_{\pi-t}$ for $t>0$ and $\mathcal N^-_0=\mathcal N^+_0$.
 \end{enumerate}
