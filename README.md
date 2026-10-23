@@ -2,6 +2,10 @@
 
 John Zachary Fitch (zack@internetuniverse.org) · ORCID [0009-0007-7953-1531](https://orcid.org/0009-0007-7953-1531)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23589731.svg)](https://doi.org/10.5281/zenodo.23589731)
+
+**DOI:** [10.5281/zenodo.23589731](https://doi.org/10.5281/zenodo.23589731) (all versions; resolves to the latest). Release `v1.1.1` is archived as [10.5281/zenodo.23589732](https://doi.org/10.5281/zenodo.23589732).
+
 This repository holds the paper, its LaTeX sources, and the programs and stored outputs behind every numerical statement in it. The paper is [`spectral_limit_circle.pdf`](spectral_limit_circle.pdf), 79 pages, version of 22 October 2026 (release v1.1). Release v1.0 holds the first version, 68 pages; v1.1 is set in 12 pt, adds Section 14 on how the work began and how AI tools were used, and Appendix C on how the results were reached.
 
 ## What the paper proves

@@ -13,6 +13,7 @@ authors:
     orcid: "https://orcid.org/0009-0007-7953-1531"
 version: 1.1.1
 date-released: 2026-10-23
+doi: 10.5281/zenodo.23589731
 repository-code: "https://github.com/johnzfitch/limit-circle-jacobi-asymptotics"
 license: MIT
 keywords:
@@ -25,6 +26,7 @@ keywords:
   - critical index
 preferred-citation:
   type: article
+  doi: 10.5281/zenodo.23589731
   title: "Bohr–Sommerfeld Asymptotics for Limit-Circle Jacobi Matrices"
   authors:
     - family-names: Fitch
